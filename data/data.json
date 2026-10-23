@@ -1,0 +1,1005 @@
+{
+  "brand": {
+    "name": "Suryavana",
+    "tagline": "Hotel & Resort",
+    "phone": "+1  00000 00000",
+    "email": "info@xyz.com",
+    "address": "100 Ocean Avenue, Santa Monica, CA 90401, United States"
+  },
+  "navLinks": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about"
+    },
+    {
+      "label": "Rooms & Suites",
+      "href": "/rooms"
+    },
+    {
+      "label": "Gallery",
+      "href": "/gallery"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
+  ],
+  "images": {
+    "poolResort": "/images/pool-resort.webp",
+    "cliffPool": "/images/cliff-pool.webp",
+    "woodVilla": "/images/wood-villa.webp",
+    "maldives": "/images/maldives.webp",
+    "beachSunset": "/images/beach-sunset.webp",
+    "palmBeach": "/images/palm-beach.webp",
+    "dining": "/images/dining.webp",
+    "spa": "/images/spa.webp",
+    "temple": "/images/temple.webp",
+    "terrace": "/images/terrace.webp",
+    "fountainCourt": "/images/fountain-court.webp",
+    "cabana": "/images/cabana.webp",
+    "nightPool": "/images/night-pool.webp",
+    "pinkPalms": "/images/pink-palms.webp",
+    "cliffSunset": "/images/cliff-sunset.webp",
+    "whiteVilla": "/images/white-villa.webp",
+    "deckLounge": "/images/deck-lounge.webp",
+    "infinity": "/images/infinity.webp",
+    "infinity2": "/images/infinity2.webp",
+    "bath": "/images/bath.webp",
+    "courtyard": "/images/courtyard.webp",
+    "roomGarden": "/images/room-garden.webp",
+    "roomOcean": "/images/room-ocean.webp",
+    "roomCliff": "/images/room-cliff.webp",
+    "roomOverwater": "/images/room-overwater.webp",
+    "roomHeritage": "/images/room-heritage.webp",
+    "roomFamily": "/images/room-family.webp",
+    "roomCity": "/images/room-city.webp",
+    "roomView": "/images/room-view.webp",
+    "livingRoom": "/images/living-room.webp",
+    "apartment": "/images/apartment.webp",
+    "suiteWhite": "/images/suite-white.webp",
+    "yoga": "/images/yoga.webp",
+    "aerialBeach": "/images/aerial-beach.webp",
+    "tropicalBeach": "/images/tropical-beach.webp",
+    "diving": "/images/diving.webp",
+    "breakfast": "/images/breakfast.webp",
+    "grill": "/images/grill.webp",
+    "chef": "/images/chef.webp",
+    "terraceDining": "/images/terrace-dining.webp",
+    "wedding": "/images/wedding.webp",
+    "overwaterHut": "/images/overwater-hut.webp",
+    "villaGarden": "/images/villa-garden.webp",
+    "resortVillas": "/images/resort-villas.webp",
+    "modernVilla": "/images/modern-villa.webp",
+    "spaTowel": "/images/spa-towel.webp",
+    "library": "/images/library.webp",
+    "poolCabanas": "/images/pool-cabanas.webp",
+    "bedroomTufted": "/images/bedroom-tufted.webp",
+    "bedroomOrange": "/images/bedroom-orange.webp",
+    "bedroomDark": "/images/bedroom-dark.webp",
+    "bedroomCosy": "/images/bedroom-cosy.webp"
+  },
+  "roomFilters": [
+    "All",
+    "Garden",
+    "Ocean",
+    "Suite",
+    "Villa"
+  ],
+  "rooms": [
+    {
+      "slug": "deluxe-garden-room",
+      "name": "Deluxe Garden Room",
+      "category": "Garden",
+      "tagline": "Calm mornings among the palms",
+      "price": 8500,
+      "size": 38,
+      "guests": 2,
+      "bed": "King bed",
+      "view": "Tropical garden",
+      "image": "/images/room-garden.webp",
+      "gallery": [
+        "/images/bedroom-tufted.webp",
+        "/images/bath.webp",
+        "/images/villa-garden.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Private balcony",
+        "Tea & coffee station"
+      ],
+      "description": [
+        "Wake to birdsong and filtered green light in a room that opens straight onto our landscaped palm garden. Warm timber, linen textures and a deep soaking tub keep everything soft and unhurried.",
+        "It is the quiet heart of the resort: a few steps from the lagoon pool, yet far enough away that the only sound is the breeze."
+      ]
+    },
+    {
+      "slug": "premier-ocean-view",
+      "name": "Premier Ocean View",
+      "category": "Ocean",
+      "tagline": "Sunrise from your own pillow",
+      "price": 12500,
+      "size": 46,
+      "guests": 3,
+      "bed": "King bed + daybed",
+      "view": "Arabian Sea",
+      "image": "/images/room-ocean.webp",
+      "gallery": [
+        "/images/bedroom-cosy.webp",
+        "/images/infinity.webp",
+        "/images/aerial-beach.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Floor-to-ceiling doors",
+        "Sea-facing terrace",
+        "Bluetooth speaker"
+      ],
+      "description": [
+        "Folding teak doors slide away and the whole room becomes a terrace over the Arabian Sea. Linen drapes catch the morning light while the daybed is made for slow afternoons.",
+        "Evenings bring the best seat in the house: a private deck for sundowners as the sky turns copper and rose."
+      ]
+    },
+    {
+      "slug": "cliffside-pool-suite",
+      "name": "Cliffside Pool Suite",
+      "category": "Suite",
+      "tagline": "A private plunge pool above the waves",
+      "price": 21000,
+      "size": 72,
+      "guests": 3,
+      "bed": "King bed",
+      "view": "Cliff & ocean horizon",
+      "image": "/images/room-cliff.webp",
+      "gallery": [
+        "/images/cliff-pool.webp",
+        "/images/bedroom-dark.webp",
+        "/images/bath.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Private plunge pool",
+        "Outdoor shower",
+        "Butler on call",
+        "Nespresso machine"
+      ],
+      "description": [
+        "Stone, glass and warm wood come together in a suite built around its own plunge pool. Step outside and the cliff edge drops away to open sea.",
+        "A dedicated butler arranges everything from in-villa breakfasts to candle-lit dinners on the deck."
+      ]
+    },
+    {
+      "slug": "overwater-lagoon-villa",
+      "name": "Overwater Lagoon Villa",
+      "category": "Villa",
+      "tagline": "Sleep above turquoise water",
+      "price": 34000,
+      "size": 95,
+      "guests": 4,
+      "bed": "King bed + twin sofa bed",
+      "view": "Private lagoon",
+      "image": "/images/room-overwater.webp",
+      "gallery": [
+        "/images/maldives.webp",
+        "/images/overwater-hut.webp",
+        "/images/infinity2.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Glass floor panel",
+        "Direct lagoon access",
+        "Private sun deck",
+        "Snorkel set",
+        "Butler on call"
+      ],
+      "description": [
+        "Our signature villa sits on stilts above a glassy lagoon, with a thatched roof, wraparound windows and a deck that steps into the water.",
+        "Lie in bed and watch fish drift beneath the glass floor panel, then paddle out for sunrise before breakfast arrives by canoe."
+      ]
+    },
+    {
+      "slug": "heritage-royal-suite",
+      "name": "Heritage Royal Suite",
+      "category": "Suite",
+      "tagline": "Old-world glamour, modern comfort",
+      "price": 27500,
+      "size": 88,
+      "guests": 3,
+      "bed": "King bed",
+      "view": "Courtyard fountain",
+      "image": "/images/room-heritage.webp",
+      "gallery": [
+        "/images/library.webp",
+        "/images/bedroom-orange.webp",
+        "/images/bath.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Separate lounge",
+        "Tufted sofa suite",
+        "Walk-in wardrobe",
+        "Evening turndown",
+        "Butler on call"
+      ],
+      "description": [
+        "Velvet, brass and soft lamplight give this suite the feel of a private manor. A separate lounge makes it ideal for longer stays or celebrations.",
+        "Tall windows frame the fountain courtyard, which glows after dark and is lovely from the bath."
+      ]
+    },
+    {
+      "slug": "family-residence",
+      "name": "Family Residence",
+      "category": "Garden",
+      "tagline": "Space for everyone, privacy for each",
+      "price": 18500,
+      "size": 110,
+      "guests": 5,
+      "bed": "King bed + 2 twin beds",
+      "view": "Pool & garden",
+      "image": "/images/room-family.webp",
+      "gallery": [
+        "/images/apartment.webp",
+        "/images/modern-villa.webp",
+        "/images/fountain-court.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Two bedrooms",
+        "Kitchenette",
+        "Kids' welcome kit",
+        "Direct pool access",
+        "Board games"
+      ],
+      "description": [
+        "Two bedrooms, a sunny living area and a kitchenette make this the easiest way to holiday with family. Everyone gets their own corner, and meals are never far.",
+        "Step out the door and you are beside the family pool, with the kids' club and beach path a short stroll away."
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Beach Adventures",
+      "text": "Kayaks, paddle boards and sunrise walks on a private shoreline.",
+      "back": "Guided kayak trips, paddle-board lessons and island-hopping by boat. Equipment and instructors are included for in-house guests.",
+      "image": "/images/tropical-beach.webp",
+      "href": "/blog/hidden-beaches-near-the-resort"
+    },
+    {
+      "title": "Pools & Cabanas",
+      "text": "Three pools, sunset cabanas and a swim-up bar.",
+      "back": "An adults-only infinity pool, a family lagoon pool and a kids' splash zone, with poolside service and private cabanas you can book by the day.",
+      "image": "/images/infinity.webp",
+      "href": "/gallery"
+    },
+    {
+      "title": "Fine Dining",
+      "text": "Coastal tasting menus built from fish landed that morning.",
+      "back": "Four restaurants from beach grill to a seven-course terrace tasting menu, timed to the sunset.",
+      "image": "/images/terrace-dining.webp",
+      "href": "/blog/sunset-dining-guide"
+    }
+  ],
+  "amenities": [
+    "Infinity Pool",
+    "Banquet & Conference Hall",
+    "Private Beach",
+    "Sunset Cabanas",
+    "Beachfront Dining",
+    "Yoga Pavilion",
+    "Kids' Club",
+    "Airport Transfers",
+    "Water Sports",
+    "24h Butler Service"
+  ],
+  "testimonials": [
+    {
+      "name": "Ananya Mehta",
+      "from": "Mumbai",
+      "stay": "Cliffside Pool Suite",
+      "rating": 5,
+      "quote": "We came for a long weekend and left planning our return. The staff remembered our names by breakfast, and the plunge pool at sunset was unreal."
+    },
+    {
+      "name": "James Whitfield",
+      "from": "London",
+      "stay": "Overwater Lagoon Villa",
+      "rating": 5,
+      "quote": "Waking up over clear water felt like a film set. Service was quietly perfect: never intrusive, always one step ahead."
+    },
+    {
+      "name": "Priya & Rahul Nair",
+      "from": "Bengaluru",
+      "stay": "Premier Ocean View",
+      "rating": 5,
+      "quote": "Our honeymoon was made special by little touches: flowers on the bed, a private beach dinner, and a handwritten note."
+    },
+    {
+      "name": "Sofia Marchetti",
+      "from": "Milan",
+      "stay": "Heritage Royal Suite",
+      "rating": 4,
+      "quote": "Beautiful design and the best seafood I have had in India. The room was spotless and the breakfast on the terrace is worth the trip alone."
+    },
+    {
+      "name": "Arjun Kapoor",
+      "from": "Delhi",
+      "stay": "Family Residence",
+      "rating": 5,
+      "quote": "Travelling with two kids is usually chaos. Here the kids' club, the pool and the space in our residence made it effortless."
+    },
+    {
+      "name": "Hannah Becker",
+      "from": "Berlin",
+      "stay": "Deluxe Garden Room",
+      "rating": 5,
+      "quote": "Peaceful, green and spotless. I did yoga at dawn, read all afternoon and ate like a queen every night."
+    }
+  ],
+  "stats": [
+    {
+      "value": 12,
+      "suffix": "+",
+      "label": "Years of hospitality"
+    },
+    {
+      "value": 120,
+      "suffix": "",
+      "label": "Rooms & villas"
+    },
+    {
+      "value": 18,
+      "suffix": "k+",
+      "label": "Happy guests"
+    },
+    {
+      "value": 4.9,
+      "suffix": "/5",
+      "label": "Average rating",
+      "decimals": 1
+    }
+  ],
+  "posts": [
+    {
+      "slug": "hidden-beaches-near-the-resort",
+      "title": "Five Hidden Beaches Within an Hour of the Resort",
+      "category": "Travel",
+      "date": "12 March 2026",
+      "readTime": "6 min read",
+      "image": "/images/beach-sunset.webp",
+      "excerpt": "Skip the crowds. Our concierge shares the quiet coves locals keep to themselves.",
+      "body": [
+        "Everyone knows the main stretch of sand. Fewer people know about the coves that start where the road gives up, reachable by a short walk or a boat from the jetty.",
+        "Start early. The best of them are empty before eight, with water so clear you can count the shells from the shore. Pack water, a hat and a sarong, because shade is scarce.",
+        "Our concierge team can arrange a driver, a picnic hamper and a guide who knows the tides. Ask at the front desk the evening before and we will plan the rest.",
+        "Our favourite is the cove below the old lighthouse. Reach it at low tide, swim in the morning and be back for lunch on the terrace."
+      ]
+    },
+    {
+      "slug": "designing-a-better-nights-sleep",
+      "title": "Inside Our Rooms: How We Design for a Better Night's Sleep",
+      "category": "Stay",
+      "date": "28 February 2026",
+      "readTime": "5 min read",
+      "image": "/images/bedroom-tufted.webp",
+      "excerpt": "Mattresses, blackout curtains and quiet air-conditioning: the small details behind a great stay.",
+      "body": [
+        "A good hotel room is judged at 2 a.m. Is it quiet, dark and the right temperature? We start every room design from that question.",
+        "Each bed has a medium-firm mattress with a choice of soft or firm pillows from our pillow menu. Blackout curtains sit behind linen drapes, so you can sleep in or let the sunrise wake you.",
+        "Air-conditioning is whisper-quiet and controlled by you, doors are solid timber, and the corridors are carpeted. Doors close softly, so late arrivals do not wake the floor.",
+        "Need something extra? Call the front desk for extra pillows, a baby cot, a bed-side charger or a late tea tray. It takes a few minutes."
+      ]
+    },
+    {
+      "slug": "sunset-dining-guide",
+      "title": "The Best Seats for Sunset: A Dining Guide",
+      "category": "Dining",
+      "date": "15 February 2026",
+      "readTime": "4 min read",
+      "image": "/images/dining.webp",
+      "excerpt": "Four restaurants, one golden hour. Where to sit and what to order.",
+      "body": [
+        "Golden hour lasts about forty minutes here, so choose your table with care. Book the sand-level tables at the beach grill if you want your toes in the sand.",
+        "For something more refined, the terrace restaurant serves a seven-course tasting menu timed to the sun. Ask for the corner table.",
+        "Finish at the cabana bar, where the house cocktail uses coconut, lime leaf and a little local feni."
+      ]
+    },
+    {
+      "slug": "planning-the-perfect-honeymoon",
+      "title": "Planning the Perfect Honeymoon in Goa",
+      "category": "Romance",
+      "date": "2 February 2026",
+      "readTime": "7 min read",
+      "image": "/images/cabana.webp",
+      "excerpt": "Candle-lit dinners, private villas and the best months to travel.",
+      "body": [
+        "The best honeymoons leave room for doing nothing. Plan one anchor activity a day and let the rest drift.",
+        "October to February brings dry, golden weather. March is warmer and quieter, and rates soften.",
+        "Tell us in advance if you are celebrating. We will arrange flowers, a candle-lit beach dinner and a chilled bottle waiting in your villa."
+      ]
+    },
+    {
+      "slug": "family-holiday-without-stress",
+      "title": "A Family Holiday Without the Stress",
+      "category": "Family",
+      "date": "20 January 2026",
+      "readTime": "5 min read",
+      "image": "/images/pool-resort.webp",
+      "excerpt": "How to keep kids busy, grandparents comfortable and parents actually relaxed.",
+      "body": [
+        "A good family trip balances togetherness with a little space. Our residences have two bedrooms so everyone sleeps well.",
+        "The kids' club runs mornings and evenings with crafts, treasure hunts and beach games, leaving adults free for a swim or a quiet coffee.",
+        "Order the family set menu for one dinner a week and let the kitchen sort out fussy eaters."
+      ]
+    },
+    {
+      "slug": "monsoon-magic",
+      "title": "Why Monsoon Is Our Secret Season",
+      "category": "Travel",
+      "date": "5 January 2026",
+      "readTime": "4 min read",
+      "image": "/images/wood-villa.webp",
+      "excerpt": "Green hills, empty beaches and lower rates. The case for travelling in the rain.",
+      "body": [
+        "Between June and September the coast turns emerald. The beaches are empty, the air smells of wet earth and rates are at their lowest.",
+        "Rain usually arrives in bursts, leaving long sunny gaps. Spend the wet hours over a long lunch or reading on your covered deck.",
+        "Pack a light rain jacket and a good book. You will not regret it."
+      ]
+    }
+  ],
+  "home": {
+    "heroImages": [
+      "/images/pool-resort.webp",
+      "/images/cliff-pool.webp",
+      "/images/maldives.webp",
+      "/images/resort-villas.webp"
+    ],
+    "heroPhrases": [
+      "The Sun Awakens the Forest",
+      "Luxury Whispers in Nature",
+      "Sunrise Over Emerald Peaks",
+      "Slow Living in Nature's Lap"
+    ],
+    "introTitle": "A Sunlit Forest Sanctuary\nWhere Nature Whispers & Luxury Abides",
+    "introText": [
+      "Suryavana Hotel & Resort is a serene eco-luxury sanctuary nestled between verdant forest hills, ancient groves, and sunlit waters. Inspired by 'Surya' (the divine golden sun) and 'Vana' (the sacred lush forest), our architecture and rituals celebrate the eternal harmony between amber sunbeams and emerald canopies.",
+      "Whether unwinding in private timber pool villas, practicing sunrise yoga beneath ancient teak boughs, or savoring organic botanical cuisine, every detail is crafted for unhurried rest and deep rejuvenation."
+    ],
+    "introImages": [
+      "/images/infinity2.webp",
+      "/images/fountain-court.webp"
+    ],
+    "parallaxImage": "/images/beach-sunset.webp",
+    "about": {
+      "story": [
+        "/images/white-villa.webp",
+        "/images/deck-lounge.webp",
+        "/images/night-pool.webp"
+      ],
+      "values": [
+        {
+          "title": "Surya & Vana Balance",
+          "text": "Honoring the golden vitality of the sun and the deep, soothing quietude of the sacred forest canopy.",
+          "image": "/images/terrace.webp"
+        },
+        {
+          "title": "Mindful Eco-Sanctuary",
+          "text": "Crafted with local reclaimed teak, river stone, solar energy and a zero single-use plastic philosophy.",
+          "image": "/images/temple.webp"
+        },
+        {
+          "title": "Holistic Healing",
+          "text": "Daily dawn yoga, forest bathing trails, Ayurvedic wellness therapies and mineral healing waters.",
+          "image": "/images/villa-garden.webp"
+        },
+        {
+          "title": "Intuitive Hospitality",
+          "text": "Hospitality rooted in genuine warmth. Every stay is embraced with gentle, anticipatory care.",
+          "image": "/images/cabana.webp"
+        }
+      ],
+      "milestones": [
+        {
+          "year": "2013",
+          "text": "Suryavana opened with 18 private forest sanctuary rooms beside an ancient teak grove."
+        },
+        {
+          "year": "2016",
+          "text": "Unveiled the sunlit yoga pavilion and organic farm-to-table botanical restaurant."
+        },
+        {
+          "year": "2020",
+          "text": "Added the hilltop infinity pool and cliffside sunset suites overlooking the valley."
+        },
+        {
+          "year": "2024",
+          "text": "Recognized as a premier eco-luxury retreat and unveiled overwater lagoon villas."
+        }
+      ]
+    },
+    "contact": {
+      "hours": "Guest Concierge & Valet",
+      "mapSrc": "https://www.openstreetmap.org/export/embed.html?bbox=-118.502,34.008,-118.485,34.020&layer=mapnik&marker=34.014,-118.495"
+    },
+    "gallery": [
+      "/images/villa-garden.webp",
+      "/images/aerial-beach.webp",
+      "/images/breakfast.webp",
+      "/images/overwater-hut.webp",
+      "/images/bedroom-tufted.webp",
+      "/images/resort-villas.webp",
+      "/images/yoga.webp",
+      "/images/grill.webp",
+      "/images/modern-villa.webp",
+      "/images/pool-cabanas.webp",
+      "/images/terrace-dining.webp",
+      "/images/chef.webp"
+    ],
+    "dining": {
+      "eyebrow": "Forest & Coastal Harvest",
+      "title": "Botanical Dining Under the Canopies",
+      "text": "Our chefs harvest from our organic permaculture gardens and the freshest coastal landings at dawn. Breakfast on the sun deck, fire-roasted botanical grills at sunset, and candle-lit tasting menus beneath the stars.",
+      "images": [
+        "/images/chef.webp",
+        "/images/breakfast.webp",
+        "/images/grill.webp"
+      ],
+      "points": [
+        "Organic permaculture & coastal harvest",
+        "Private candlelit forest canopy dinners",
+        "Sunset fire grills & artisanal botanical infusions"
+      ]
+    }
+  },
+  "motion": {
+    "ease": [
+      0.22,
+      1,
+      0.36,
+      1
+    ],
+    "duration": 0.85,
+    "reveal": {
+      "up": {
+        "hidden": {
+          "opacity": 0,
+          "y": 44
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "down": {
+        "hidden": {
+          "opacity": 0,
+          "y": -44
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "left": {
+        "hidden": {
+          "opacity": 0,
+          "x": -60
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "right": {
+        "hidden": {
+          "opacity": 0,
+          "x": 60
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "zoom": {
+        "hidden": {
+          "opacity": 0,
+          "scale": 0.88
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "zoomOut": {
+        "hidden": {
+          "opacity": 0,
+          "scale": 1.25
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "flip": {
+        "hidden": {
+          "opacity": 0,
+          "rotateX": -70,
+          "y": 40
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "flipY": {
+        "hidden": {
+          "opacity": 0,
+          "rotateY": -80,
+          "x": -30
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "blur": {
+        "hidden": {
+          "opacity": 0,
+          "filter": "blur(16px)",
+          "y": 20
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "rotate": {
+        "hidden": {
+          "opacity": 0,
+          "rotate": -8,
+          "y": 40,
+          "scale": 0.92
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "none": {
+        "hidden": {
+          "opacity": 0
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      }
+    },
+    "stagger": {
+      "container": {
+        "hidden": {},
+        "show": {
+          "transition": {
+            "staggerChildren": 0.12
+          }
+        }
+      },
+      "item": {
+        "hidden": {
+          "opacity": 0,
+          "y": 50,
+          "scale": 0.92,
+          "rotateX": -25
+        },
+        "show": {
+          "opacity": 1,
+          "y": 0,
+          "scale": 1,
+          "rotateX": 0
+        }
+      }
+    },
+    "word": {
+      "container": {
+        "hidden": {},
+        "show": {
+          "transition": {
+            "staggerChildren": 0.07
+          }
+        }
+      },
+      "item": {
+        "hidden": {
+          "y": "110%",
+          "rotate": 6
+        },
+        "show": {
+          "y": 0,
+          "rotate": 0
+        }
+      }
+    },
+    "stack": {
+      "topOffset": 88,
+      "step": 14,
+      "endScale": 0.92,
+      "endOpacity": 0.75
+    },
+    "page": {
+      "initial": {
+        "opacity": 0
+      },
+      "animate": {
+        "opacity": 1
+      },
+      "transition": {
+        "duration": 0.5
+      }
+    }
+  },
+  "gallery": {
+    "hero": {
+      "title": "Moments in Suryavana",
+      "subtitle": "Golden sun, lush forest groves, and serene waters: the Suryavana journey in pictures.",
+      "image": "/images/beach-sunset.webp"
+    },
+    "intro": {
+      "eyebrow": "Our Emblem",
+      "title": "Surya & Vana: Sun, Forest, Peaks & Waters",
+      "text": "Our emblem captures the sacred union of 'Surya' (the golden sun) rising behind emerald mountain peaks and 'Vana' (the lush forest sanctuary) flowing into serene waters. We organize our resort impressions to reflect this harmony: Sunrise, Waters, Forest, Stays and Table."
+    },
+    "arches": [
+      {
+        "label": "Sunrise",
+        "caption": "First golden light over the sanctuary",
+        "image": "/images/cliff-sunset.webp"
+      },
+      {
+        "label": "Waters",
+        "caption": "Crystal mineral pools and lagoon waters",
+        "image": "/images/aerial-beach.webp"
+      },
+      {
+        "label": "Forest",
+        "caption": "Canopy shade and ancient grove pathways",
+        "image": "/images/resort-villas.webp"
+      }
+    ],
+    "categories": [
+      "All",
+      "Sunrise",
+      "Waters",
+      "Forest",
+      "Stays",
+      "Table"
+    ],
+    "items": [
+      {
+        "src": "/images/beach-sunset.webp",
+        "title": "Golden hour on the shore",
+        "category": "Sunrise"
+      },
+      {
+        "src": "/images/aerial-beach.webp",
+        "title": "Boats at anchor, seen from above",
+        "category": "Waters"
+      },
+      {
+        "src": "/images/villa-garden.webp",
+        "title": "Garden pool pavilion",
+        "category": "Forest"
+      },
+      {
+        "src": "/images/room-ocean.webp",
+        "title": "Premier Ocean View bedroom",
+        "category": "Stays"
+      },
+      {
+        "src": "/images/terrace-dining.webp",
+        "title": "Terrace dining by the water",
+        "category": "Table"
+      },
+      {
+        "src": "/images/cliff-sunset.webp",
+        "title": "Cliffside pool at dusk",
+        "category": "Sunrise"
+      },
+      {
+        "src": "/images/infinity.webp",
+        "title": "Infinity pool edge",
+        "category": "Waters"
+      },
+      {
+        "src": "/images/resort-villas.webp",
+        "title": "Villa walkway under the palms",
+        "category": "Forest"
+      },
+      {
+        "src": "/images/room-overwater.webp",
+        "title": "Overwater lagoon villa",
+        "category": "Stays"
+      },
+      {
+        "src": "/images/breakfast.webp",
+        "title": "Breakfast spread on the deck",
+        "category": "Table"
+      },
+      {
+        "src": "/images/cabana.webp",
+        "title": "Sunset cabanas",
+        "category": "Sunrise"
+      },
+      {
+        "src": "/images/maldives.webp",
+        "title": "Lagoon villas from the sky",
+        "category": "Waters"
+      },
+      {
+        "src": "/images/tropical-beach.webp",
+        "title": "Palm-lined private beach",
+        "category": "Forest"
+      },
+      {
+        "src": "/images/bedroom-tufted.webp",
+        "title": "Heritage suite bedroom",
+        "category": "Stays"
+      },
+      {
+        "src": "/images/grill.webp",
+        "title": "Beach grill, fresh off the fire",
+        "category": "Table"
+      },
+      {
+        "src": "/images/terrace.webp",
+        "title": "Morning terrace loungers",
+        "category": "Sunrise"
+      },
+      {
+        "src": "/images/cliff-pool.webp",
+        "title": "Cliffside plunge pool",
+        "category": "Waters"
+      },
+      {
+        "src": "/images/fountain-court.webp",
+        "title": "Fountain courtyard",
+        "category": "Forest"
+      },
+      {
+        "src": "/images/room-garden.webp",
+        "title": "Deluxe garden room",
+        "category": "Stays"
+      },
+      {
+        "src": "/images/chef.webp",
+        "title": "Chef's morning prep",
+        "category": "Table"
+      },
+      {
+        "src": "/images/pink-palms.webp",
+        "title": "Palms against a pink sky",
+        "category": "Sunrise"
+      },
+      {
+        "src": "/images/overwater-hut.webp",
+        "title": "Thatched lagoon pavilion",
+        "category": "Waters"
+      },
+      {
+        "src": "/images/wood-villa.webp",
+        "title": "Timber villa and pool deck",
+        "category": "Forest"
+      },
+      {
+        "src": "/images/wedding.webp",
+        "title": "Beachfront wedding table",
+        "category": "Table"
+      }
+    ],
+    "cta": {
+      "title": "Found a view you love?",
+      "text": "Tell us which one and we will find you the room that looks onto it."
+    }
+  }
+}

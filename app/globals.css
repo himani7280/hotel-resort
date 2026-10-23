@@ -1,0 +1,452 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-cream: var(--c-cream);
+  --color-sand: var(--c-sand);
+  --color-forest: var(--c-forest);
+  --color-teal: var(--c-teal);
+  --color-lagoon: var(--c-lagoon);
+  --color-gold: var(--c-gold);
+  --color-ink: var(--c-ink);
+  --color-mist: var(--c-mist);
+  --font-sans: var(--font-poppins), 'Poppins', system-ui, sans-serif;
+  --font-serif: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-title: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+/* ---- Themes: switched with <html data-theme="..."> ---- */
+:root,
+[data-theme="tropical"] {
+  --c-cream: #faf7f0; --c-sand: #f2ebdc; --c-forest: #09251b; --c-teal: #14593f;
+  --c-lagoon: #1f7d58; --c-gold: #c59b4b; --c-ink: #0a1c15; --c-mist: #53685e;
+}
+[data-theme="sunset"] {
+  --c-cream: #fbf5ee; --c-sand: #f5e6d7; --c-forest: #2b1712; --c-teal: #9e4324;
+  --c-lagoon: #d97d4c; --c-gold: #da9847; --c-ink: #20130e; --c-mist: #6e5950;
+}
+[data-theme="ocean"] {
+  --c-cream: #f4f8fa; --c-sand: #dde9f0; --c-forest: #081e2e; --c-teal: #14587c;
+  --c-lagoon: #3895be; --c-gold: #c59b4b; --c-ink: #0b1a26; --c-mist: #556c7a;
+}
+
+body, header, section, footer { transition: background-color 0.4s ease, color 0.4s ease; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), 'Poppins', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+/* Google Sans font for all titles & headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.font-serif,
+.font-title {
+  font-family: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+a,
+button,
+summary,
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Glass surface used by the navbar, booking bar and overlay chips. */
+.glass {
+  background: rgb(255 255 255 / 0.12);
+  border: 1px solid rgb(255 255 255 / 0.22);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+
+.glass-light {
+  background: rgb(255 255 255 / 0.82);
+  border: 1px solid rgb(255 255 255 / 0.9);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  backdrop-filter: blur(22px) saturate(160%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(100deg, color-mix(in srgb, var(--color-gold) 60%, white) 0%, var(--color-gold) 45%, color-mix(in srgb, var(--color-gold) 50%, white) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Cursor-following soft glow for cards; --mx/--my are set from JS. */
+.spotlight {
+  position: relative;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--color-gold) 18%, transparent), transparent 60%);
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+.btn-primary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 0.9rem 2.2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1;
+}
+
+/* Unified Shimmer Light Reflection Sweep Animation for all buttons */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary:hover::before {
+  left: 120%;
+}
+
+.btn-primary:active {
+  transform: translateY(0px) scale(0.97);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #c69b59 0%, #e2be82 50%, #c69b59 100%);
+  background-size: 200% auto;
+  color: #0b1e15 !important;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 28px -8px rgba(198, 155, 89, 0.55);
+}
+
+.btn-gold:hover {
+  box-shadow: 0 16px 36px -6px rgba(198, 155, 89, 0.75);
+  background-position: right center;
+}
+
+.btn-dark {
+  background: var(--color-forest);
+  color: #fff !important;
+  border: 1px solid rgba(198, 155, 89, 0.4);
+  box-shadow: 0 10px 28px -8px rgba(13, 40, 30, 0.6);
+}
+
+.btn-dark:hover {
+  background: #0f3627;
+  border-color: var(--color-gold);
+  box-shadow: 0 16px 36px -6px rgba(198, 155, 89, 0.4);
+}
+
+.btn-outline-light {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff !important;
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-light:hover {
+  background: #fff;
+  color: var(--color-forest) !important;
+  box-shadow: 0 12px 30px -6px rgba(255, 255, 255, 0.3);
+}
+
+.btn-outline-dark {
+  border: 1px solid var(--color-gold);
+  color: var(--color-forest) !important;
+  background: transparent;
+}
+
+.btn-outline-dark:hover {
+  background: var(--color-forest);
+  color: #fff !important;
+  box-shadow: 0 12px 30px -6px rgba(13, 40, 30, 0.4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-marquee,
+  .animate-marquee-rev {
+    animation: none;
+  }
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-forest);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  to {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+}
+
+.btn-shine:hover::after {
+  animation: shine 0.9s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float {
+    animation: none;
+  }
+}
+
+@keyframes marquee-rev {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-rev {
+  animation: marquee-rev 55s linear infinite;
+}
+
+.animate-marquee {
+  animation-duration: 55s;
+}
+
+.animate-marquee-rev:hover,
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.logo-rays {
+  transform-box: view-box;
+  transform-origin: 30px 38px;
+  animation: logo-spin 24s linear infinite;
+}
+
+.logo:hover .logo-rays {
+  animation-duration: 6s;
+}
+
+.logo-waves {
+  animation: logo-wave 4s linear infinite;
+}
+
+@keyframes logo-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-rays,
+  .logo-waves {
+    animation: none;
+  }
+}
+
+.emblem-frond {
+  transform-box: view-box;
+  transform-origin: 32px 8px;
+  animation: frond-sway 5s ease-in-out infinite alternate;
+}
+
+.emblem-frond-r {
+  animation-delay: -2.5s;
+}
+
+.emblem-sun {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sun-pulse 3.2s ease-in-out infinite;
+}
+
+.logo:hover .emblem-frond {
+  animation-duration: 1.8s;
+}
+
+@keyframes frond-sway {
+  from {
+    transform: rotate(-1.8deg);
+  }
+  to {
+    transform: rotate(1.4deg);
+  }
+}
+
+@keyframes sun-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.14);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emblem-frond,
+  .emblem-sun {
+    animation: none;
+  }
+}
+
+
+/* ================= Resort background animations ================= */
+
+/* Soft sun-glow blobs that drift slowly behind sections */
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  pointer-events: none;
+  opacity: 0.35;
+  animation: drift 18s ease-in-out infinite alternate;
+}
+@keyframes drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(60px, -40px) scale(1.2); }
+}
+
+/* Golden bubbles rising over banners and sections */
+.sparkle {
+  position: absolute;
+  bottom: -20px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(246, 226, 174, 0.7) 40%, rgba(197, 155, 75, 0.3) 75%, transparent 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 6px rgba(212, 175, 55, 0.45);
+  pointer-events: none;
+  animation: rise linear infinite;
+}
+@keyframes rise {
+  0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+  10% { opacity: 0.9; }
+  50% { transform: translateY(-50vh) translateX(25px) scale(1.05); opacity: 0.8; }
+  85% { opacity: 0.6; }
+  100% { transform: translateY(-105vh) translateX(-20px) scale(1.15); opacity: 0; }
+}
+
+/* Two layers of waves sliding sideways */
+.wave-layer { animation: wave-slide 14s linear infinite; }
+.wave-layer-b { animation-duration: 22s; animation-direction: reverse; opacity: 0.55; }
+@keyframes wave-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Palm leaf that sways from the corner */
+.leaf-sway {
+  transform-origin: 0% 0%;
+  animation: leaf 6s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes leaf {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glow, .sparkle, .wave-layer, .wave-layer-b, .leaf-sway { animation: none; }
+}
