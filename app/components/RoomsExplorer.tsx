@@ -9,7 +9,8 @@ type RoomsExplorerProps = { rooms: Room[]; filters: string[] };
 
 export function RoomsExplorer({ rooms, filters }: RoomsExplorerProps) {
   const [active, setActive] = useState("All");
-  const visible = active === "All" ? rooms : rooms.filter((room) => room.category === active);
+  const filtered = active === "All" ? rooms : rooms.filter((room) => room.category === active);
+  const visible = filtered.slice(0, 3);
 
   return (
     <div>

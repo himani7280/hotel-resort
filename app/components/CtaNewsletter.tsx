@@ -25,7 +25,7 @@ export function CtaNewsletter() {
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">The Suryavana Circle</span>
-            <h2 className="mt-2 font-serif text-3xl font-medium text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-2 font-serif text-2xl font-medium text-white sm:text-3xl lg:text-[2.25rem]">
               Where the <span className="text-gold-gradient italic">sun</span> awakens the sanctuary.
             </h2>
             <p className="mt-3 text-sm text-white/75 max-w-lg leading-relaxed">

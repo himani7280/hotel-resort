@@ -17,61 +17,65 @@ export default function Home() {
     <>
       <HomeHero images={HOME.heroImages} phrases={HOME.heroPhrases} />
 
-      {/* Intro Section - 12px Top & Bottom Spacing, Header Aligned */}
-      <section className="relative isolate overflow-hidden py-3 my-3">
+      {/* ── About the Resort ── */}
+      <section className="section">
         <Glows />
         <Sparkles />
-        <div className="mx-auto grid max-w-7xl items-stretch gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-12 lg:px-8">
-          <div className="flex h-full flex-col justify-between py-2">
+        <div className="section-inner grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+
+          {/* Left: Text */}
+          <div className="flex h-full flex-col justify-between gap-6">
             <div>
               <p className="mb-3 inline-flex items-center gap-3 text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-teal">
                 <span className="h-px w-8 bg-gold" aria-hidden="true" />
                 About the resort
               </p>
-              <h2 className="font-serif text-xl sm:text-2xl md:text-3xl lg:text-[1.95rem] xl:text-[2.25rem] font-medium leading-[1.25] text-forest">
-                <span className="block whitespace-nowrap text-nowrap">A Sunlit Forest Sanctuary</span>
-                <span className="block text-gold-gradient italic mt-1 sm:mt-1.5 whitespace-nowrap text-nowrap">Where Nature Whispers &amp; Luxury Abides</span>
+              <h2 className="font-serif text-2xl font-medium leading-[1.25] text-forest sm:text-3xl lg:text-[2.1rem] xl:text-[2.35rem]">
+                <span className="block">A Sunlit Forest Sanctuary</span>
+                <span className="block text-gold-gradient italic mt-1 sm:mt-2">
+                  Where Nature Whispers &amp; Luxury Abides
+                </span>
               </h2>
 
-              <Reveal delay={0.15} className="mt-4 space-y-3 leading-relaxed text-mist">
+              <Reveal delay={0.15} className="mt-5 space-y-3 leading-relaxed text-mist text-sm sm:text-base">
                 {HOME.introText.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
               </Reveal>
 
-              {/* Pillars with animated scroll counters */}
-              <div className="mt-6 grid grid-cols-1 gap-3 border-y border-forest/10 py-4 text-forest sm:grid-cols-3">
+              {/* Pillars */}
+              <div className="mt-6 grid grid-cols-3 gap-3 border-y border-forest/10 py-4 text-forest">
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1.5">
-                    <SunIcon size={18} className="text-gold" />
-                    <span className="font-serif text-2xl font-semibold text-gold sm:text-3xl">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <SunIcon size={16} className="text-gold shrink-0" />
+                    <span className="font-serif text-xl font-semibold text-gold sm:text-2xl">
                       <Counter value={12} suffix="+" />
                     </span>
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-mist">Years of Haven</p>
+                  <p className="text-[0.65rem] sm:text-xs font-semibold uppercase tracking-wider text-mist">Years of Haven</p>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1.5">
-                    <LeafIcon size={18} className="text-gold" />
-                    <span className="font-serif text-2xl font-semibold text-gold sm:text-3xl">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <LeafIcon size={16} className="text-gold shrink-0" />
+                    <span className="font-serif text-xl font-semibold text-gold sm:text-2xl">
                       <Counter value={100} suffix="%" />
                     </span>
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-mist">Solar & Eco-Built</p>
+                  <p className="text-[0.65rem] sm:text-xs font-semibold uppercase tracking-wider text-mist">Solar &amp; Eco-Built</p>
                 </div>
                 <div className="space-y-1">
-                  <div className="flex items-center gap-1.5">
-                    <ShieldCheckIcon size={18} className="text-gold" />
-                    <span className="font-serif text-2xl font-semibold text-gold sm:text-3xl">
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <ShieldCheckIcon size={16} className="text-gold shrink-0" />
+                    <span className="font-serif text-xl font-semibold text-gold sm:text-2xl">
                       <Counter value={4.9} decimals={1} suffix=" / 5" />
                     </span>
                   </div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-mist">Guest Rating</p>
+                  <p className="text-[0.65rem] sm:text-xs font-semibold uppercase tracking-wider text-mist">Guest Rating</p>
                 </div>
               </div>
             </div>
 
-            <Reveal delay={0.3} className="pt-4">
+            <Reveal delay={0.3}>
               <Magnetic>
                 <Link href="/about" className="btn-primary btn-gold">
                   Discover Our Story
@@ -80,13 +84,14 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="relative flex h-full min-h-[440px] items-center justify-center sm:min-h-[500px]">
-            {/* Architectural offset gold accent frame */}
-            <div className="pointer-events-none absolute -inset-2.5 hidden rounded-tl-[5.5rem] rounded-br-[5.5rem] rounded-tr-3xl rounded-bl-3xl border-2 border-gold/45 sm:block -z-10 translate-x-2 translate-y-2" />
+          {/* Right: Image Stack */}
+          <div className="relative flex items-center justify-center min-h-[380px] sm:min-h-[460px] lg:min-h-[520px]">
+            {/* Gold accent frame — desktop only */}
+            <div className="pointer-events-none absolute -inset-2.5 hidden rounded-tl-[5.5rem] rounded-br-[5.5rem] rounded-tr-3xl rounded-bl-3xl border-2 border-gold/45 lg:block -z-10 translate-x-2 translate-y-2" />
 
-            {/* Main image with luxury asymmetric organic shape */}
+            {/* Main image */}
             {introMain && (
-              <div className="relative h-full min-h-[440px] w-full overflow-hidden rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-2xl rounded-bl-2xl shadow-2xl group border border-forest/10 sm:min-h-[500px]">
+              <div className="relative h-full min-h-[380px] sm:min-h-[460px] lg:min-h-[520px] w-full overflow-hidden rounded-tl-[5rem] rounded-br-[5rem] rounded-tr-2xl rounded-bl-2xl shadow-2xl group border border-forest/10">
                 <Photo
                   src={introMain}
                   alt="Suryavana resort terrace and pool at golden hour"
@@ -102,8 +107,8 @@ export default function Home() {
 
             {/* Floating secondary badge image */}
             {introSecondary && (
-              <div className="absolute -bottom-5 -left-3 sm:-bottom-6 sm:-left-5 w-44 sm:w-52 overflow-hidden rounded-3xl border-4 border-cream shadow-2xl group animate-float">
-                <div className="relative h-36 sm:h-44 w-full">
+              <div className="absolute -bottom-4 -left-2 sm:-bottom-6 sm:-left-4 w-36 sm:w-44 md:w-52 overflow-hidden rounded-3xl border-4 border-cream shadow-2xl group animate-float z-10">
+                <div className="relative h-28 sm:h-40 w-full">
                   <Photo
                     src={introSecondary}
                     alt="Courtyard fountain pool"
@@ -117,21 +122,19 @@ export default function Home() {
               </div>
             )}
 
-            {/* Heritage seal badge */}
-            <span className="pointer-events-none absolute -right-3 top-6 hidden h-24 w-24 place-items-center rounded-full bg-gold text-center text-[0.55rem] font-semibold uppercase leading-tight tracking-[0.2em] text-forest shadow-xl sm:grid border-2 border-cream">
-              Est.
-              <br />
-              2013
+            {/* Heritage seal */}
+            <span className="pointer-events-none absolute -right-2 sm:-right-3 top-6 hidden h-20 w-20 sm:h-24 sm:w-24 place-items-center rounded-full bg-gold text-center text-[0.5rem] sm:text-[0.55rem] font-semibold uppercase leading-tight tracking-[0.2em] text-forest shadow-xl sm:grid border-2 border-cream">
+              Est.<br />2013
             </span>
           </div>
         </div>
       </section>
 
-      {/* Rooms & Suites - 12px Spacing, Header Aligned */}
-      <section className="relative isolate overflow-hidden bg-sand/60 py-3 my-3">
+      {/* ── Rooms & Suites ── */}
+      <section className="section bg-sand/60">
         <Glows />
         <Sparkles />
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="section-inner">
           <SectionHeading
             center
             eyebrow="Rooms & suites"
@@ -151,10 +154,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Experiences - 12px Spacing, Header Aligned */}
-      <section className="relative isolate overflow-hidden py-3 my-3">
+      {/* ── Experiences ── */}
+      <section className="section">
         <Sparkles />
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="section-inner">
           <SectionHeading
             center
             eyebrow="Experiences"
@@ -169,12 +172,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Moments Gallery - 12px Spacing, Header Aligned */}
-      <section className="overflow-hidden bg-sand/60 py-3 my-3">
-        <div className="mx-auto max-w-7xl px-4 pt-6 sm:px-6 lg:px-8">
+      {/* ── Gallery Marquee ── */}
+      <section className="section bg-sand/60">
+        <div className="section-inner">
           <SectionHeading center eyebrow="Gallery" title="Moments Worth Framing" />
         </div>
-        <Reveal dir="blur" className="mt-8 space-y-3 pb-6">
+        <Reveal dir="blur" className="mt-8 space-y-3">
           <PhotoMarquee images={HOME.gallery.slice(0, 6)} />
           <PhotoMarquee images={HOME.gallery.slice(6, 12)} reverse />
         </Reveal>

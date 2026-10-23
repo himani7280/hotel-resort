@@ -3,13 +3,13 @@
 import { motion, useInView, useMotionValue, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import { Children, useEffect, useRef, useState, type ReactNode } from "react";
 
-import { MOTION } from "@/lib/data";
+import { MOTION, VARIANTS } from "@/lib/data";
 
 const { ease: EASE, duration: DURATION } = MOTION;
 
 type RevealProps = {
   children: ReactNode;
-  dir?: keyof typeof MOTION.reveal;
+  dir?: keyof typeof VARIANTS.reveal;
   delay?: number;
   className?: string;
 };
@@ -18,7 +18,7 @@ export function Reveal({ children, dir = "up", delay = 0, className }: RevealPro
   return (
     <motion.div
       className={className}
-      variants={MOTION.reveal[dir]}
+      variants={VARIANTS.reveal[dir]}
       initial="hidden"
       whileInView="show"
       style={{ transformPerspective: 1200 }}
@@ -34,7 +34,7 @@ export function Stagger({ children, className }: { children: ReactNode; classNam
   return (
     <motion.div
       className={className}
-      variants={MOTION.stagger.container}
+      variants={VARIANTS.stagger.container}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-60px" }}
@@ -48,7 +48,7 @@ export function StaggerItem({ children, className }: { children: ReactNode; clas
   return (
     <motion.div
       className={className}
-      variants={MOTION.stagger.item}
+      variants={VARIANTS.stagger.item}
       transition={{ duration: DURATION, ease: EASE }}
       style={{ transformPerspective: 1200 }}
     >
@@ -115,7 +115,7 @@ export function WordReveal({ text, className }: { text: string; className?: stri
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      variants={MOTION.word.container}
+      variants={VARIANTS.word.container}
     >
       {lines.map((line, lineIdx) => (
         <span key={lineIdx} className={lines.length > 1 ? "block" : "inline"}>
@@ -123,7 +123,8 @@ export function WordReveal({ text, className }: { text: string; className?: stri
             <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom">
               <motion.span
                 className="inline-block pr-[0.25em]"
-                variants={{ hidden: { y: "110%", rotate: 6 }, show: { y: 0, rotate: 0, transition: { duration: 0.8, ease: EASE } } }}
+                variants={VARIANTS.word.item}
+                transition={{ duration: 0.8, ease: EASE }}
               >
                 {word}
               </motion.span>

@@ -72,7 +72,7 @@ export function BlogCard({ post }: { post: Post }) {
             <h3 className="mt-3 font-serif text-2xl font-semibold leading-snug text-forest transition-colors group-hover:text-teal">
               <Link href={`/blog/${post.slug}`}>{post.title}</Link>
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-mist line-clamp-3">{post.excerpt}</p>
+            <p className="mt-3 text-sm leading-relaxed text-mist line-clamp-3 text-justify [text-align:justify] [text-justify:inter-word]">{post.excerpt}</p>
           </div>
           <Link
             href={`/blog/${post.slug}`}

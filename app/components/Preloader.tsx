@@ -97,7 +97,7 @@ export function Preloader() {
             >
               <div className="relative h-28 w-28 sm:h-36 sm:w-36">
                 <img
-                  src="/images/suryavana-emblem-light.png"
+                  src="/images/suryavana-emblem-light.webp"
                   alt="Suryavana Emblem"
                   className="h-full w-full object-contain drop-shadow-[0_0_25px_rgba(224,185,107,0.4)]"
                 />

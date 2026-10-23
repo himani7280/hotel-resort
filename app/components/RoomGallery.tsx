@@ -37,7 +37,11 @@ export function RoomGallery({ images, name }: RoomGalleryProps) {
             transition={{ delay: i * 0.1, duration: 0.7 }}
             aria-label={`Open photo ${i + 1} of ${name}`}
             className={`group relative h-60 cursor-zoom-in overflow-hidden rounded-2xl ${
-              i === 0 ? "md:col-span-2 md:row-span-2 md:h-full" : ""
+              i === 0
+                ? "md:col-span-2 md:row-span-2 md:h-full"
+                : i === 3
+                ? "md:col-span-2 md:h-60"
+                : "md:h-60"
             }`}
           >
             <Photo src={image} alt={`${name} photo ${i + 1}`} sizes="(min-width: 768px) 50vw, 100vw" />

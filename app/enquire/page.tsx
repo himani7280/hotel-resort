@@ -46,7 +46,7 @@ export default function EnquirePage() {
         <Reveal className="flex h-full flex-col justify-between rounded-3xl bg-white p-6 shadow-xl shadow-forest/10 sm:p-10 border border-forest/5">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Direct Reservation</span>
-            <h2 className="mt-2 mb-4 font-serif text-3xl font-medium text-forest sm:text-4xl">Plan Your Suryavana Escape</h2>
+            <h2 className="mt-2 mb-4 font-serif text-2xl font-medium text-forest sm:text-3xl lg:text-[2.25rem]">Plan Your Suryavana Escape</h2>
             <Suspense fallback={<div className="min-h-[420px]" />}>
               <EnquiryForm rooms={ROOMS} />
             </Suspense>
@@ -57,7 +57,7 @@ export default function EnquirePage() {
         <Reveal dir="right" delay={0.1} className="flex h-full flex-col justify-between rounded-3xl bg-forest p-6 text-white shadow-xl sm:p-8">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Direct Advantages</span>
-            <h2 className="mt-1 font-serif text-3xl font-medium">Why Book Direct</h2>
+            <h2 className="mt-1 font-serif text-2xl font-medium sm:text-3xl lg:text-[2.25rem]">Why Book Direct</h2>
             <p className="mt-2 text-sm text-white/75 leading-relaxed">
               Enjoy dedicated privileges and personalized care crafted exclusively for guests who reserve directly with Suryavana.
             </p>

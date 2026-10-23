@@ -40,7 +40,7 @@ export function Navbar() {
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const isHome = pathname === "/";
-  const logoSize = isHome && !scrolled ? "xl" : "sm";
+  const logoSize = isHome && !scrolled ? "xl" : "md";
 
   return (
     <>
@@ -54,50 +54,63 @@ export function Navbar() {
           className={`mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition-all duration-500 sm:px-6 lg:px-8 ${
             scrolled || open
               ? "bg-forest/90 py-2 shadow-2xl shadow-black/25 ring-1 ring-white/10 backdrop-blur-xl"
-              : isHome ? "bg-transparent py-4 sm:py-5" : "bg-transparent py-2.5 sm:py-3"
+              : isHome
+              ? "bg-transparent py-4 sm:py-5"
+              : "bg-transparent py-2.5 sm:py-3"
           }`}
         >
-          <Link
-            href="/"
-            aria-label="Suryavana Hotel & Resort home"
-            onClick={() => setOpen(false)}
-            className="shrink-0 transition-all duration-500"
-          >
-            <Logo light size={logoSize} />
-          </Link>
+          {/* Left: Brand Logo */}
+          <div className="flex flex-1 items-center justify-start">
+            <Link
+              href="/"
+              aria-label="Suryavana Hotel & Resort home"
+              onClick={() => setOpen(false)}
+              className="shrink-0 transition-all duration-500"
+            >
+              <Logo light size={logoSize} />
+            </Link>
+          </div>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main">
+          {/* Center: Navigation Menu */}
+          <nav className="hidden items-center justify-center gap-1 lg:flex shrink-0" aria-label="Main">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className={`relative px-4 py-2 text-[0.72rem] font-medium uppercase tracking-[0.18em] transition-colors ${
-                  isActive(link.href) ? "text-gold" : "text-white/85 hover:text-white"
+                className={`relative px-3.5 py-2 text-[0.74rem] font-semibold uppercase tracking-[0.18em] transition-colors ${
+                  isActive(link.href) ? "text-gold" : "text-white/95 hover:text-gold"
                 }`}
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <motion.span layoutId="nav-dot" className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-gold" />
+                  <motion.span
+                    layoutId="nav-dot"
+                    className="absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-gold"
+                  />
                 )}
               </Link>
             ))}
-            <Link href="/enquire" className="btn-primary btn-gold ml-4 px-6! py-2.5! text-[0.7rem]!">
-              Enquire Now
-            </Link>
           </nav>
 
-          <button
-            type="button"
-            onClick={() => setOpen((value) => !value)}
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            className="relative ml-auto grid h-11 w-11 place-items-center rounded-full border border-white/30 text-white lg:hidden"
-          >
-            <span className={`absolute h-0.5 w-5 bg-current transition-transform ${open ? "rotate-45" : "-translate-y-1.5"}`} />
-            <span className={`absolute h-0.5 w-5 bg-current transition-opacity ${open ? "opacity-0" : ""}`} />
-            <span className={`absolute h-0.5 w-5 bg-current transition-transform ${open ? "-rotate-45" : "translate-y-1.5"}`} />
-          </button>
+          {/* Right: Enquire Now CTA & Mobile Hamburger Toggle */}
+          <div className="flex flex-1 items-center justify-end gap-3">
+            {/* Hidden below 768px (md) */}
+            <Link href="/enquire" className="hidden md:flex btn-primary btn-gold px-6! py-2.5! text-[0.7rem]!">
+              Enquire Now
+            </Link>
+            <button
+              type="button"
+              onClick={() => setOpen((value) => !value)}
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              className="relative grid h-11 w-11 place-items-center rounded-full border border-white/30 text-white lg:hidden"
+            >
+              <span className={`absolute h-0.5 w-5 bg-current transition-transform ${open ? "rotate-45" : "-translate-y-1.5"}`} />
+              <span className={`absolute h-0.5 w-5 bg-current transition-opacity ${open ? "opacity-0" : ""}`} />
+              <span className={`absolute h-0.5 w-5 bg-current transition-transform ${open ? "-rotate-45" : "translate-y-1.5"}`} />
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -115,19 +128,19 @@ export function Navbar() {
               className="fixed inset-0 z-40 bg-black/75 backdrop-blur-md lg:hidden"
             />
 
-            {/* Luxury Sanctuary Slide-In Drawer */}
+            {/* Luxury Sanctuary Slide-In Drawer (Opens on Left Side) */}
             <motion.nav
               key="mobile-drawer"
               aria-label="Mobile Navigation"
-              initial={{ x: "100%" }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              exit={{ x: "-100%" }}
               transition={{ duration: 0.45, ease: EASE }}
-              className="fixed inset-y-0 right-0 z-50 flex w-full max-w-sm flex-col justify-between overflow-y-auto bg-gradient-to-b from-[#061811] via-[#092218] to-[#04120c] p-6 shadow-2xl border-l border-gold/30 lg:hidden"
+              className="fixed inset-y-0 left-0 z-50 flex w-full max-w-sm flex-col justify-between overflow-y-auto bg-gradient-to-b from-[#061811] via-[#092218] to-[#04120c] p-6 shadow-2xl border-r border-gold/30 lg:hidden"
             >
               {/* Decorative radial glows */}
-              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
-              <div className="pointer-events-none absolute -left-20 bottom-0 h-64 w-64 rounded-full bg-teal/15 blur-3xl" />
+              <div className="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
+              <div className="pointer-events-none absolute -right-20 bottom-0 h-64 w-64 rounded-full bg-teal/15 blur-3xl" />
               <Sparkles />
 
               {/* Drawer Header: Logo & Luxury Close Button */}
@@ -166,7 +179,7 @@ export function Navbar() {
                     return (
                       <motion.li
                         key={link.href}
-                        initial={{ x: 25, opacity: 0 }}
+                        initial={{ x: -25, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ delay: 0.12 + 0.04 * index, duration: 0.45, ease: EASE }}
                       >
@@ -197,13 +210,6 @@ export function Navbar() {
 
               {/* Drawer Footer: VIP Action & Direct Contact */}
               <div className="relative z-10 border-t border-white/10 pt-5 space-y-3">
-                <Link
-                  href="/enquire"
-                  onClick={() => setOpen(false)}
-                  className="btn-primary btn-gold w-full text-center text-xs py-3.5 tracking-widest shadow-xl block"
-                >
-                  Book Sanctuary Stay
-                </Link>
 
                 <div className="flex items-center justify-between pt-1 text-xs text-white/70">
                   <a href={`tel:${BRAND.phone}`} className="flex items-center gap-1.5 hover:text-gold transition-colors">

@@ -84,7 +84,11 @@
     "bedroomTufted": "/images/bedroom-tufted.webp",
     "bedroomOrange": "/images/bedroom-orange.webp",
     "bedroomDark": "/images/bedroom-dark.webp",
-    "bedroomCosy": "/images/bedroom-cosy.webp"
+    "bedroomCosy": "/images/bedroom-cosy.webp",
+    "wellnessShirodhara": "/images/wellness-shirodhara.webp",
+    "wellnessSingingBowls": "/images/wellness-singing-bowls.webp",
+    "wellnessHerbalPoultice": "/images/wellness-herbal-poultice.webp",
+    "wellnessMineralBath": "/images/wellness-mineral-bath.webp"
   },
   "roomFilters": [
     "All",
@@ -291,6 +295,192 @@
         "Two bedrooms, a sunny living area and a kitchenette make this the easiest way to holiday with family. Everyone gets their own corner, and meals are never far.",
         "Step out the door and you are beside the family pool, with the kids' club and beach path a short stroll away."
       ]
+    },
+    {
+      "slug": "botanical-forest-cottage",
+      "name": "Botanical Forest Cottage",
+      "category": "Garden",
+      "tagline": "Nestled amid canopies and fragrant flora",
+      "price": 10500,
+      "size": 44,
+      "guests": 2,
+      "bed": "King bed",
+      "view": "Botanical garden",
+      "image": "/images/villa-garden.webp",
+      "gallery": [
+        "/images/bedroom-tufted.webp",
+        "/images/courtyard.webp",
+        "/images/bath.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Private forest deck",
+        "Espresso station"
+      ],
+      "description": [
+        "Set deeper inside our tropical grove, the Botanical Forest Cottage offers serene seclusion beneath whispering canopies.",
+        "Wake to birdsong, unwind on a private timber deck, and enjoy organic herbal infusions gathered from our gardens."
+      ]
+    },
+    {
+      "slug": "oceanfront-horizon-suite",
+      "name": "Oceanfront Horizon Suite",
+      "category": "Ocean",
+      "tagline": "Panoramic seascapes and open salt breezes",
+      "price": 16500,
+      "size": 58,
+      "guests": 3,
+      "bed": "King bed + daybed",
+      "view": "Panoramic ocean",
+      "image": "/images/room-view.webp",
+      "gallery": [
+        "/images/palm-beach.webp",
+        "/images/bedroom-cosy.webp",
+        "/images/infinity2.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Wraparound sea deck",
+        "Stargazing telescope"
+      ],
+      "description": [
+        "Elevated above the shoreline, floor-to-ceiling glass captures the full sweep of the Arabian Sea horizon.",
+        "Sip morning espresso on the expansive terrace while watching fishing boats head out across glassy waters."
+      ]
+    },
+    {
+      "slug": "coastal-sunset-haven",
+      "name": "Coastal Sunset Haven",
+      "category": "Ocean",
+      "tagline": "Front-row vantage for golden hour colors",
+      "price": 19500,
+      "size": 64,
+      "guests": 3,
+      "bed": "King bed",
+      "view": "Sunset ocean horizon",
+      "image": "/images/beach-sunset.webp",
+      "gallery": [
+        "/images/aerial-beach.webp",
+        "/images/deck-lounge.webp",
+        "/images/bath.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Sunset daybed",
+        "Outdoor soaking tub"
+      ],
+      "description": [
+        "Positioned on the western shoreline, every evening paints your private balcony in radiant copper and amber tones.",
+        "An open-air stone soaking tub on the deck lets you watch twilight give way to coastal constellations."
+      ]
+    },
+    {
+      "slug": "presidential-penthouse-suite",
+      "name": "Presidential Penthouse Suite",
+      "category": "Suite",
+      "tagline": "The pinnacle of elevated sanctuary living",
+      "price": 31000,
+      "size": 120,
+      "guests": 4,
+      "bed": "Master King + Queen suite",
+      "view": "360° Forest & ocean",
+      "image": "/images/suite-white.webp",
+      "gallery": [
+        "/images/bedroom-dark.webp",
+        "/images/living-room.webp",
+        "/images/fountain-court.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Private rooftop terrace",
+        "Dedicated 24h butler"
+      ],
+      "description": [
+        "Occupying the uppermost tier of the resort, this penthouse combines expansive living quarters with unmatched 360-degree vistas.",
+        "Featuring handcrafted teak furnishings, a formal dining space, and bespoke personal butler service throughout your stay."
+      ]
+    },
+    {
+      "slug": "private-forest-pool-villa",
+      "name": "Private Forest Pool Villa",
+      "category": "Villa",
+      "tagline": "An exclusive secluded jungle oasis",
+      "price": 38000,
+      "size": 135,
+      "guests": 4,
+      "bed": "Two King bedrooms",
+      "view": "Private rainforest & pool",
+      "image": "/images/resort-villas.webp",
+      "gallery": [
+        "/images/modern-villa.webp",
+        "/images/wood-villa.webp",
+        "/images/cliff-pool.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Private 10m pool",
+        "Sunken lounge"
+      ],
+      "description": [
+        "Tucked behind lush bamboo groves, this two-bedroom villa centers around a sparkling private pool and sunken garden lounge.",
+        "Total privacy meets intuitive luxury with direct butler access, outdoor rainfall showers, and twilight poolside dining."
+      ]
+    },
+    {
+      "slug": "royal-beachfront-villa",
+      "name": "Royal Beachfront Villa",
+      "category": "Villa",
+      "tagline": "Direct sand access with private cabana deck",
+      "price": 42000,
+      "size": 150,
+      "guests": 4,
+      "bed": "Two King suites",
+      "view": "Direct beach & sea",
+      "image": "/images/white-villa.webp",
+      "gallery": [
+        "/images/overwater-hut.webp",
+        "/images/tropical-beach.webp",
+        "/images/cabana.webp"
+      ],
+      "amenities": [
+        "Complimentary Wi-Fi",
+        "Air conditioning",
+        "Smart TV",
+        "Mini bar",
+        "Rain shower",
+        "Daily breakfast",
+        "Private beach gate",
+        "Dedicated golf buggy"
+      ],
+      "description": [
+        "Step straight from your private lawn onto the pristine golden sands of Suryavana Beach.",
+        "Complete with a private sunset cabana, personal chef options, and dedicated electric buggy for exploring the grounds."
+      ]
     }
   ],
   "experiences": [
@@ -398,88 +588,107 @@
   "posts": [
     {
       "slug": "hidden-beaches-near-the-resort",
-      "title": "Five Hidden Beaches Within an Hour of the Resort",
+      "title": "Hidden Coastal Beaches",
       "category": "Travel",
       "date": "12 March 2026",
       "readTime": "6 min read",
       "image": "/images/beach-sunset.webp",
       "excerpt": "Skip the crowds. Our concierge shares the quiet coves locals keep to themselves.",
       "body": [
-        "Everyone knows the main stretch of sand. Fewer people know about the coves that start where the road gives up, reachable by a short walk or a boat from the jetty.",
-        "Start early. The best of them are empty before eight, with water so clear you can count the shells from the shore. Pack water, a hat and a sarong, because shade is scarce.",
-        "Our concierge team can arrange a driver, a picnic hamper and a guide who knows the tides. Ask at the front desk the evening before and we will plan the rest.",
-        "Our favourite is the cove below the old lighthouse. Reach it at low tide, swim in the morning and be back for lunch on the terrace."
+        "While the central shoreline draws holidaymakers for morning sunbathing, the true soul of our coastal sanctuary lies tucked behind rugged granite headlands. A short fifteen-minute stroll past ancient banyans leads to concealed coves where azure waves lap against pristine white sand in secluded serenity.",
+        "Timing is essential for coastal exploration. We recommend setting out in the tender glow of early morning when low tide reveals glistening tidal pools filled with sea anemones, polished cowrie shells, and coral formations untouched by crowds.",
+        "Our concierge curates bespoke beach exploration kits for guests. Packed with handwoven linen towels, mineral sun protection, refreshing chilled coconut water, and a gourmet picnic hamper, you are equipped for an undisturbed morning retreat.",
+        "For the ultimate private escape, charter a traditional wooden catamaran from our jetty to secluded sandbanks accessible only by water, returning just in time for an afternoon citrus infusion under our shaded cabanas."
       ]
     },
     {
       "slug": "designing-a-better-nights-sleep",
-      "title": "Inside Our Rooms: How We Design for a Better Night's Sleep",
+      "title": "Designing Restful Sleep",
       "category": "Stay",
       "date": "28 February 2026",
       "readTime": "5 min read",
       "image": "/images/bedroom-tufted.webp",
       "excerpt": "Mattresses, blackout curtains and quiet air-conditioning: the small details behind a great stay.",
       "body": [
-        "A good hotel room is judged at 2 a.m. Is it quiet, dark and the right temperature? We start every room design from that question.",
-        "Each bed has a medium-firm mattress with a choice of soft or firm pillows from our pillow menu. Blackout curtains sit behind linen drapes, so you can sleep in or let the sunrise wake you.",
-        "Air-conditioning is whisper-quiet and controlled by you, doors are solid timber, and the corridors are carpeted. Doors close softly, so late arrivals do not wake the floor.",
-        "Need something extra? Call the front desk for extra pillows, a baby cot, a bed-side charger or a late tea tray. It takes a few minutes."
+        "In the realm of luxury hospitality, true indulgence begins with undisturbed, restorative rest. At Suryavana, every guest suite is an architectural study in sensory tranquility, crafted from ground up to ease the mind into effortless rejuvenation.",
+        "Acoustic architecture ensures absolute quietude. Solid reclaimed teak doors with perimeter soundproofing seals, plush underfelt carpets, and double-glazed acoustic glass buffer ambient noise, allowing only the rhythmic hush of distant waves to enter.",
+        "The centerpiece of each bedroom is our custom mattress layered with natural organic latex and breathable cotton batting, paired with 600-thread-count Egyptian cotton linens for optimal ergonomic spinal alignment throughout the night.",
+        "Ambient lighting eliminates blue light spectrums after dusk, while motorized blackout linen drapes ensure total optical darkness. Complemented by evening jasmine aromatherapy and our bespoke pillow menu, deep restorative sleep comes naturally."
       ]
     },
     {
       "slug": "sunset-dining-guide",
-      "title": "The Best Seats for Sunset: A Dining Guide",
+      "title": "Sunset Dining Guide",
       "category": "Dining",
       "date": "15 February 2026",
       "readTime": "4 min read",
       "image": "/images/dining.webp",
       "excerpt": "Four restaurants, one golden hour. Where to sit and what to order.",
       "body": [
-        "Golden hour lasts about forty minutes here, so choose your table with care. Book the sand-level tables at the beach grill if you want your toes in the sand.",
-        "For something more refined, the terrace restaurant serves a seven-course tasting menu timed to the sun. Ask for the corner table.",
-        "Finish at the cabana bar, where the house cocktail uses coconut, lime leaf and a little local feni."
+        "As twilight descends over the Arabian sea, the horizon transforms into a mesmerizing canvas of burnt sienna, dusty rose, and liquid gold. At Suryavana, the evening golden hour is a cherished culinary ritual celebrated across four distinct dining venues.",
+        "For guests seeking barefoot romance, the Beach Grill offers front-row seats on the sand. Timber lantern-lit tables set directly into the shoreline allow you to feel the cool evening tides while savoring fresh catch-of-the-day grilled over coconut husks.",
+        "Higher on the cliffside, the Terrace Pavilion presents our signature seven-course tasting journey. Executed with artistic precision, each dish is synchronized with the sun's descent, transitioning from crisp sea-scallop ceviche to spiced coastal delicacies.",
+        "Conclude your evening at the sunset cabana lounge with artisanal aperitifs infused with local botanicals, listening to acoustic sitar melodies as lanterns cast shimmering reflections across the water under a canopy of stars."
       ]
     },
     {
       "slug": "planning-the-perfect-honeymoon",
-      "title": "Planning the Perfect Honeymoon in Goa",
+      "title": "Honeymoon In Goa",
       "category": "Romance",
       "date": "2 February 2026",
       "readTime": "7 min read",
       "image": "/images/cabana.webp",
       "excerpt": "Candle-lit dinners, private villas and the best months to travel.",
       "body": [
-        "The best honeymoons leave room for doing nothing. Plan one anchor activity a day and let the rest drift.",
-        "October to February brings dry, golden weather. March is warmer and quieter, and rates soften.",
-        "Tell us in advance if you are celebrating. We will arrange flowers, a candle-lit beach dinner and a chilled bottle waiting in your villa."
+        "A honeymoon should be an effortless sanctuary of connection, where romance unfolds naturally without rush or rigid timetables. Set amidst ancient coastal forests and turquoise lagoons, Suryavana provides the quintessential backdrop for newlyweds embarking on a lifetime together.",
+        "Our dedicated romance concierges curate personalized itineraries striking the ideal balance between enchanting experiences and quiet seclusion. We encourage couples to schedule one anchor activity per day, leaving ample unhurried hours by private infinity plunge pools.",
+        "From arrival frangipani garlands and chilled vintage champagne to floral bath rituals, every detail elevates your stay. Among our most cherished experiences is the private sandbank dinner illuminated by glowing lanterns with a personal chef and butler.",
+        "Complement your journey with dual Ayurvedic warm oil therapies at our forest spa. The optimal months span from October through April, when gentle ocean breezes and clear sapphire skies weave unforgettable magic into your celebration."
       ]
     },
     {
       "slug": "family-holiday-without-stress",
-      "title": "A Family Holiday Without the Stress",
+      "title": "Family Escape Guide",
       "category": "Family",
       "date": "20 January 2026",
       "readTime": "5 min read",
       "image": "/images/pool-resort.webp",
       "excerpt": "How to keep kids busy, grandparents comfortable and parents actually relaxed.",
       "body": [
-        "A good family trip balances togetherness with a little space. Our residences have two bedrooms so everyone sleeps well.",
-        "The kids' club runs mornings and evenings with crafts, treasure hunts and beach games, leaving adults free for a swim or a quiet coffee.",
-        "Order the family set menu for one dinner a week and let the kitchen sort out fussy eaters."
+        "Traveling across generations requires thoughtful spaces where children find adventure, grandparents find comfort, and parents discover genuine relaxation. Suryavana was designed specifically to eliminate family travel stress, creating an environment where every age group thrives.",
+        "Our multi-bedroom family residences offer generous living rooms, separate en-suite bathrooms, and private enclosed gardens with shallow wading pools. This intentional layout gives everyone their personal haven while making shared family meals joyful and seamless.",
+        "The Little Explorers Club engages young minds with educational nature activities supervised by trained specialists. Children discover organic gardening, seashell pottery, and coastal bird watching, giving parents guilt-free hours to unwind.",
+        "Dining with diverse palates is effortless with our customized family menus. Combined with morning mangrove boat safaris and certified on-call babysitting, families surrender to true vacation bliss knowing every practical detail is anticipated."
       ]
     },
     {
       "slug": "monsoon-magic",
-      "title": "Why Monsoon Is Our Secret Season",
+      "title": "Monsoon: Secret Season",
       "category": "Travel",
       "date": "5 January 2026",
       "readTime": "4 min read",
       "image": "/images/wood-villa.webp",
       "excerpt": "Green hills, empty beaches and lower rates. The case for travelling in the rain.",
       "body": [
-        "Between June and September the coast turns emerald. The beaches are empty, the air smells of wet earth and rates are at their lowest.",
-        "Rain usually arrives in bursts, leaving long sunny gaps. Spend the wet hours over a long lunch or reading on your covered deck.",
-        "Pack a light rain jacket and a good book. You will not regret it."
+        "While summer and winter draw conventional travelers, discerning connoisseurs consider the monsoon between June and September to be our most enchanting secret. When southwest rains arrive, the coastal landscape transforms into a vibrant emerald paradise bursting with raw vitality.",
+        "The air carries the intoxicating fragrance of wet red earth and blooming jasmine. Gentle rainfall falls in rhythmic showers interspersed with luminous sunlit clearings that bathe forest foliage in glistening diamonds of dew.",
+        "During this tranquil season, the resort takes on a deeply contemplative ambiance. Verandas become cozy retreats to curl up with a classic novel, savoring roasted coastal corn, cinnamon-infused chai, and slow-simmered herbal broths that warm the spirit.",
+        "Ayurveda traditionally regards the monsoon as the prime period for detoxification and cell rejuvenation. With uncrowded beaches and lush riverways, a monsoon escape to Suryavana invites you to slow down and reconnect with nature's purest rhythm."
+      ]
+    },
+    {
+      "slug": "ayurvedic-forest-rituals",
+      "title": "Ayurveda & Forest Rituals",
+      "category": "Wellness",
+      "date": "22 December 2025",
+      "readTime": "5 min read",
+      "image": "/images/yoga.webp",
+      "excerpt": "Ancient holistic healing, herbal botanical infusions, and oceanfront sound bath therapies.",
+      "body": [
+        "Rooted in five thousand years of sacred Vedic wisdom, our wellness philosophy embraces the eternal dance between Surya—the golden solar energy of vitality—and Vana—the nurturing forest canopy of deep peace, inviting guests on a transformative healing journey.",
+        "Every wellness residency commences with an in-depth consultation by our resident Ayurvedic physician (Vaidya). Through pulse diagnosis (Nadi Pariksha), your unique Prakriti is identified to tailor customized herbal remedies and nutrition.",
+        "Morning rituals begin at dawn in our open-air teak yoga pavilion with guided pranayama breathwork and gentle Surya Namaskar. In our treatment suites, skilled therapists administer authentic Abhyanga warm botanical oil massages that stimulate lymphatic drainage.",
+        "For mental serenity, the Shirodhara ritual pours a continuous warm stream of herbalized oil across the forehead chakra, followed by evening Tibetan singing bowl sound therapy that grounds you in lasting inner tranquility."
       ]
     }
   ],
@@ -995,11 +1204,404 @@
         "src": "/images/wedding.webp",
         "title": "Beachfront wedding table",
         "category": "Table"
+      },
+      {
+        "src": "/images/suite-white.webp",
+        "title": "Presidential penthouse suite",
+        "category": "Stays"
       }
     ],
     "cta": {
       "title": "Found a view you love?",
       "text": "Tell us which one and we will find you the room that looks onto it."
+    }
+  },
+  "variants": {
+    "hero": {
+      "container": {
+        "hidden": {},
+        "show": {
+          "transition": {
+            "staggerChildren": 0.15
+          }
+        }
+      },
+      "title": {
+        "hidden": {
+          "opacity": 0,
+          "y": 50
+        },
+        "show": {
+          "opacity": 1,
+          "y": 0
+        }
+      },
+      "subtitle": {
+        "hidden": {
+          "opacity": 0,
+          "y": 30
+        },
+        "show": {
+          "opacity": 1,
+          "y": 0
+        }
+      },
+      "cta": {
+        "hidden": {
+          "opacity": 0,
+          "scale": 0.9
+        },
+        "show": {
+          "opacity": 1,
+          "scale": 1
+        }
+      }
+    },
+    "reveal": {
+      "up": {
+        "hidden": {
+          "opacity": 0,
+          "y": 44
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "down": {
+        "hidden": {
+          "opacity": 0,
+          "y": -44
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "left": {
+        "hidden": {
+          "opacity": 0,
+          "x": -60
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "right": {
+        "hidden": {
+          "opacity": 0,
+          "x": 60
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "zoom": {
+        "hidden": {
+          "opacity": 0,
+          "scale": 0.88
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "zoomOut": {
+        "hidden": {
+          "opacity": 0,
+          "scale": 1.25
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "flip": {
+        "hidden": {
+          "opacity": 0,
+          "rotateX": -70,
+          "y": 40
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "flipY": {
+        "hidden": {
+          "opacity": 0,
+          "rotateY": -80,
+          "x": -30
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "blur": {
+        "hidden": {
+          "opacity": 0,
+          "filter": "blur(16px)",
+          "y": 20
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "rotate": {
+        "hidden": {
+          "opacity": 0,
+          "rotate": -8,
+          "y": 40,
+          "scale": 0.92
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      },
+      "none": {
+        "hidden": {
+          "opacity": 0
+        },
+        "show": {
+          "opacity": 1,
+          "x": 0,
+          "y": 0,
+          "scale": 1,
+          "rotate": 0,
+          "rotateX": 0,
+          "rotateY": 0,
+          "filter": "blur(0px)"
+        }
+      }
+    },
+    "stagger": {
+      "container": {
+        "hidden": {},
+        "show": {
+          "transition": {
+            "staggerChildren": 0.12
+          }
+        }
+      },
+      "item": {
+        "hidden": {
+          "opacity": 0,
+          "y": 50,
+          "scale": 0.92,
+          "rotateX": -25
+        },
+        "show": {
+          "opacity": 1,
+          "y": 0,
+          "scale": 1,
+          "rotateX": 0
+        }
+      }
+    },
+    "word": {
+      "container": {
+        "hidden": {},
+        "show": {
+          "transition": {
+            "staggerChildren": 0.07
+          }
+        }
+      },
+      "item": {
+        "hidden": {
+          "y": "110%",
+          "rotate": 6
+        },
+        "show": {
+          "y": 0,
+          "rotate": 0
+        }
+      }
+    },
+    "fade": {
+      "hidden": {
+        "opacity": 0
+      },
+      "show": {
+        "opacity": 1
+      }
+    },
+    "slideUp": {
+      "hidden": {
+        "opacity": 0,
+        "y": 40
+      },
+      "show": {
+        "opacity": 1,
+        "y": 0
+      }
+    },
+    "slideDown": {
+      "hidden": {
+        "opacity": 0,
+        "y": -40
+      },
+      "show": {
+        "opacity": 1,
+        "y": 0
+      }
+    },
+    "slideLeft": {
+      "hidden": {
+        "opacity": 0,
+        "x": -40
+      },
+      "show": {
+        "opacity": 1,
+        "x": 0
+      }
+    },
+    "slideRight": {
+      "hidden": {
+        "opacity": 0,
+        "x": 40
+      },
+      "show": {
+        "opacity": 1,
+        "x": 0
+      }
+    },
+    "scale": {
+      "hidden": {
+        "opacity": 0,
+        "scale": 0.88
+      },
+      "show": {
+        "opacity": 1,
+        "scale": 1
+      }
+    },
+    "navbar": {
+      "hidden": {
+        "y": -90,
+        "opacity": 0
+      },
+      "show": {
+        "y": 0,
+        "opacity": 1
+      }
+    },
+    "drawerItem": {
+      "hidden": {
+        "x": -25,
+        "opacity": 0
+      },
+      "show": {
+        "x": 0,
+        "opacity": 1
+      }
+    },
+    "page": {
+      "initial": {
+        "opacity": 0
+      },
+      "animate": {
+        "opacity": 1
+      },
+      "transition": {
+        "duration": 0.5
+      }
+    }
+  },
+  "fonts": {
+    "sans": {
+      "family": "Poppins",
+      "googleFont": "Poppins",
+      "weights": [
+        "300",
+        "400",
+        "500",
+        "600",
+        "700"
+      ],
+      "variable": "--font-poppins"
+    },
+    "serif": {
+      "family": "Plus Jakarta Sans",
+      "googleFont": "Plus_Jakarta_Sans",
+      "weights": [
+        "400",
+        "500",
+        "600",
+        "700",
+        "800"
+      ],
+      "variable": "--font-title"
+    },
+    "display": {
+      "family": "Google Sans",
+      "cdnUrl": "https://fonts.cdnfonts.com/css/google-sans",
+      "fallback": "Plus Jakarta Sans, system-ui, sans-serif"
     }
   }
 }

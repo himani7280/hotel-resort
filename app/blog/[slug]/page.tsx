@@ -22,7 +22,7 @@ export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug
   const index = POSTS.findIndex((item) => item.slug === post.slug);
   const next = POSTS[(index + 1) % POSTS.length];
   const categories = [...new Set(POSTS.map((item) => item.category))];
-  const recent = POSTS.filter((item) => item.slug !== post.slug).slice(0, 3);
+  const recent = POSTS.filter((item) => item.slug !== post.slug).slice(0, 6);
 
   return (
     <>
@@ -34,26 +34,28 @@ export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug
       />
 
       <section className="relative isolate mx-auto grid max-w-7xl gap-8 px-4 py-4 my-3 sm:px-6 lg:grid-cols-[1fr_360px] lg:gap-10 lg:px-8">
-        <article>
-          <Reveal dir="zoom" className="group relative h-80 overflow-hidden rounded-3xl sm:h-[420px]">
-            <Photo src={post.image} alt={post.title} sizes="(min-width: 1024px) 60vw, 100vw" />
-          </Reveal>
-          <div className="mt-10 space-y-6 text-lg leading-8 text-ink/80">
-            {post.body.map((paragraph, i) => (
-              <Reveal key={paragraph}>
-                <p className={i === 0 ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-6xl first-letter:leading-[0.8] first-letter:text-teal" : ""}>
-                  {paragraph}
-                </p>
-              </Reveal>
-            ))}
+        <article className="flex flex-col justify-between">
+          <div>
+            <Reveal dir="zoom" className="group relative h-72 overflow-hidden rounded-3xl sm:h-[360px]">
+              <Photo src={post.image} alt={post.title} sizes="(min-width: 1024px) 60vw, 100vw" />
+            </Reveal>
+            <div className="mt-6 space-y-4 text-base leading-7 text-ink/80 text-justify [text-align:justify] [text-justify:inter-word] hyphens-auto sm:text-[0.98rem] sm:leading-[1.8]">
+              {post.body.map((paragraph, i) => (
+                <Reveal key={paragraph}>
+                  <p className={i === 0 ? "first-letter:float-left first-letter:mr-3.5 first-letter:font-serif first-letter:text-6xl first-letter:leading-[0.8] first-letter:text-teal" : ""}>
+                    {paragraph}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
           </div>
 
           {next && (
-            <Reveal className="mt-14">
-              <Link href={`/blog/${next.slug}`} className="group flex items-center justify-between gap-4 rounded-2xl bg-forest p-6 text-white transition hover:bg-teal">
+            <Reveal className="mt-8 pt-2">
+              <Link href={`/blog/${next.slug}`} className="group flex items-center justify-between gap-4 rounded-2xl bg-forest p-5 text-white transition hover:bg-teal">
                 <span>
                   <span className="block text-xs uppercase tracking-widest text-gold">Next story</span>
-                  <span className="mt-1 block font-serif text-xl">{next.title}</span>
+                  <span className="mt-1 block font-serif text-lg sm:text-xl">{next.title}</span>
                 </span>
                 <span className="text-2xl transition-transform group-hover:translate-x-2">→</span>
               </Link>
@@ -61,29 +63,30 @@ export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug
           )}
         </article>
 
-        <aside className="space-y-8">
-          <Reveal dir="right" className="rounded-3xl bg-white p-7 shadow-lg shadow-forest/5">
+        <aside className="flex flex-col space-y-6">
+          <Reveal dir="right" className="rounded-3xl bg-white p-6 shadow-lg shadow-forest/5">
             <h2 className="font-serif text-2xl text-forest">Categories</h2>
-            <ul className="mt-4 flex flex-wrap gap-2">
+            <ul className="mt-3.5 flex flex-wrap gap-2">
               {categories.map((category) => (
-                <li key={category} className={`rounded-full px-4 py-1.5 text-sm ${category === post.category ? "bg-forest text-white" : "bg-sand text-forest"}`}>
+                <li key={category} className={`rounded-full px-3.5 py-1 text-xs font-medium sm:text-sm ${category === post.category ? "bg-forest text-white" : "bg-sand text-forest"}`}>
                   {category}
                 </li>
               ))}
             </ul>
           </Reveal>
-          <Reveal dir="right" delay={0.1} className="rounded-3xl bg-white p-7 shadow-lg shadow-forest/5">
+          <Reveal dir="right" delay={0.1} className="flex-1 rounded-3xl bg-white p-6 shadow-lg shadow-forest/5">
             <h2 className="font-serif text-2xl text-forest">Recent posts</h2>
-            <ul className="mt-4 space-y-5">
+            <ul className="mt-3 divide-y divide-forest/10">
               {recent.map((item) => (
-                <li key={item.slug}>
-                  <Link href={`/blog/${item.slug}`} className="group flex gap-4">
-                    <span className="group relative h-16 w-20 shrink-0 overflow-hidden rounded-xl">
+                <li key={item.slug} className="py-3.5 first:pt-0 last:pb-0">
+                  <Link href={`/blog/${item.slug}`} className="group flex gap-3.5">
+                    <span className="group relative h-20 w-20 shrink-0 overflow-hidden rounded-xl">
                       <Photo src={item.image} alt="" sizes="80px" />
                     </span>
-                    <span>
-                      <span className="line-clamp-2 text-sm font-semibold text-forest transition-colors group-hover:text-teal">{item.title}</span>
-                      <span className="mt-1 block text-xs text-mist">{item.date}</span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.2em] text-gold">{item.category}</span>
+                      <span className="mt-0.5 block truncate text-sm font-semibold leading-5 text-forest transition-colors group-hover:text-teal">{item.title}</span>
+                      <span className="mt-1 line-clamp-2 h-8 text-justify [text-align:justify] [text-justify:inter-word] text-xs leading-4 text-ink/60">{item.excerpt}</span>
                     </span>
                   </Link>
                 </li>

@@ -42,7 +42,7 @@ export default function BlogPage() {
                   <h2 className="mt-4 font-serif text-2xl font-medium leading-tight text-balance sm:text-3xl">
                     {featured.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-white/80">{featured.excerpt}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-white/80 text-justify [text-align:justify] [text-justify:inter-word]">{featured.excerpt}</p>
                 </div>
                 <div className="mt-6 flex items-center justify-between border-t border-white/10 pt-4">
                   <p className="text-xs text-white/60">

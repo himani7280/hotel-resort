@@ -178,13 +178,15 @@ export default function AboutPage() {
                   <FlipCard
                     className="h-88 sm:h-96"
                     front={
-                      <div className="group relative h-full w-full overflow-hidden rounded-3xl">
+                      <div className="group relative h-full w-full overflow-hidden rounded-tl-[2rem] rounded-br-[2rem] rounded-tr-none rounded-bl-none">
                         <Photo src={value.image} alt={value.title} sizes="(min-width: 1024px) 25vw, 100vw" />
                         <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/40 to-forest/10" />
                         <div className="relative flex h-full flex-col justify-between p-7 text-white">
                           <span className="font-serif text-6xl text-gold drop-shadow">0{i + 1}</span>
                           <div>
-                            <IconComp size={24} className="text-gold mb-2" />
+                            <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-forest group-hover:scale-110 shadow-md mb-3">
+                              <IconComp size={20} />
+                            </span>
                             <h3 className="font-serif text-2xl font-medium leading-snug">{value.title}</h3>
                             <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-gold">Tap to explore ↻</p>
                           </div>
@@ -192,11 +194,13 @@ export default function AboutPage() {
                       </div>
                     }
                     back={
-                      <div className="relative h-full w-full overflow-hidden rounded-3xl">
+                      <div className="relative h-full w-full overflow-hidden rounded-tl-[2rem] rounded-br-[2rem] rounded-tr-none rounded-bl-none">
                         <Photo src={value.image} alt="" sizes="(min-width: 1024px) 25vw, 100vw" className="scale-125 blur-sm" />
                         <div className="absolute inset-0 bg-forest/90" />
                         <div className="relative flex h-full flex-col justify-center p-8 text-white">
-                          <IconComp size={28} className="text-gold mb-3" />
+                          <span className="grid h-12 w-12 place-items-center rounded-xl bg-white/10 text-gold transition-all duration-300 hover:bg-gold hover:text-forest hover:scale-110 shadow-md mb-3">
+                            <IconComp size={24} />
+                          </span>
                           <h3 className="font-serif text-2xl text-gold">{value.title}</h3>
                           <p className="mt-3 text-sm leading-relaxed text-white/90">{value.text}</p>
                         </div>

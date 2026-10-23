@@ -44,13 +44,8 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Google Sans font for all titles & headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Heading font */
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
   letter-spacing: -0.015em;
 }
@@ -67,14 +62,62 @@ h6 {
   border-radius: 6px;
 }
 
-a,
-button,
-summary,
-[role="button"] {
+a, button, summary, [role="button"] {
   cursor: pointer;
 }
 
-/* Glass surface used by the navbar, booking bar and overlay chips. */
+/* ================================================================
+   Standard section layout — equal padding + header-aligned content
+   Usage: <section className="section"> <div className="section-inner"> … </div> </section>
+   ================================================================ */
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Inner container aligned with navbar max-w-7xl */
+.section-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem; /* = max-w-7xl */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-inner {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ================================================================
+   Glass surfaces
+   ================================================================ */
 .glass {
   background: rgb(255 255 255 / 0.12);
   border: 1px solid rgb(255 255 255 / 0.22);
@@ -89,6 +132,9 @@ summary,
   backdrop-filter: blur(22px) saturate(160%);
 }
 
+/* ================================================================
+   Gold gradient text
+   ================================================================ */
 .text-gold-gradient {
   background: linear-gradient(100deg, color-mix(in srgb, var(--color-gold) 60%, white) 0%, var(--color-gold) 45%, color-mix(in srgb, var(--color-gold) 50%, white) 100%);
   -webkit-background-clip: text;
@@ -96,7 +142,9 @@ summary,
   color: transparent;
 }
 
-/* Cursor-following soft glow for cards; --mx/--my are set from JS. */
+/* ================================================================
+   Spotlight glow on cards (--mx/--my set by JS)
+   ================================================================ */
 .spotlight {
   position: relative;
 }
@@ -117,6 +165,9 @@ summary,
   opacity: 1;
 }
 
+/* ================================================================
+   Buttons
+   ================================================================ */
 .btn-primary {
   position: relative;
   display: inline-flex;
@@ -134,7 +185,7 @@ summary,
   z-index: 1;
 }
 
-/* Unified Shimmer Light Reflection Sweep Animation for all buttons */
+/* Shimmer sweep on hover */
 .btn-primary::before {
   content: "";
   position: absolute;
@@ -142,12 +193,7 @@ summary,
   left: -120%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.45) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.45) 50%, transparent 100%);
   transform: skewX(-20deg);
   transition: left 0.75s ease;
   z-index: 2;
@@ -179,52 +225,13 @@ summary,
   background-position: right center;
 }
 
-.btn-dark {
-  background: var(--color-forest);
-  color: #fff !important;
-  border: 1px solid rgba(198, 155, 89, 0.4);
-  box-shadow: 0 10px 28px -8px rgba(13, 40, 30, 0.6);
-}
-
-.btn-dark:hover {
-  background: #0f3627;
-  border-color: var(--color-gold);
-  box-shadow: 0 16px 36px -6px rgba(198, 155, 89, 0.4);
-}
-
-.btn-outline-light {
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  color: #fff !important;
-  backdrop-filter: blur(8px);
-}
-
-.btn-outline-light:hover {
-  background: #fff;
-  color: var(--color-forest) !important;
-  box-shadow: 0 12px 30px -6px rgba(255, 255, 255, 0.3);
-}
-
-.btn-outline-dark {
-  border: 1px solid var(--color-gold);
-  color: var(--color-forest) !important;
-  background: transparent;
-}
-
-.btn-outline-dark:hover {
-  background: var(--color-forest);
-  color: #fff !important;
-  box-shadow: 0 12px 30px -6px rgba(13, 40, 30, 0.4);
-}
-
+/* ================================================================
+   Accessibility
+   ================================================================ */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .animate-marquee,
-  .animate-marquee-rev {
-    animation: none;
-  }
+  html { scroll-behavior: auto; }
+  .animate-marquee, .animate-marquee-rev, .animate-float,
+  .glow, .sparkle, .wave-layer, .wave-layer-b { animation: none; }
 }
 
 ::selection {
@@ -232,170 +239,38 @@ summary,
   color: var(--color-forest);
 }
 
+/* ================================================================
+   Marquee animations
+   ================================================================ */
 @keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes shine {
-  from {
-    transform: translateX(-120%) skewX(-20deg);
-  }
-  to {
-    transform: translateX(220%) skewX(-20deg);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-}
-
-.animate-float {
-  animation: float 5s ease-in-out infinite;
-}
-
-.btn-shine::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 40%;
-  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
-  transform: translateX(-120%) skewX(-20deg);
-}
-
-.btn-shine:hover::after {
-  animation: shine 0.9s ease;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee,
-  .animate-float {
-    animation: none;
-  }
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 @keyframes marquee-rev {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
-.animate-marquee-rev {
-  animation: marquee-rev 55s linear infinite;
-}
-
-.animate-marquee {
-  animation-duration: 55s;
-}
+.animate-marquee     { animation: marquee     55s linear infinite; }
+.animate-marquee-rev { animation: marquee-rev 55s linear infinite; }
 
 .animate-marquee-rev:hover,
-.animate-marquee:hover {
-  animation-play-state: paused;
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* ================================================================
+   Float animation (badge images)
+   ================================================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
 }
 
-.logo-rays {
-  transform-box: view-box;
-  transform-origin: 30px 38px;
-  animation: logo-spin 24s linear infinite;
-}
+.animate-float { animation: float 5s ease-in-out infinite; }
 
-.logo:hover .logo-rays {
-  animation-duration: 6s;
-}
-
-.logo-waves {
-  animation: logo-wave 4s linear infinite;
-}
-
-@keyframes logo-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes logo-wave {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-16px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .logo-rays,
-  .logo-waves {
-    animation: none;
-  }
-}
-
-.emblem-frond {
-  transform-box: view-box;
-  transform-origin: 32px 8px;
-  animation: frond-sway 5s ease-in-out infinite alternate;
-}
-
-.emblem-frond-r {
-  animation-delay: -2.5s;
-}
-
-.emblem-sun {
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: sun-pulse 3.2s ease-in-out infinite;
-}
-
-.logo:hover .emblem-frond {
-  animation-duration: 1.8s;
-}
-
-@keyframes frond-sway {
-  from {
-    transform: rotate(-1.8deg);
-  }
-  to {
-    transform: rotate(1.4deg);
-  }
-}
-
-@keyframes sun-pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.14);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .emblem-frond,
-  .emblem-sun {
-    animation: none;
-  }
-}
-
-
-/* ================= Resort background animations ================= */
-
-/* Soft sun-glow blobs that drift slowly behind sections */
+/* ================================================================
+   Background effects: glow blobs, sparkles, waves
+   ================================================================ */
 .glow {
   position: absolute;
   border-radius: 9999px;
@@ -404,49 +279,35 @@ summary,
   opacity: 0.35;
   animation: drift 18s ease-in-out infinite alternate;
 }
+
 @keyframes drift {
   from { transform: translate(0, 0) scale(1); }
-  to { transform: translate(60px, -40px) scale(1.2); }
+  to   { transform: translate(60px, -40px) scale(1.2); }
 }
 
-/* Golden bubbles rising over banners and sections */
 .sparkle {
   position: absolute;
   bottom: -20px;
   border-radius: 9999px;
-  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95) 0%, rgba(246, 226, 174, 0.7) 40%, rgba(197, 155, 75, 0.3) 75%, transparent 100%);
-  border: 0.5px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 6px rgba(212, 175, 55, 0.45);
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.95) 0%, rgba(246,226,174,0.7) 40%, rgba(197,155,75,0.3) 75%, transparent 100%);
+  border: 0.5px solid rgba(255,255,255,0.6);
+  box-shadow: 0 0 6px rgba(212,175,55,0.45);
   pointer-events: none;
   animation: rise linear infinite;
 }
+
 @keyframes rise {
-  0% { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
-  10% { opacity: 0.9; }
-  50% { transform: translateY(-50vh) translateX(25px) scale(1.05); opacity: 0.8; }
-  85% { opacity: 0.6; }
+  0%   { transform: translateY(0) translateX(0) scale(0.6); opacity: 0; }
+  10%  { opacity: 0.9; }
+  50%  { transform: translateY(-50vh) translateX(25px) scale(1.05); opacity: 0.8; }
+  85%  { opacity: 0.6; }
   100% { transform: translateY(-105vh) translateX(-20px) scale(1.15); opacity: 0; }
 }
 
-/* Two layers of waves sliding sideways */
-.wave-layer { animation: wave-slide 14s linear infinite; }
+.wave-layer   { animation: wave-slide 14s linear infinite; }
 .wave-layer-b { animation-duration: 22s; animation-direction: reverse; opacity: 0.55; }
+
 @keyframes wave-slide {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* Palm leaf that sways from the corner */
-.leaf-sway {
-  transform-origin: 0% 0%;
-  animation: leaf 6s ease-in-out infinite alternate;
-  pointer-events: none;
-}
-@keyframes leaf {
-  from { transform: rotate(-4deg); }
-  to { transform: rotate(5deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .glow, .sparkle, .wave-layer, .wave-layer-b, .leaf-sway { animation: none; }
+  to   { transform: translateX(-50%); }
 }

@@ -18,7 +18,7 @@ type PageHeroProps = {
 export function PageHero({ title, subtitle, image, crumbs }: PageHeroProps) {
   const done = useIntroDone();
   return (
-    <section className="relative flex min-h-[50vh] sm:min-h-[56vh] items-end overflow-hidden bg-forest pb-20 pt-36 text-white">
+    <section className="relative flex min-h-[65vh] sm:min-h-[72vh] lg:min-h-[80vh] items-end overflow-hidden bg-forest pb-20 pt-36 text-white">
       <motion.div
         className="absolute inset-0"
         initial={{ scale: 1.2 }}
@@ -63,16 +63,6 @@ export function PageHero({ title, subtitle, image, crumbs }: PageHeroProps) {
         >
           {title}
         </motion.h1>
-        {subtitle && (
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={done ? { opacity: 1, y: 0 } : undefined}
-            transition={{ delay: 0.65, duration: 0.9 }}
-            className="mx-auto mt-4 max-w-xl text-base sm:text-lg text-white/85 sm:mx-0"
-          >
-            {subtitle}
-          </motion.p>
-        )}
       </div>
     </section>
   );
