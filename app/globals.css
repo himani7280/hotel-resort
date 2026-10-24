@@ -93,6 +93,16 @@ a, button, summary, [role="button"] {
   color: transparent;
 }
 
+/* Prevent clipping of italic slanted glyphs when background-clip: text is used */
+.text-gold-gradient.italic,
+.italic.text-gold-gradient,
+.italic .text-gold-gradient {
+  display: inline-block;
+  padding-right: 0.22em;
+  margin-right: -0.12em;
+  vertical-align: baseline;
+}
+
 /* ================================================================
    Spotlight glow on cards (--mx/--my set by JS)
    ================================================================ */

@@ -1,25 +1,41 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Reveal } from "./Motion";
 import { miscContent as misc } from "@/lib/data";
+import { ArrowRightIcon } from "@/lib/icons";
 
-const news = misc.newsletter;
+const news = misc.newsletter as {
+  eyebrow?: string;
+  headingBefore?: string;
+  headingAccent?: string;
+  headingAfter?: string;
+  text?: string;
+  buttonText?: string;
+  buttonHref?: string;
+};
 
-export function CtaNewsletter() {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [loading, setLoading] = useState(false);
+type CtaNewsletterProps = {
+  eyebrow?: string;
+  headingBefore?: string;
+  headingAccent?: string;
+  headingAfter?: string;
+  text?: string;
+  buttonText?: string;
+  buttonHref?: string;
+};
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    setLoading(true);
-    setTimeout(() => {
-      router.push(news.redirectHref);
-    }, news.redirectDelayMs);
-  };
+export function CtaNewsletter(props: CtaNewsletterProps) {
+  const eyebrow = props.eyebrow ?? news.eyebrow ?? "The Suryavana Circle";
+  const headingBefore = props.headingBefore ?? news.headingBefore ?? "Where the ";
+  const headingAccent = props.headingAccent ?? news.headingAccent ?? "sun";
+  const headingAfter = props.headingAfter ?? news.headingAfter ?? " awakens the sanctuary.";
+  const text =
+    props.text ??
+    news.text ??
+    "Join our private circle to receive seasonal forest retreat offerings, private villa invitations, and wellness journals directly to your inbox.";
+  const buttonText = props.buttonText ?? news.buttonText ?? "Contact Us";
+  const buttonHref = props.buttonHref ?? news.buttonHref ?? "/contact";
 
   return (
     <section className="relative isolate mx-auto max-w-7xl px-4 py-4 my-4 sm:px-6 lg:px-8">
@@ -27,34 +43,31 @@ export function CtaNewsletter() {
         <div className="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{news.eyebrow}</span>
-            <h2 className="mt-2 font-serif text-2xl font-medium text-white sm:text-3xl lg:text-[2.25rem]">
-              {news.headingBefore}<span className="text-gold-gradient italic">{news.headingAccent}</span>{news.headingAfter}
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{eyebrow}</span>
+            <h2 className="mt-2 font-serif text-2xl font-medium text-white sm:text-3xl lg:text-[2.25rem] leading-[1.25]">
+              {headingBefore}
+              <span className="text-gold-gradient italic inline-block pr-2.5 -mr-1.5 align-baseline">
+                {headingAccent}
+              </span>
+              {headingAfter}
             </h2>
             <p className="mt-3 text-sm text-white/75 max-w-lg leading-relaxed">
-              {news.text}
+              {text}
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={news.placeholder}
-              className="w-full rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm text-white placeholder:text-white/50 outline-none backdrop-blur-md focus:border-gold focus:ring-2 focus:ring-gold/30"
-            />
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn-primary btn-gold whitespace-nowrap px-8 py-4 text-xs tracking-widest shadow-lg"
+          <div className="flex items-center justify-start lg:justify-end">
+            <Link
+              href={buttonHref}
+              className="btn-primary btn-gold inline-flex items-center gap-3 whitespace-nowrap px-8 py-4 text-xs font-semibold tracking-widest uppercase shadow-lg transition-transform duration-300 hover:scale-105"
             >
-              {loading ? news.submitting : news.submit}
-            </button>
-          </form>
+              <span>{buttonText}</span>
+              <ArrowRightIcon size={16} />
+            </Link>
+          </div>
         </div>
       </Reveal>
     </section>
   );
 }
+

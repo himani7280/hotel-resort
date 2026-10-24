@@ -2211,11 +2211,8 @@
         "headingAccent": "sun",
         "headingAfter": " awakens the sanctuary.",
         "text": "Join our private circle to receive seasonal forest retreat offerings, private villa invitations, and wellness journals directly to your inbox.",
-        "placeholder": "Enter your email address",
-        "submit": "SUBSCRIBE",
-        "submitting": "JOINING...",
-        "redirectHref": "/thank-you",
-        "redirectDelayMs": 350
+        "buttonText": "Contact Us",
+        "buttonHref": "/contact"
       },
       "bookingBar": {
         "checkIn": "Check-in",
