@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Sparkles } from "@/components/BgFx";
+import { faqVariant } from "@/lib/data";
 
 type FaqItem = {
   question: string;
@@ -11,10 +12,11 @@ type FaqItem = {
 };
 
 type FaqSectionProps = {
-  eyebrow: string;
-  heading: string;
-  subtitle: string;
-  items: FaqItem[];
+  eyebrow?: string;
+  heading?: string;
+  subtitle?: string;
+  items?: FaqItem[];
+  variantKey?: string;
 };
 
 const CATEGORIES = [
@@ -26,7 +28,14 @@ const CATEGORIES = [
   "Family Sanctuaries",
 ];
 
-export function FaqSection({ eyebrow, heading, subtitle, items }: FaqSectionProps) {
+export function FaqSection({ eyebrow, heading, subtitle, items, variantKey }: FaqSectionProps) {
+  // Fall back to variant data from sections.Faq.variants.HotelResortFaq1
+  const d = faqVariant;
+  const _eyebrow = eyebrow ?? d.eyebrow;
+  const _heading = heading ?? d.heading;
+  const _subtitle = subtitle ?? d.subtitle;
+  const _items: FaqItem[] = (items ?? d.items) as FaqItem[];
+
   // First item open by default
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -44,18 +53,18 @@ export function FaqSection({ eyebrow, heading, subtitle, items }: FaqSectionProp
 
       <div className="relative text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-gold shadow-sm">
-          ✦ {eyebrow}
+          ✦ {_eyebrow}
         </span>
         <h2 className="mt-4 font-serif text-2xl font-medium leading-[1.2] text-white sm:text-3xl lg:text-[2.25rem]">
-          {heading}
+          {_heading}
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base leading-relaxed text-white/70">
-          {subtitle}
+          {_subtitle}
         </p>
       </div>
 
       <div className="relative mt-10 space-y-4">
-        {items.map((item, idx) => {
+        {_items.map((item, idx) => {
           const isOpen = openIndex === idx;
           const num = String(idx + 1).padStart(2, "0");
           const category = CATEGORIES[idx % CATEGORIES.length];

@@ -146,3 +146,21 @@ export const roomsContent = raw.content.rooms;
 export const sharedContent = raw.content.shared;
 export const wellnessContent = raw.content.wellness;
 
+// Template & Section Variants exports
+export const HotelResort = (raw as any).HotelResort;
+export const Investment = (raw as any).Investment;
+export const templateComponents = (raw as any).HotelResort?.templateComponents;
+export const sections = ((raw as any).HotelResort?.sections || (raw as any).sections) as {
+  Hero: { variants: Record<string, any> };
+  Faq: { variants: Record<string, any> };
+  Cta: { variants: Record<string, any> };
+  About: { variants: Record<string, any> };
+  Contact: { variants: Record<string, any> };
+  [key: string]: any;
+};
+
+export const faqVariant = sections.Faq.variants.HotelResortFaq1;
+export const ctaVariant = sections.Cta.variants.HotelResortCta1;
+export const heroVariants = sections.Hero.variants;
+
+export default raw;

@@ -1,19 +1,12 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { Reveal } from "./Motion";
-import { miscContent as misc } from "@/lib/data";
+import { VARIANTS, ctaVariant } from "@/lib/data";
 import { ArrowRightIcon } from "@/lib/icons";
 
-const news = misc.newsletter as {
-  eyebrow?: string;
-  headingBefore?: string;
-  headingAccent?: string;
-  headingAfter?: string;
-  text?: string;
-  buttonText?: string;
-  buttonHref?: string;
-};
+// Default data pulled from sections.Cta.variants.HotelResortCta1
+const newsletter = ctaVariant;
 
 type CtaNewsletterProps = {
   eyebrow?: string;
@@ -21,25 +14,29 @@ type CtaNewsletterProps = {
   headingAccent?: string;
   headingAfter?: string;
   text?: string;
-  buttonText?: string;
-  buttonHref?: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
 };
 
 export function CtaNewsletter(props: CtaNewsletterProps) {
-  const eyebrow = props.eyebrow ?? news.eyebrow ?? "The Suryavana Circle";
-  const headingBefore = props.headingBefore ?? news.headingBefore ?? "Where the ";
-  const headingAccent = props.headingAccent ?? news.headingAccent ?? "sun";
-  const headingAfter = props.headingAfter ?? news.headingAfter ?? " awakens the sanctuary.";
-  const text =
-    props.text ??
-    news.text ??
-    "Join our private circle to receive seasonal forest retreat offerings, private villa invitations, and wellness journals directly to your inbox.";
-  const buttonText = props.buttonText ?? news.buttonText ?? "Contact Us";
-  const buttonHref = props.buttonHref ?? news.buttonHref ?? "/contact";
+  const eyebrow = props.eyebrow ?? newsletter.eyebrow;
+  const headingBefore = props.headingBefore ?? newsletter.headingBefore;
+  const headingAccent = props.headingAccent ?? newsletter.headingAccent;
+  const headingAfter = props.headingAfter ?? newsletter.headingAfter;
+  const text = props.text ?? newsletter.text;
+  const cta = props.cta ?? newsletter.cta;
 
   return (
     <section className="relative isolate mx-auto max-w-7xl px-4 py-4 my-4 sm:px-6 lg:px-8">
-      <Reveal className="rounded-3xl bg-gradient-to-r from-forest/95 via-[#0a2e21] to-forest/95 p-8 sm:p-12 border border-gold/25 shadow-2xl relative overflow-hidden">
+      <motion.div
+        variants={VARIANTS.reveal.up}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-40px" }}
+        className="rounded-3xl bg-gradient-to-r from-forest/95 via-[#0a2e21] to-forest/95 p-8 sm:p-12 border border-gold/25 shadow-2xl relative overflow-hidden"
+      >
         <div className="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
@@ -57,17 +54,20 @@ export function CtaNewsletter(props: CtaNewsletterProps) {
           </div>
 
           <div className="flex items-center justify-start lg:justify-end">
-            <Link
-              href={buttonHref}
-              className="btn-primary btn-gold inline-flex items-center gap-3 whitespace-nowrap px-8 py-4 text-xs font-semibold tracking-widest uppercase shadow-lg transition-transform duration-300 hover:scale-105"
-            >
-              <span>{buttonText}</span>
-              <ArrowRightIcon size={16} />
-            </Link>
+            <motion.div variants={VARIANTS.scale}>
+              <Link
+                href={cta?.href || "/contact"}
+                className="btn-primary btn-gold inline-flex items-center gap-3 whitespace-nowrap px-8 py-4 text-xs font-semibold tracking-widest uppercase shadow-lg transition-transform duration-300 hover:scale-105"
+              >
+                <span>{cta?.label || "Contact Us"}</span>
+                <ArrowRightIcon size={16} />
+              </Link>
+            </motion.div>
           </div>
         </div>
-      </Reveal>
+      </motion.div>
     </section>
   );
 }
+
 

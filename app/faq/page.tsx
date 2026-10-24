@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { IMG } from "@/lib/data";
+import { IMG, heroVariants, faqVariant } from "@/lib/data";
 import { PageHero } from "@/components/PageHero";
 import { FaqSection } from "@/components/FaqSection";
 import { CtaNewsletter } from "@/components/CtaNewsletter";
-import { contactContent as content } from "@/lib/data";
 
-const page = content.contact;
+// Pull page-level data from sections.Hero.variants and sections.Faq.variants
+const faqHero = heroVariants.HotelResortFaqHero1;
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Suryavana Hotel & Resort",
@@ -16,21 +16,21 @@ export default function FaqPage() {
   return (
     <>
       <PageHero
-        title="Frequently Asked Questions"
-        subtitle="Everything you need to know about your coastal forest sanctuary escape."
+        title={faqHero.title}
+        subtitle={faqHero.subtitle}
         image={IMG.poolResort}
         crumbs={[{ label: "FAQ" }]}
       />
 
-      {/* Styled 2-Color FAQ Section */}
+      {/* FAQ Section — data from sections.Faq.variants.HotelResortFaq1 */}
       <FaqSection
-        eyebrow={page.faq.eyebrow}
-        heading={page.faq.heading}
-        subtitle={page.faq.subtitle}
-        items={page.faq.items}
+        eyebrow={faqVariant.eyebrow}
+        heading={faqVariant.heading}
+        subtitle={faqVariant.subtitle}
+        items={faqVariant.items}
       />
 
-      {/* Suryavana Circle Newsletter CTA Section */}
+      {/* CTA — data from sections.Cta.variants.HotelResortCta1 */}
       <CtaNewsletter />
     </>
   );
