@@ -5,8 +5,9 @@ import Link from "next/link";
 import type { Post, Room } from "@/lib/data";
 import { Photo } from "./Photo";
 import { Spotlight } from "./Spotlight";
+import { homeContent as home } from "@/lib/data";
 
-const formatPrice = (price: number) => `₹${price.toLocaleString("en-IN")}`;
+const formatPrice = (price: number) => `${home.cards.currency}${price.toLocaleString(home.cards.priceLocale)}`;
 const HOVER = { type: "spring", stiffness: 140, damping: 18 } as const;
 
 const Arrow = () => (
@@ -19,7 +20,7 @@ export function RoomCard({ room }: { room: Room }) {
   return (
     <motion.article whileHover={{ y: -8 }} transition={HOVER} className="h-full">
       <Spotlight className="group flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-white shadow-lg shadow-forest/5 ring-1 ring-forest/5 transition-shadow duration-500 hover:shadow-2xl hover:shadow-forest/15">
-        <Link href={`/rooms/${room.slug}`} className="relative block h-72 overflow-hidden" aria-label={`${room.name} details`}>
+        <Link href={`/rooms/${room.slug}`} className="relative block h-72 overflow-hidden" aria-label={`${room.name} ${home.cards.detailsSuffix}`}>
           <Photo src={room.image} alt={room.name} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-forest/60 via-transparent to-transparent" />
           <span className="glass absolute left-4 top-4 rounded-full px-3.5 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white">
@@ -27,7 +28,7 @@ export function RoomCard({ room }: { room: Room }) {
           </span>
           <p className="absolute bottom-4 left-5 text-white">
             <span className="font-serif text-3xl font-semibold">{formatPrice(room.price)}</span>
-            <span className="ml-1 text-xs tracking-wider text-white/80">/ night</span>
+            <span className="ml-1 text-xs tracking-wider text-white/80">{home.cards.perNight}</span>
           </p>
         </Link>
         <div className="flex flex-1 flex-col justify-between p-7">
@@ -35,7 +36,7 @@ export function RoomCard({ room }: { room: Room }) {
             <h3 className="font-serif text-3xl font-semibold leading-tight text-forest">{room.name}</h3>
             <p className="mt-2 text-sm text-mist">{room.tagline}</p>
             <ul className="mt-5 flex flex-wrap gap-2 text-xs font-medium text-ink/75">
-              {[`${room.size} m²`, `Up to ${room.guests} guests`, room.bed].map((fact) => (
+              {[`${room.size} ${home.cards.sizeUnit}`, `${home.cards.guestsPrefix} ${room.guests} ${home.cards.guestsSuffix}`, room.bed].map((fact) => (
                 <li key={fact} className="rounded-full bg-sand px-3 py-1">
                   {fact}
                 </li>
@@ -46,7 +47,7 @@ export function RoomCard({ room }: { room: Room }) {
             href={`/rooms/${room.slug}`}
             className="mt-6 inline-flex items-center gap-2 border-t border-forest/10 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-teal transition-all group-hover:gap-4"
           >
-            View sanctuary details <Arrow />
+            {home.cards.roomLink} <Arrow />
           </Link>
         </div>
       </Spotlight>
@@ -78,7 +79,7 @@ export function BlogCard({ post }: { post: Post }) {
             href={`/blog/${post.slug}`}
             className="mt-6 inline-flex items-center gap-2 border-t border-forest/10 pt-5 text-xs font-semibold uppercase tracking-[0.18em] text-teal transition-all group-hover:gap-4"
           >
-            Read story <Arrow />
+            {home.cards.readStory} <Arrow />
           </Link>
         </div>
       </Spotlight>

@@ -3,6 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Reveal } from "./Motion";
+import { miscContent as misc } from "@/lib/data";
+
+const news = misc.newsletter;
 
 export function CtaNewsletter() {
   const router = useRouter();
@@ -14,8 +17,8 @@ export function CtaNewsletter() {
     if (!email) return;
     setLoading(true);
     setTimeout(() => {
-      router.push("/thank-you");
-    }, 350);
+      router.push(news.redirectHref);
+    }, news.redirectDelayMs);
   };
 
   return (
@@ -24,12 +27,12 @@ export function CtaNewsletter() {
         <div className="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-gold/10 blur-2xl pointer-events-none" />
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">The Suryavana Circle</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">{news.eyebrow}</span>
             <h2 className="mt-2 font-serif text-2xl font-medium text-white sm:text-3xl lg:text-[2.25rem]">
-              Where the <span className="text-gold-gradient italic">sun</span> awakens the sanctuary.
+              {news.headingBefore}<span className="text-gold-gradient italic">{news.headingAccent}</span>{news.headingAfter}
             </h2>
             <p className="mt-3 text-sm text-white/75 max-w-lg leading-relaxed">
-              Join our private circle to receive seasonal forest retreat offerings, private villa invitations, and wellness journals directly to your inbox.
+              {news.text}
             </p>
           </div>
 
@@ -39,7 +42,7 @@ export function CtaNewsletter() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
+              placeholder={news.placeholder}
               className="w-full rounded-full border border-white/20 bg-white/10 px-6 py-4 text-sm text-white placeholder:text-white/50 outline-none backdrop-blur-md focus:border-gold focus:ring-2 focus:ring-gold/30"
             />
             <button
@@ -47,7 +50,7 @@ export function CtaNewsletter() {
               disabled={loading}
               className="btn-primary btn-gold whitespace-nowrap px-8 py-4 text-xs tracking-widest shadow-lg"
             >
-              {loading ? "JOINING..." : "SUBSCRIBE"}
+              {loading ? news.submitting : news.submit}
             </button>
           </form>
         </div>

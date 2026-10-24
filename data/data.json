@@ -4,7 +4,11 @@
     "tagline": "Hotel & Resort",
     "phone": "+1  00000 00000",
     "email": "info@xyz.com",
-    "address": "100 Ocean Avenue, Santa Monica, CA 90401, United States"
+    "address": "100 Ocean Avenue, Santa Monica, CA 90401, United States",
+    "hours": [
+      "Reception: Open 24 Hours",
+      "Dining: 7:00 AM - 10:30 PM"
+    ]
   },
   "navLinks": [
     {
@@ -28,8 +32,12 @@
       "href": "/blog"
     },
     {
-      "label": "Contact",
-      "href": "/contact"
+      "label": "Dining",
+      "href": "/dining"
+    },
+    {
+      "label": "FAQ",
+      "href": "/faq"
     }
   ],
   "images": {
@@ -524,42 +532,48 @@
       "from": "Mumbai",
       "stay": "Cliffside Pool Suite",
       "rating": 5,
-      "quote": "We came for a long weekend and left planning our return. The staff remembered our names by breakfast, and the plunge pool at sunset was unreal."
+      "quote": "We came for a long weekend and left planning our return. The staff remembered our names by breakfast, and the plunge pool at sunset was unreal.",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&h=160&fit=crop&crop=faces&q=80"
     },
     {
       "name": "James Whitfield",
       "from": "London",
       "stay": "Overwater Lagoon Villa",
       "rating": 5,
-      "quote": "Waking up over clear water felt like a film set. Service was quietly perfect: never intrusive, always one step ahead."
+      "quote": "Waking up over clear water felt like a film set. Service was quietly perfect: never intrusive, always one step ahead.",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces&q=80"
     },
     {
       "name": "Priya & Rahul Nair",
       "from": "Bengaluru",
       "stay": "Premier Ocean View",
       "rating": 5,
-      "quote": "Our honeymoon was made special by little touches: flowers on the bed, a private beach dinner, and a handwritten note."
+      "quote": "Our honeymoon was made special by little touches: flowers on the bed, a private beach dinner, and a handwritten note.",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&h=160&fit=crop&crop=faces&q=80"
     },
     {
       "name": "Sofia Marchetti",
       "from": "Milan",
       "stay": "Heritage Royal Suite",
       "rating": 4,
-      "quote": "Beautiful design and the best seafood I have had in India. The room was spotless and the breakfast on the terrace is worth the trip alone."
+      "quote": "Beautiful design and the best seafood I have had in India. The room was spotless and the breakfast on the terrace is worth the trip alone.",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&h=160&fit=crop&crop=faces&q=80"
     },
     {
       "name": "Arjun Kapoor",
       "from": "Delhi",
       "stay": "Family Residence",
       "rating": 5,
-      "quote": "Travelling with two kids is usually chaos. Here the kids' club, the pool and the space in our residence made it effortless."
+      "quote": "Travelling with two kids is usually chaos. Here the kids' club, the pool and the space in our residence made it effortless.",
+      "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&h=160&fit=crop&crop=faces&q=80"
     },
     {
       "name": "Hannah Becker",
       "from": "Berlin",
       "stay": "Deluxe Garden Room",
       "rating": 5,
-      "quote": "Peaceful, green and spotless. I did yoga at dawn, read all afternoon and ate like a queen every night."
+      "quote": "Peaceful, green and spotless. I did yoga at dawn, read all afternoon and ate like a queen every night.",
+      "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&h=160&fit=crop&crop=faces&q=80"
     }
   ],
   "stats": [
@@ -759,6 +773,32 @@
         {
           "year": "2024",
           "text": "Recognized as a premier eco-luxury retreat and unveiled overwater lagoon villas."
+        }
+      ],
+      "mission": {
+        "title": "Our Mission",
+        "text": "To offer restorative, sustainably-built stays where warm hospitality, honest botanical nourishment and the quiet of the forest help every guest slow down and reconnect."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "text": "To be recognised as the most loved eco-luxury sanctuary on the coast, protecting the canopy that surrounds us while setting a new standard for mindful, community-rooted hospitality."
+      },
+      "whyUs": [
+        {
+          "title": "Preserved Forest Setting",
+          "text": "Every villa sits within a protected teak and coconut canopy, so privacy and birdsong come standard."
+        },
+        {
+          "title": "Sustainable Luxury",
+          "text": "Solar power, spring water and zero single-use plastic, without compromising comfort."
+        },
+        {
+          "title": "Holistic Wellness",
+          "text": "Dawn yoga, forest bathing and spa rituals led by experienced practitioners."
+        },
+        {
+          "title": "Genuine Hospitality",
+          "text": "A team that remembers your name, your preferences and the way you like your morning tea."
         }
       ]
     },
@@ -1602,6 +1642,939 @@
       "family": "Google Sans",
       "cdnUrl": "https://fonts.cdnfonts.com/css/google-sans",
       "fallback": "Plus Jakarta Sans, system-ui, sans-serif"
+    }
+  },
+  "content": {
+    "about": {
+      "metadata": {
+        "title": "About Us | Suryavana Hotel & Resort",
+        "description": "Discover the story of Suryavana Hotel & Resort. Where the sun awakens ancient forest sanctuaries in harmony with luxury eco-hospitality."
+      },
+      "hero": {
+        "title": "A Haven of Sun & Forest",
+        "subtitle": "Twelve years of warm welcomes, gentle sunbeams, and the timeless pace of the sanctuary.",
+        "imageKey": "whiteVilla",
+        "crumbs": [
+          {
+            "label": "About Us"
+          }
+        ]
+      },
+      "gallery": {
+        "main": {
+          "alt": "Suryavana resort pool and villas",
+          "badge": "✦ Sanctuary Pool & Villas ✦"
+        },
+        "second": {
+          "alt": "Pool deck loungers in sunlight",
+          "badge": "Sun Deck"
+        },
+        "third": {
+          "alt": "Resort pool at night under stars",
+          "badge": "Night Serenity"
+        },
+        "fourth": {
+          "imageKey": "fountainCourt",
+          "alt": "Fountain courtyard and ancient teak pavilion",
+          "title": "Fountain Courtyard & Ancient Teak Pavilion",
+          "subtitle": "Hand-chiseled laterite stone & sustainable architecture",
+          "mark": "✦"
+        }
+      },
+      "heritage": {
+        "eyebrow": "Our Heritage",
+        "title": "From Sacred Forest to Sunlit Sanctuary",
+        "paragraphs": [
+          "Suryavana was founded in 2013 on an untouched expanse where ancient teak groves and coconut canopies met golden coastal breezes. Our founders envisioned an eco-haven where the pace of life matched the gentle, restorative rhythm of the forest and the sun.",
+          "Today, the resort has blossomed into secluded timber villas, hillside suites, organic dining pavilions, and holistic wellness spaces. Yet the founding ethos remains pure: warm hospitality, honest botanical nourishment, and spaces that let your soul breathe deeply."
+        ],
+        "hallmarks": [
+          "100% Natural Canopy Preserved",
+          "Solar-Powered & Pure Spring Waters",
+          "Hand-Chiseled Laterite Architecture",
+          "Zero Single-Use Plastic Sanctuary"
+        ],
+        "quote": {
+          "text": "“We believe true luxury is space, sunlight filtering through teak leaves, birdsong at dawn, and unhurried stillness.”",
+          "author": "— The Suryavana Founders · Est. 2013"
+        },
+        "buttons": [
+          {
+            "label": "Explore Sanctuaries",
+            "href": "/rooms"
+          },
+          {
+            "label": "Connect With Us",
+            "href": "/contact"
+          }
+        ]
+      },
+      "missionVision": {
+        "eyebrow": "Purpose",
+        "title": "Our Mission & Vision"
+      },
+      "whyUs": {
+        "eyebrow": "Why Choose Us",
+        "title": "Why Choose Suryavana",
+        "text": "A few reasons travellers keep returning to the sanctuary."
+      },
+      "values": {
+        "eyebrow": "What We Cherish",
+        "title": "Values That Shape Every Suryavana Stay",
+        "text": "Rooted in reverence for nature, sustainable luxury, and generous hospitality.",
+        "flipHint": "Tap to explore ↻"
+      }
+    },
+    "blog": {
+      "metadata": {
+        "title": "The Journal | Suryavana Hotel & Resort",
+        "description": "Stories of forest wellness, morning sun meditations, botanical cuisine, and coastal sanctuary living."
+      },
+      "hero": {
+        "title": "The Suryavana Journal",
+        "subtitle": "Stories of sacred groves, dawn sun rituals, sustainable architecture, and slow living.",
+        "imageKey": "beachSunset",
+        "crumbs": [
+          {
+            "label": "Blog"
+          }
+        ]
+      },
+      "featuredLabel": "Featured",
+      "readStory": "Read story →",
+      "detail": {
+        "fallbackTitle": "Article",
+        "blogCrumb": {
+          "label": "Blog",
+          "href": "/blog"
+        },
+        "backHome": {
+          "label": "← Back to Home",
+          "href": "/"
+        },
+        "nextStory": "Next story",
+        "nextArrow": "→",
+        "recentTitle": "Recent posts"
+      }
+    },
+    "contact": {
+      "contact": {
+        "metadata": {
+          "title": "Contact Us | Suryavana Hotel & Resort",
+          "description": "Get in touch with Suryavana Hotel & Resort. Inquiries, bookings, location and personalized concierge service."
+        },
+        "hero": {
+          "title": "Contact Us",
+          "subtitle": "We would love to welcome you to our sun and forest sanctuary.",
+          "imageKey": "nightPool",
+          "crumbs": [
+            {
+              "label": "Contact"
+            }
+          ]
+        },
+        "form": {
+          "eyebrow": "Reach Out",
+          "heading": "Send us a message",
+          "intro": "Whether inquiring about private villas, wellness retreats, or bespoke culinary experiences, our team will respond promptly to assist with your stay."
+        },
+        "concierge": {
+          "eyebrow": "Direct Concierge",
+          "heading": "Suryavana Hotel & Resort"
+        },
+        "map": {
+          "title": "Suryavana Hotel & Resort USA location map"
+        },
+        "faq": {
+          "eyebrow": "Frequently Asked Questions",
+          "heading": "Everything You Need to Know",
+          "subtitle": "Clear answers regarding reservations, villa amenities, check-in, and curated sanctuary services.",
+          "items": [
+            {
+              "question": "What are the standard check-in and check-out timings?",
+              "answer": "Check-in begins at 14:00 (2:00 PM) and check-out is at 12:00 (noon). Early arrivals and extended departures can be coordinated in advance with our concierge, subject to villa availability."
+            },
+            {
+              "question": "Do you provide airport and private boat transfers?",
+              "answer": "Yes. We offer chauffeur-driven luxury vehicle transfers from both regional and international airports. Guests arriving by coastal charter can also disembark directly at our private resort jetty."
+            },
+            {
+              "question": "Can custom dietary requirements and vegan dining be accommodated?",
+              "answer": "Absolutely. Our culinary team caters to plant-based, vegan, Jain, gluten-free, and bespoke ayurvedic diets using fresh organic produce harvested daily from our estate orchards."
+            },
+            {
+              "question": "What is the cancellation and rescheduling policy?",
+              "answer": "Direct bookings enjoy flexible modification or cancellation up to 7 days prior to arrival without penalty. Our dedicated reservations concierge is available 24/7 to assist with changes."
+            },
+            {
+              "question": "Are private wellness and yoga sessions available for beginners?",
+              "answer": "Yes. Our resident masters conduct daily dawn meditation and sunrise yoga suitable for all skill levels, alongside tailored one-on-one wellness consultations and bespoke spa journeys."
+            }
+          ]
+        }
+      },
+      "enquire": {
+        "metadata": {
+          "title": "Enquire Now | Suryavana Hotel & Resort",
+          "description": "Reserve your luxury sanctuary at Suryavana Hotel & Resort. Best rates guaranteed on direct bookings."
+        },
+        "hero": {
+          "title": "Reserve Your Haven",
+          "subtitle": "Share your journey dates and preferences, and our reservations team will curate your stay.",
+          "imageKey": "cabana",
+          "crumbs": [
+            {
+              "label": "Enquire Now"
+            }
+          ]
+        },
+        "form": {
+          "eyebrow": "Direct Reservation",
+          "heading": "Plan Your Suryavana Escape"
+        },
+        "benefits": {
+          "eyebrow": "Direct Advantages",
+          "heading": "Why Book Direct",
+          "intro": "Enjoy dedicated privileges and personalized care crafted exclusively for guests who reserve directly with Suryavana.",
+          "perks": [
+            {
+              "text": "Best-rate guarantee on all direct sanctuary bookings",
+              "icon": "shield"
+            },
+            {
+              "text": "Complimentary private airport transfer on stays of 3+ nights",
+              "icon": "car"
+            },
+            {
+              "text": "Daily organic botanical breakfast included",
+              "icon": "breakfast"
+            },
+            {
+              "text": "Complimentary morning yoga & forest meditation session",
+              "icon": "yoga"
+            },
+            {
+              "text": "Priority villa room selection & upgrade privilege upon availability",
+              "icon": "key"
+            }
+          ],
+          "speakLabel": "Prefer to speak with us directly?",
+          "footnote": "Dedicated Concierge & Personalized Reservations"
+        }
+      },
+      "forms": {
+        "enquiry": {
+          "fields": {
+            "name": {
+              "label": "Full name",
+              "placeholder": "Your name"
+            },
+            "email": {
+              "label": "Email",
+              "placeholder": "you@email.com"
+            },
+            "phone": {
+              "label": "Phone number",
+              "placeholder": "+91 98765 43210"
+            },
+            "room": {
+              "label": "Room type",
+              "placeholder": "Select a preferred sanctuary"
+            },
+            "checkin": {
+              "label": "Check-in"
+            },
+            "checkout": {
+              "label": "Check-out"
+            },
+            "guests": {
+              "label": "Guests"
+            },
+            "occasion": {
+              "label": "Occasion",
+              "options": [
+                "Leisure & Relaxation",
+                "Honeymoon Retreat",
+                "Anniversary Celebration",
+                "Family Sanctuary Holiday",
+                "Wellness & Yoga Immersion"
+              ]
+            },
+            "message": {
+              "label": "Special requests or preferences",
+              "placeholder": "Dietary needs, airport transfer details, surprises, bed arrangements…"
+            }
+          },
+          "submit": "Send Enquiry & Reserve",
+          "submitting": "Confirming Enquiry…"
+        },
+        "contact": {
+          "fields": {
+            "name": {
+              "label": "Name",
+              "placeholder": "Your full name"
+            },
+            "email": {
+              "label": "Email",
+              "placeholder": "you@email.com"
+            },
+            "subject": {
+              "label": "Subject",
+              "placeholder": "Reservation inquiry, event, wellness retreat…"
+            },
+            "message": {
+              "label": "Message",
+              "placeholder": "Write your message here…"
+            }
+          },
+          "submit": "Send Message",
+          "submitting": "Sending Message…"
+        },
+        "guestOptions": {
+          "counts": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "defaultCount": "2",
+          "singular": "Guest",
+          "plural": "Guests"
+        },
+        "redirectHref": "/thank-you",
+        "redirectDelayMs": 350
+      }
+    },
+    "dining": {
+      "metadata": {
+        "title": "Dining & Coastal Gastronomy | Suryavana Hotel & Resort",
+        "description": "Experience four oceanfront dining destinations, wood-fired beach grills, organic botanical harvests, and starlit seven-course tasting journeys timed to the setting sun."
+      },
+      "hero": {
+        "title": "Botanical & Coastal Dining",
+        "subtitle": "Four oceanfront destinations celebrating organic forest harvests, dawn fisherman catches, and wood-fired gastronomy.",
+        "imageKey": "terraceDining",
+        "crumbs": [
+          {
+            "label": "Dining"
+          }
+        ]
+      },
+      "philosophy": {
+        "eyebrow": "Our Culinary Philosophy",
+        "title": "From Surya to Table: Sacred Groves & Ocean Bounty",
+        "description": "At Suryavana, dining is an intimate extension of our sanctuary ethos. Every ingredient honors the sacred balance between Surya—the sun that ripens our estate orchards—and Vana—the rich, fertile forest floor that nurtures our spices and herbs.",
+        "paragraphs": [
+          "We collaborate closely with traditional catamaran fishermen who cast their nets at dawn, bringing pristine snapper, prawns, and crab directly to our shoreline kitchen within hours of catch.",
+          "Our botanical gardens provide fragrant lemongrass, curry leaves, turmeric, and black pepper, while our stone flour mill and wood ovens produce rustic breads baked fresh daily at dawn."
+        ],
+        "badges": [
+          {
+            "icon": "leaf",
+            "iconWrapClass": "bg-teal/15 text-teal",
+            "title": "100% Organic Estates",
+            "text": "Heirloom spices & herbs from our forest gardens."
+          },
+          {
+            "icon": "breakfast",
+            "iconWrapClass": "bg-gold/15 text-gold",
+            "title": "Dawn Ocean Catch",
+            "text": "Sustainable seafood landed fresh at our private jetty."
+          }
+        ],
+        "imageKey": "dining",
+        "imageAlt": "Dining at Suryavana",
+        "stat": {
+          "number": "4",
+          "label": "Dining Venues",
+          "text": "From beachfront fire grills to cliffside tasting rooms"
+        }
+      },
+      "venuesSection": {
+        "eyebrow": "Our Restaurants & Lounges",
+        "title": "Four Distinct Culinary Destinations",
+        "description": "Each venue has been architecturally framed to celebrate a unique hour of daylight, from misty dawn forest breakfasts to starlit ocean banquets.",
+        "highlightsLabel": "Signature Highlights",
+        "highlightPrefix": "✦ ",
+        "reserve": {
+          "label": "Reserve Table",
+          "arrow": "→",
+          "href": "/contact"
+        }
+      },
+      "venues": [
+        {
+          "name": "The Cliffside Terrace",
+          "tagline": "Fine Coastal Dining Synchronized with Golden Hour",
+          "timing": "Breakfast: 07:00 – 10:30 · Dinner: 18:30 – 22:30",
+          "cuisine": "Goan-Portuguese Tasting Journeys & Curated Cellar Vintages",
+          "imageKey": "terraceDining",
+          "description": "Perched high above the azure bay, The Cliffside Terrace celebrates the evening transition from radiant sun to twilight stars. Our culinary team presents an artistic seven-course tasting journey that shifts course-by-course as the sun dips below the horizon.",
+          "highlights": [
+            "Panoramic Ocean Sunset",
+            "Private Wine Cellar",
+            "Chef's Tasting Menu",
+            "Live Sitar Melodies"
+          ],
+          "dressCode": "Smart Resort Casual"
+        },
+        {
+          "name": "Coconut Grove Beach Grill",
+          "tagline": "Barefoot Sand Dining & Wood-Fired Flavors",
+          "timing": "Lunch: 12:30 – 15:30 · Starlight Barbecue: 19:00 – 23:00",
+          "cuisine": "Fresh Catamaran Catch, Charcoal Lobster & Tandoori Aromatics",
+          "imageKey": "grill",
+          "description": "Feel the cool, powdery sands beneath your feet as lanterns flicker in the ocean breeze. Guests choose directly from our iced display of local lobster, kingfish, and tiger prawns, caught at dawn by local fishermen and flame-grilled over seasoned coconut husks.",
+          "highlights": [
+            "Tables on the Sand",
+            "Live Seafood Display",
+            "Open Coconut-Husk Grill",
+            "Craft Local Ales"
+          ],
+          "dressCode": "Barefoot Beach Chic"
+        },
+        {
+          "name": "Vana Botanical Breakfast Pavilion",
+          "tagline": "Sunrise Elixirs, Tropical Breads & Orchard Bounty",
+          "timing": "Daily: 06:30 – 11:30",
+          "cuisine": "Artisanal Sourdough, Cold-Pressed Juices & Ayurvedic Tonics",
+          "imageKey": "breakfast",
+          "description": "Awaken gently in our open-air pavilion nestled beneath wild teak and bamboo groves. Enjoy farm-fresh honeycomb, seasonal passionfruit, bespoke eggs, warm sourdough loaves from our stone oven, and revitalizing Ayurvedic herbal infusions.",
+          "highlights": [
+            "Cold-Pressed Juice Bar",
+            "Stone Oven Bakery",
+            "Forest Birdsong",
+            "Apothecary Herbal Teas"
+          ],
+          "dressCode": "Casual Morning Attire"
+        },
+        {
+          "name": "Sunset Cabana & Aperitif Lounge",
+          "tagline": "Botanical Mixology & Starlit Twilight Tapas",
+          "timing": "Daily: 16:30 – 00:00",
+          "cuisine": "Artisanal Tapas, Cashew Feni Elixirs & Signature Cocktails",
+          "imageKey": "cabana",
+          "description": "The resort's premier evening gathering place. Relax on plush daybeds under swaying palms as master mixologists blend single-estate cashew feni, coconut water, kaffir lime, and roasted spices into unforgettable sundowner cocktails.",
+          "highlights": [
+            "Sunset Daybeds",
+            "Bespoke Botanical Cocktails",
+            "Twilight Acoustic Sessions",
+            "Artisan Mezze Plates"
+          ],
+          "dressCode": "Resort Casual"
+        }
+      ],
+      "cta": {
+        "title": "Reserve Your Culinary Journey",
+        "text": "Whether celebrating a milestone or requesting a quiet corner table for sunset, our dining concierges accommodate dietary preferences and bespoke requirements with effortless grace.",
+        "primary": {
+          "label": "Contact Us For Table Reservation",
+          "href": "/contact"
+        }
+      }
+    },
+    "home": {
+      "about": {
+        "eyebrow": "About the resort",
+        "titleLine1": "A Sunlit Forest Sanctuary",
+        "titleLine2": "Where Nature Whispers & Luxury Abides",
+        "pillars": [
+          {
+            "icon": "sun",
+            "value": 12,
+            "suffix": "+",
+            "label": "Years of Haven"
+          },
+          {
+            "icon": "leaf",
+            "value": 100,
+            "suffix": "%",
+            "label": "Solar & Eco-Built"
+          },
+          {
+            "icon": "shield",
+            "value": 4.9,
+            "decimals": 1,
+            "suffix": " / 5",
+            "label": "Guest Rating"
+          }
+        ],
+        "cta": {
+          "label": "Discover Our Story",
+          "href": "/about"
+        },
+        "mainImageAlt": "Suryavana resort terrace and pool at golden hour",
+        "mainImageBadge": "✦ Sanctuary Vista",
+        "secondaryImageAlt": "Courtyard fountain pool",
+        "secondaryImageCaption": "Fountain Courtyard",
+        "sealLines": [
+          "Est.",
+          "2013"
+        ]
+      },
+      "rooms": {
+        "eyebrow": "Rooms & suites",
+        "title": "Rooms Designed for Rest & Reconnection",
+        "text": "From sunlit garden hideaways to overwater villas, each space is crafted for restorative sleep and tranquil forest mornings.",
+        "cta": {
+          "label": "View All Rooms",
+          "href": "/rooms"
+        }
+      },
+      "experiences": {
+        "eyebrow": "Experiences",
+        "title": "Sacred Rituals & Forest Adventures",
+        "text": "Awaken your senses through dawn yoga, guided forest bathing, and private candlelit dinners."
+      },
+      "testimonials": {
+        "eyebrow": "Testimonials",
+        "title": "Words From Our Guests",
+        "text": "Stories from travellers who found stillness, sunlight and warm hospitality beneath the canopy."
+      },
+      "blog": {
+        "eyebrow": "The Journal",
+        "title": "Stories From the Sanctuary",
+        "text": "Forest wellness, dawn rituals, botanical cuisine and slow living.",
+        "cta": {
+          "label": "Read The Journal",
+          "href": "/blog"
+        }
+      },
+      "cards": {
+        "currency": "₹",
+        "priceLocale": "en-IN",
+        "perNight": "/ night",
+        "detailsSuffix": "details",
+        "sizeUnit": "m²",
+        "guestsPrefix": "Up to",
+        "guestsSuffix": "guests",
+        "roomLink": "View sanctuary details",
+        "readStory": "Read story"
+      },
+      "experienceCard": {
+        "showDetails": "Show details",
+        "hideDetails": "Hide details",
+        "defaultCta": "Discover Dining",
+        "ctaByTitle": {
+          "Beach Adventures": "Explore Beaches",
+          "Pools & Cabanas": "View Waters Gallery"
+        }
+      }
+    },
+    "misc": {
+      "notFound": {
+        "code": "404",
+        "heading": "This shore doesn't exist",
+        "text": "The page you are looking for has drifted out to sea.",
+        "cta": {
+          "label": "Back to Home",
+          "href": "/"
+        }
+      },
+      "thankYou": {
+        "metadata": {
+          "title": "Thank You | Suryavana Hotel & Resort",
+          "description": "Thank you for contacting Suryavana Hotel & Resort. Our concierge team will connect with you shortly."
+        },
+        "hero": {
+          "title": "Thank You",
+          "subtitle": "Your enquiry has been received with warmth. We look forward to welcoming you.",
+          "imageKey": "poolResort",
+          "crumbs": [
+            {
+              "label": "Thank You"
+            }
+          ]
+        },
+        "eyebrow": "Enquiry Confirmed",
+        "heading": "We Have Received Your Request",
+        "textBefore": "Thank you for reaching out to ",
+        "brandName": "Suryavana Hotel & Resort",
+        "textAfter": ". Our reservations team is reviewing your preferences and will respond within 2 to 4 hours with tailored stay options and best direct rates.",
+        "guarantee": {
+          "label": "Sanctuary Guarantee",
+          "text": "Direct Booking Confirmation & Best Rate Privilege"
+        },
+        "links": [
+          {
+            "label": "Return to Homepage",
+            "href": "/"
+          }
+        ],
+        "urgent": "Need urgent assistance with your travel plans? Connect with us immediately:"
+      },
+      "newsletter": {
+        "eyebrow": "The Suryavana Circle",
+        "headingBefore": "Where the ",
+        "headingAccent": "sun",
+        "headingAfter": " awakens the sanctuary.",
+        "text": "Join our private circle to receive seasonal forest retreat offerings, private villa invitations, and wellness journals directly to your inbox.",
+        "placeholder": "Enter your email address",
+        "submit": "SUBSCRIBE",
+        "submitting": "JOINING...",
+        "redirectHref": "/thank-you",
+        "redirectDelayMs": 350
+      },
+      "bookingBar": {
+        "checkIn": "Check-in",
+        "checkOut": "Check-out",
+        "guests": "Guests",
+        "guestCounts": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "defaultGuests": "2",
+        "guestSingular": "Guest",
+        "guestPlural": "Guests",
+        "submit": "Check Availability",
+        "targetHref": "/contact"
+      }
+    },
+    "rooms": {
+      "metadata": {
+        "title": "Rooms & Suites | Suryavana Hotel & Resort",
+        "description": "Explore luxury timber villas, forest suites, and overwater residences at Suryavana Hotel & Resort."
+      },
+      "hero": {
+        "title": "Rooms & Suites",
+        "subtitle": "Sanctuaries crafted for restorative sleep, gentle forest breezes, and golden dawn sunbeams.",
+        "imageKey": "roomOverwater",
+        "crumbs": [
+          {
+            "label": "Rooms & Suites"
+          }
+        ]
+      },
+      "intro": {
+        "eyebrow": "Choose your haven",
+        "title": "Find the Sanctuary That Speaks to You",
+        "text": "From tranquil forest gardens to overwater cliffside pavilions, each space harmonizes with surrounding nature."
+      },
+      "explorer": {
+        "allFilter": "All",
+        "tabListLabel": "Room categories"
+      },
+      "gallery": {
+        "openPhotoLabel": "Open photo {n} of {name}",
+        "photoAlt": "{name} photo {n}",
+        "dialogLabel": "{name} gallery",
+        "closeLabel": "Close gallery",
+        "closeIcon": "×"
+      },
+      "detail": {
+        "fallbackTitle": "Room",
+        "roomsCrumb": {
+          "label": "Rooms & Suites",
+          "href": "/rooms"
+        },
+        "facts": {
+          "size": {
+            "label": "Size",
+            "unit": "m²"
+          },
+          "guests": {
+            "label": "Guests",
+            "prefix": "Up to "
+          },
+          "bed": {
+            "label": "Bed"
+          },
+          "view": {
+            "label": "View"
+          }
+        },
+        "aboutTitle": "About this room",
+        "amenitiesTitle": "Sanctuary Amenities",
+        "priceFrom": "From",
+        "priceCurrency": "₹",
+        "priceLocale": "en-IN",
+        "priceUnit": " / night",
+        "priceNote": "Includes daily organic breakfast. Taxes extra.",
+        "enquire": {
+          "label": "Contact Us",
+          "href": "/contact"
+        },
+        "reservations": {
+          "label": "Talk to Reservations",
+          "href": "/contact"
+        },
+        "related": {
+          "eyebrow": "You may also like",
+          "title": "More Places to Rest"
+        }
+      }
+    },
+    "shared": {
+      "site": {
+        "titleDefault": "Suryavana Hotel & Resort | Sun & Forest Luxury Sanctuary in Goa",
+        "titleTemplate": "%s | Suryavana Hotel & Resort",
+        "description": "Escape to Suryavana Hotel & Resort. Where the golden sun awakens ancient forest sanctuaries, featuring luxury timber villas, wellness rituals, and pristine coastal retreats.",
+        "copyright": "Suryavana Hotel & Resort. All rights reserved. Powered by Lestow.",
+        "wordmark": "SURYAVANA"
+      },
+      "navbar": {
+        "homeAriaLabel": "Suryavana Hotel & Resort home",
+        "cta": {
+          "label": "Contact Us",
+          "href": "/contact"
+        },
+        "drawerHeading": "Sanctuary Navigation",
+        "taglines": [
+          "Sanctuary & Forest Hideaway",
+          "Our Heritage & Philosophy",
+          "Timber Villas & Suites",
+          "Moments in Suryavana",
+          "Journals & Travel Stories",
+          "Botanical Table & Venues",
+          "Reservations & Map"
+        ]
+      },
+      "footer": {
+        "title": "Contact Us",
+        "hoursHeading": "Hours Of Operation",
+        "followLabel": "Follow us on",
+        "links": [
+          {
+            "label": "Home",
+            "href": "/"
+          },
+          {
+            "label": "About Us",
+            "href": "/about"
+          },
+          {
+            "label": "Rooms & Suites",
+            "href": "/rooms"
+          },
+          {
+            "label": "Gallery",
+            "href": "/gallery"
+          },
+          {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          },
+          {
+            "label": "Dining",
+            "href": "/dining"
+          }
+        ],
+        "socials": [
+          {
+            "key": "instagram",
+            "label": "Instagram",
+            "href": "https://instagram.com"
+          },
+          {
+            "key": "facebook",
+            "label": "Facebook",
+            "href": "https://facebook.com"
+          },
+          {
+            "key": "youtube",
+            "label": "YouTube",
+            "href": "https://youtube.com"
+          },
+          {
+            "key": "linkedin",
+            "label": "LinkedIn",
+            "href": "https://linkedin.com"
+          }
+        ]
+      },
+      "hero": {
+        "titleLine1": "Escape to where",
+        "cta": {
+          "label": "Explore Sanctuaries",
+          "href": "/rooms"
+        }
+      }
+    },
+    "wellness": {
+      "metadata": {
+        "title": "Ayurveda & Forest Sanctuary Spa | Suryavana Hotel & Resort",
+        "description": "Immerse in ancient Vedic rituals, mineral waters, sunrise forest yoga, and oceanfront sound bath therapies."
+      },
+      "hero": {
+        "title": "Ayurveda & Forest Sanctuary Spa",
+        "imageKey": "spa",
+        "crumbs": [
+          {
+            "label": "Wellness"
+          }
+        ]
+      },
+      "portals": {
+        "badge": "✦ The Sacred Sanctuary ✦",
+        "title": "Three Portals of Vedic Equilibrium",
+        "text": "Awaken solar vitality with the morning sun, immerse in pure forest botanical oils, and surrender to spring mineral waters.",
+        "centerpieceLabel": "Centerpiece Ritual",
+        "arches": [
+          {
+            "imageKey": "yoga",
+            "alt": "Dawn Yoga & Solar Prana",
+            "badge": "01 · Surya Prana",
+            "icon": "sun",
+            "title": "Solar Awakening",
+            "text": "Open-air teak yoga shala & sunrise ocean breathwork."
+          },
+          {
+            "imageKey": "wellnessShirodhara",
+            "alt": "Ayurvedic Copper Bath & Shirodhara",
+            "badge": "✦ 02 · Vana Healing ✦",
+            "icon": "yogaLotus",
+            "title": "Abhyanga & Shirodhara",
+            "text": "Warm copper bath & third-eye flow with 21 mountain herbs."
+          },
+          {
+            "imageKey": "wellnessMineralBath",
+            "alt": "Spring Mineral Plunge Waters",
+            "badge": "03 · Sacred Waters",
+            "icon": "leaf",
+            "title": "Mineral Plunge & Sound",
+            "text": "Thermal spring hydrotherapy & Tibetan sound bath at dusk."
+          }
+        ],
+        "hallmarks": [
+          {
+            "icon": "sun",
+            "label": "Solar Awakening",
+            "detail": "Daily 06:30 Sunrise Yoga"
+          },
+          {
+            "icon": "leaf",
+            "label": "Cold-Pressed Botanicals",
+            "detail": "100% Estate Organic Oils"
+          },
+          {
+            "icon": "shieldCheck",
+            "label": "Resident Vaidya",
+            "detail": "Nadi Pariksha Pulse Diagnosis"
+          },
+          {
+            "icon": "clock",
+            "label": "Custom Residencies",
+            "detail": "3 to 7 Day Panchakarma"
+          }
+        ]
+      },
+      "treatmentsSection": {
+        "eyebrow": "Signature Therapies",
+        "title": "Curated Healing Journeys",
+        "description": "Administered in private garden suites with warm, cold-pressed botanical oils.",
+        "tagPrefix": "✦ ",
+        "book": {
+          "label": "Book Ritual",
+          "arrow": "→",
+          "href": "/contact"
+        },
+        "audience": "Individual & Couples"
+      },
+      "treatments": [
+        {
+          "title": "Abhyanga & Shirodhara Flow",
+          "duration": "90 Mins",
+          "price": "₹7,500",
+          "imageKey": "wellnessShirodhara",
+          "caption": "Synchronized warm herbal oil massage & continuous third-eye stream for nervous system recovery.",
+          "tags": [
+            "Insomnia Relief",
+            "Warm Herbal Oils"
+          ],
+          "icon": "yogaLotus"
+        },
+        {
+          "title": "Sunrise Ocean Yoga & Pranayama",
+          "duration": "60 Mins",
+          "price": "₹3,500",
+          "imageKey": "yoga",
+          "caption": "Dawn sun salutations and guided breathwork suspended above lotus ponds in the open-air teak shala.",
+          "tags": [
+            "Solar Vitality",
+            "Breathwork"
+          ],
+          "icon": "sun"
+        },
+        {
+          "title": "Forest Herb Poultice (Kizhi)",
+          "duration": "120 Mins",
+          "price": "₹8,800",
+          "imageKey": "wellnessHerbalPoultice",
+          "caption": "Steamed camphor & lemongrass bundles rhythmically tapped over joints, followed by mineral plunge bath.",
+          "tags": [
+            "Deep Muscle Detox",
+            "Thermal Plunge"
+          ],
+          "icon": "leaf"
+        },
+        {
+          "title": "Tibetan Singing Bowl Immersion",
+          "duration": "45 Mins",
+          "price": "₹4,200",
+          "imageKey": "wellnessSingingBowls",
+          "caption": "Seven-metal Himalayan bowls and bronze gongs resonating with evening ocean breezes for deep stillness.",
+          "tags": [
+            "Acoustic Healing",
+            "Chakra Harmony"
+          ],
+          "icon": "shower"
+        }
+      ],
+      "spacesSection": {
+        "eyebrow": "Sanctuary Grounds",
+        "title": "Spaces Designed for Stillness",
+        "description": "Crafted with native teak, spring-fed plunge waters, and secluded forest canopies."
+      },
+      "spaces": [
+        {
+          "title": "Teak Forest Yoga Shala",
+          "badge": "Lotus Grove Sanctuary",
+          "imageKey": "villaGarden",
+          "subtitle": "Open-air timber platform under ancient banyans."
+        },
+        {
+          "title": "Thermal Mineral Plunge Pools",
+          "badge": "Hydrotherapy",
+          "imageKey": "wellnessMineralBath",
+          "subtitle": "Natural spring-fed hot & cool mineral waters."
+        },
+        {
+          "title": "Fountain Courtyard & Apothecary",
+          "badge": "Botanical Herbs",
+          "imageKey": "fountainCourt",
+          "subtitle": "Hand-pressed oils & copper distillation cauldrons."
+        },
+        {
+          "title": "Cliffside Sunset Meditation Deck",
+          "badge": "Twilight Serenity",
+          "imageKey": "cliffSunset",
+          "subtitle": "Uninterrupted horizon views for evening contemplation."
+        }
+      ],
+      "cta": {
+        "title": "Begin Your Healing Residency",
+        "text": "Schedule your confidential Ayurvedic consultation with our resident Vaidya for personalized Panchakarma and herbal retreat programs.",
+        "phone": "Spa Desk: +1 00000 00000",
+        "email": "wellness@xyz.com",
+        "primary": {
+          "label": "Contact Us For Spa Consultation",
+          "href": "/contact"
+        },
+        "secondary": {
+          "label": "Contact Concierge",
+          "href": "/contact"
+        }
+      }
     }
   }
 }

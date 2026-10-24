@@ -3,18 +3,19 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import type { Room } from "@/lib/data";
+import { roomsContent as roomsContent } from "@/lib/data";
 import { RoomCard } from "./Cards";
 
 type RoomsExplorerProps = { rooms: Room[]; filters: string[] };
 
 export function RoomsExplorer({ rooms, filters }: RoomsExplorerProps) {
-  const [active, setActive] = useState("All");
-  const filtered = active === "All" ? rooms : rooms.filter((room) => room.category === active);
+  const [active, setActive] = useState<string>(roomsContent.explorer.allFilter);
+  const filtered = active === roomsContent.explorer.allFilter ? rooms : rooms.filter((room) => room.category === active);
   const visible = filtered.slice(0, 3);
 
   return (
     <div>
-      <div className="mb-12 flex flex-wrap justify-center gap-3" role="tablist" aria-label="Room categories">
+      <div className="mb-12 flex flex-wrap justify-center gap-3" role="tablist" aria-label={roomsContent.explorer.tabListLabel}>
         {filters.map((filter) => (
           <button
             key={filter}

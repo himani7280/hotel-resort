@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IMG, POSTS } from "@/lib/data";
-import { BlogCard } from "../components/Cards";
-import { Reveal, StackList } from "../components/Motion";
-import { PageHero } from "../components/PageHero";
-import { Photo } from "../components/Photo";
-import { Sparkles } from "../components/BgFx";
+import { BlogCard } from "@/components/Cards";
+import { Reveal, StackList } from "@/components/Motion";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { Sparkles } from "@/components/BgFx";
+import { blogContent as blog } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "The Journal | Suryavana Hotel & Resort",
-  description: "Stories of forest wellness, morning sun meditations, botanical cuisine, and coastal sanctuary living.",
+  title: blog.metadata.title,
+  description: blog.metadata.description,
 };
 
 export default function BlogPage() {
@@ -18,10 +19,10 @@ export default function BlogPage() {
   return (
     <>
       <PageHero
-        title="The Suryavana Journal"
-        subtitle="Stories of sacred groves, dawn sun rituals, sustainable architecture, and slow living."
-        image={IMG.beachSunset}
-        crumbs={[{ label: "Blog" }]}
+        title={blog.hero.title}
+        subtitle={blog.hero.subtitle}
+        image={IMG[blog.hero.imageKey as keyof typeof IMG]}
+        crumbs={blog.hero.crumbs}
       />
       <section className="relative isolate mx-auto max-w-7xl px-4 py-4 my-3 sm:px-6 lg:px-8">
         <Sparkles />
@@ -37,9 +38,9 @@ export default function BlogPage() {
               <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
                 <div>
                   <span className="w-fit rounded-full bg-gold px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-forest">
-                    Featured · {featured.category}
+                    {blog.featuredLabel} · {featured.category}
                   </span>
-                  <h2 className="mt-4 font-serif text-2xl font-medium leading-tight text-balance sm:text-3xl">
+                  <h2 className="mt-4 font-serif text-2xl font-medium leading-[1.2] text-balance sm:text-3xl lg:text-[2.25rem]">
                     {featured.title}
                   </h2>
                   <p className="mt-3 text-sm leading-relaxed text-white/80 text-justify [text-align:justify] [text-justify:inter-word]">{featured.excerpt}</p>
@@ -49,7 +50,7 @@ export default function BlogPage() {
                     {featured.date}
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-gold transition-all group-hover:gap-3">
-                    Read story →
+                    {blog.readStory}
                   </span>
                 </div>
               </div>

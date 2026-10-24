@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { VARIANTS } from "@/lib/data";
 import { useIntroDone } from "@/lib/intro";
 import { Sparkles, Waves } from "./BgFx";
 

@@ -42,7 +42,7 @@ export function Logo({ light = false, className = "", size = "md" }: LogoProps) 
   const sizeClasses = {
     sm: "h-9 sm:h-10 w-auto",
     md: "h-11 sm:h-12.5 w-auto",
-    lg: "h-11 sm:h-12.5 w-auto",
+    lg: "h-13 sm:h-14.5 md:h-15 w-auto",
     xl: "h-16 sm:h-18 md:h-20 w-auto",
   }[size];
 

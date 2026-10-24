@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import type { Experience } from "@/lib/data";
 import { Photo } from "./Photo";
+import { homeContent as home } from "@/lib/data";
 
 /** Image card whose details slide up on hover, keyboard focus, or tap. */
 export function ExperienceCard({ item }: { item: Experience }) {
@@ -33,11 +34,7 @@ export function ExperienceCard({ item }: { item: Experience }) {
         >
           <p className="mt-4 border-t border-white/20 pt-4 text-sm leading-relaxed text-white/90">{item.back}</p>
           <Link href={item.href} className="btn-primary btn-gold mt-5 text-[0.72rem]!">
-            {item.title === "Beach Adventures"
-              ? "Explore Beaches"
-              : item.title === "Pools & Cabanas"
-              ? "View Waters Gallery"
-              : "Discover Dining"}
+            {(home.experienceCard.ctaByTitle as Record<string, string>)[item.title] ?? home.experienceCard.defaultCta}
           </Link>
         </motion.div>
 
@@ -47,7 +44,7 @@ export function ExperienceCard({ item }: { item: Experience }) {
           aria-expanded={open}
           className={`absolute right-6 top-[-3.5rem] grid h-11 w-11 place-items-center rounded-full bg-gold text-forest transition-transform duration-500 md:hidden ${open ? "rotate-45" : ""}`}
         >
-          <span className="sr-only">{open ? "Hide details" : "Show details"}</span>
+          <span className="sr-only">{open ? home.experienceCard.hideDetails : home.experienceCard.showDetails}</span>
           <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
             <path d="M12 5v14M5 12h14" />
           </svg>

@@ -29,6 +29,7 @@ export type Testimonial = {
   stay: string;
   rating: number;
   quote: string;
+  avatar?: string;
 };
 
 export type Stat = { value: number; suffix: string; label: string; decimals?: number };
@@ -44,7 +45,7 @@ export type Post = {
   body: string[];
 };
 
-type Brand = { name: string; tagline: string; phone: string; email: string; address: string };
+type Brand = { name: string; tagline: string; phone: string; email: string; address: string; hours: string[] };
 type NavLink = { label: string; href: string };
 
 export const BRAND: Brand = raw.brand;
@@ -74,6 +75,9 @@ export type HomeContent = {
     story: string[];
     values: { title: string; text: string; image: string }[];
     milestones: { year: string; text: string }[];
+    mission: { title: string; text: string };
+    vision: { title: string; text: string };
+    whyUs: { title: string; text: string }[];
   };
   contact: { hours: string; mapSrc: string };
 };
@@ -96,10 +100,15 @@ export const MOTION = raw.motion as unknown as MotionConfig;
  * Variants exported directly from data.json "variants" key
  */
 export const VARIANTS = raw.variants as {
+  hero: Record<"container" | "title" | "subtitle" | "cta", Variants>;
   fade: Variants;
   slideUp: Variants;
   slideDown: Variants;
+  slideLeft: Variants;
+  slideRight: Variants;
   scale: Variants;
+  navbar: Variants;
+  drawerItem: Variants;
   reveal: Record<keyof typeof raw.motion.reveal, Variants>;
   stagger: { container: Variants; item: Variants };
   word: { container: Variants; item: Variants };
@@ -117,3 +126,23 @@ export type GalleryContent = {
 };
 
 export const GALLERY: GalleryContent = raw.gallery;
+
+export type FontConfig = { family: string; weights: string[] };
+export const FONTS = raw.fonts as {
+  sans: FontConfig;
+  serif: FontConfig;
+  display: { family: string; cdnUrl: string; fallback: string };
+};
+
+// Consolidated content exports from single data.json
+export const content = raw.content;
+export const aboutContent = raw.content.about;
+export const blogContent = raw.content.blog;
+export const contactContent = raw.content.contact;
+export const diningContent = raw.content.dining;
+export const homeContent = raw.content.home;
+export const miscContent = raw.content.misc;
+export const roomsContent = raw.content.rooms;
+export const sharedContent = raw.content.shared;
+export const wellnessContent = raw.content.wellness;
+

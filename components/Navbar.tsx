@@ -4,11 +4,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BRAND, NAV_LINKS } from "@/lib/data";
+import { BRAND, NAV_LINKS, VARIANTS } from "@/lib/data";
 import { useIntroDone } from "@/lib/intro";
 import { Logo } from "./Logo";
 import { Sparkles } from "./BgFx";
 import { PhoneIcon, MailIcon } from "@/lib/icons";
+import { sharedContent as shared } from "@/lib/data";
+
+const { navbar } = shared;
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -40,30 +43,31 @@ export function Navbar() {
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const isHome = pathname === "/";
-  const logoSize = isHome && !scrolled ? "xl" : "md";
+  const logoSize = isHome && !scrolled ? "xl" : "lg";
 
   return (
     <>
       <motion.header
-        initial={{ y: -90, opacity: 0 }}
-        animate={done ? { y: 0, opacity: 1 } : undefined}
+        variants={VARIANTS.navbar}
+        initial="hidden"
+        animate={done ? "show" : undefined}
         transition={{ duration: 0.8, ease: EASE }}
-        className="fixed inset-x-0 top-0 z-50 px-3 pt-2 sm:px-6 sm:pt-3"
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+          scrolled || open
+            ? "bg-forest/90 shadow-2xl shadow-black/25 ring-1 ring-white/10 backdrop-blur-xl"
+            : "bg-black/20 backdrop-blur-md"
+        }`}
       >
         <div
-          className={`mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 transition-all duration-500 sm:px-6 lg:px-8 ${
-            scrolled || open
-              ? "bg-forest/90 py-2 shadow-2xl shadow-black/25 ring-1 ring-white/10 backdrop-blur-xl"
-              : isHome
-              ? "bg-transparent py-4 sm:py-5"
-              : "bg-transparent py-2.5 sm:py-3"
+          className={`mx-auto flex max-w-7xl items-center justify-between px-4 transition-all duration-500 sm:px-6 lg:px-8 ${
+            scrolled || open ? "py-2" : isHome ? "py-3 sm:py-4" : "py-2.5 sm:py-3"
           }`}
         >
           {/* Left: Brand Logo */}
           <div className="flex flex-1 items-center justify-start">
             <Link
               href="/"
-              aria-label="Suryavana Hotel & Resort home"
+              aria-label={navbar.homeAriaLabel}
               onClick={() => setOpen(false)}
               className="shrink-0 transition-all duration-500"
             >
@@ -78,8 +82,8 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
-                className={`relative px-3.5 py-2 text-[0.74rem] font-semibold uppercase tracking-[0.18em] transition-colors ${
-                  isActive(link.href) ? "text-gold" : "text-white/95 hover:text-gold"
+                className={`relative px-3.5 py-2 text-[0.8rem] font-extrabold uppercase tracking-[0.16em] drop-shadow-sm transition-colors ${
+                  isActive(link.href) ? "text-gold" : "text-white hover:text-gold"
                 }`}
               >
                 {link.label}
@@ -96,9 +100,11 @@ export function Navbar() {
           {/* Right: Enquire Now CTA & Mobile Hamburger Toggle */}
           <div className="flex flex-1 items-center justify-end gap-3">
             {/* Hidden below 768px (md) */}
-            <Link href="/enquire" className="hidden md:flex btn-primary btn-gold px-6! py-2.5! text-[0.7rem]!">
-              Enquire Now
-            </Link>
+            <div className="hidden md:block">
+              <Link href={navbar.cta.href} className="btn-primary btn-gold px-6! py-2.5! text-[0.7rem]!">
+                {navbar.cta.label}
+              </Link>
+            </div>
             <button
               type="button"
               onClick={() => setOpen((value) => !value)}
@@ -163,24 +169,18 @@ export function Navbar() {
               {/* Staggered Navigation Links */}
               <div className="relative z-10 my-auto py-5">
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-gold/80 mb-3">
-                  Sanctuary Navigation
+                  {navbar.drawerHeading}
                 </p>
                 <ul className="space-y-2">
                   {NAV_LINKS.map((link, index) => {
                     const active = isActive(link.href);
-                    const taglines = [
-                      "Sanctuary & Forest Hideaway",
-                      "Our Heritage & Philosophy",
-                      "Timber Villas & Suites",
-                      "Moments in Suryavana",
-                      "Journals & Concierge Guides",
-                      "Reservations & Map",
-                    ];
+                    const taglines = navbar.taglines;
                     return (
                       <motion.li
                         key={link.href}
-                        initial={{ x: -25, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
+                        variants={VARIANTS.drawerItem}
+                        initial="hidden"
+                        animate="show"
                         transition={{ delay: 0.12 + 0.04 * index, duration: 0.45, ease: EASE }}
                       >
                         <Link
@@ -210,6 +210,9 @@ export function Navbar() {
 
               {/* Drawer Footer: VIP Action & Direct Contact */}
               <div className="relative z-10 border-t border-white/10 pt-5 space-y-3">
+                <Link href={navbar.cta.href} onClick={() => setOpen(false)} className="btn-primary btn-gold w-full">
+                  {navbar.cta.label}
+                </Link>
 
                 <div className="flex items-center justify-between pt-1 text-xs text-white/70">
                   <a href={`tel:${BRAND.phone}`} className="flex items-center gap-1.5 hover:text-gold transition-colors">

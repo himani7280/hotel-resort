@@ -252,10 +252,7 @@ function StackCard({ children, index, total, progress }: StackCardProps) {
   );
 }
 
-/**
- * On phones each child sticks under the navbar and the next one slides over it
- * (stacked-cards scroll). From `sm` up it is a plain layout driven by `className`.
- */
+
 export function StackList({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: [`start ${MOTION.stack.topOffset}px`, "end end"] });

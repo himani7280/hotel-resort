@@ -3,6 +3,9 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import type { FormEvent, ReactNode } from "react";
+import { miscContent as misc } from "@/lib/data";
+
+const bar = misc.bookingBar;
 
 const FIELD =
   "mt-1.5 w-full rounded-xl border border-forest/10 bg-white/70 px-4 py-3 text-sm normal-case tracking-normal text-ink outline-none transition focus:border-gold focus:bg-white focus:ring-4 focus:ring-gold/20";
@@ -24,7 +27,7 @@ export function BookingBar() {
     data.forEach((value, key) => {
       if (typeof value === "string" && value) params.set(key, value);
     });
-    router.push(`/enquire?${params.toString()}`);
+    router.push(`${bar.targetHref}?${params.toString()}`);
   };
 
   return (
@@ -42,7 +45,7 @@ export function BookingBar() {
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <path d="M3 10h18M8 3v4M16 3v4" />
           </Icon>
-          Check-in
+          {bar.checkIn}
           <input type="date" name="checkin" className={FIELD} required />
         </label>
         <label className={LABEL}>
@@ -50,7 +53,7 @@ export function BookingBar() {
             <rect x="3" y="5" width="18" height="16" rx="2" />
             <path d="M3 10h18M8 3v4M16 3v4" />
           </Icon>
-          Check-out
+          {bar.checkOut}
           <input type="date" name="checkout" className={FIELD} required />
         </label>
         <label className={LABEL}>
@@ -58,17 +61,17 @@ export function BookingBar() {
             <circle cx="12" cy="8" r="4" />
             <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
           </Icon>
-          Guests
-          <select name="guests" defaultValue="2" className={FIELD}>
-            {[1, 2, 3, 4, 5, 6].map((count) => (
+          {bar.guests}
+          <select name="guests" defaultValue={bar.defaultGuests} className={FIELD}>
+            {bar.guestCounts.map((count) => (
               <option key={count} value={count}>
-                {count} {count === 1 ? "Guest" : "Guests"}
+                {count} {count === 1 ? bar.guestSingular : bar.guestPlural}
               </option>
             ))}
           </select>
         </label>
         <button type="submit" className="btn-primary btn-gold py-4! sm:col-span-2 lg:col-span-1">
-          Check Availability
+          {bar.submit}
         </button>
       </motion.form>
     </div>

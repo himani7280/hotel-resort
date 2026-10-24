@@ -1,13 +1,15 @@
 "use client";
 
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useTransform, type Variants } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { VARIANTS } from "@/lib/data";
 import { useIntroDone } from "@/lib/intro";
 import { Sparkles, Waves } from "./BgFx";
 import { Magnetic } from "./Fx";
+import { sharedContent as shared } from "@/lib/data";
 
 type HomeHeroProps = {
   images: string[];
@@ -31,9 +33,10 @@ export function HomeHero({ images, phrases }: HomeHeroProps) {
   }, [images.length, index]);
 
   const sequence = phrases.flatMap((phrase) => [phrase, 2200]);
-  const show = (delay: number) => ({
-    initial: { opacity: 0, y: 30 },
-    animate: done ? { opacity: 1, y: 0 } : undefined,
+  const show = (variants: Variants, delay: number) => ({
+    variants,
+    initial: "hidden",
+    animate: done ? "show" : undefined,
     transition: { delay, duration: 0.9, ease: EASE },
   });
 
@@ -63,20 +66,20 @@ export function HomeHero({ images, phrases }: HomeHeroProps) {
       <motion.div style={{ y: textY, opacity: textOpacity }} className="relative z-10 mx-auto max-w-5xl px-4 pb-20 pt-32 sm:px-6">
         {/* 2-line title: Line 1 white text, Line 2 animated text strictly in 1 line */}
         <motion.h1
-          {...show(0.5)}
+          {...show(VARIANTS.hero.title, 0.5)}
           className="mx-auto font-serif text-2xl font-medium tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-xl"
         >
-          <span className="block text-white drop-shadow text-nowrap whitespace-nowrap">Escape to where</span>
+          <span className="block text-white drop-shadow text-nowrap whitespace-nowrap">{shared.hero.titleLine1}</span>
           <span className="block text-gold-gradient italic mt-2 min-h-[1.25em] drop-shadow text-nowrap whitespace-nowrap overflow-hidden">
             {done && <TypeAnimation sequence={sequence} wrapper="span" speed={45} deletionSpeed={65} repeat={Infinity} />}
           </span>
         </motion.h1>
 
         {/* Direct CTA button right below heading */}
-        <motion.div {...show(0.7)} className="mt-8 flex items-center justify-center">
+        <motion.div {...show(VARIANTS.hero.subtitle, 0.7)} className="mt-8 flex items-center justify-center">
           <Magnetic>
-            <Link href="/rooms" className="btn-primary btn-gold px-9 py-3.5 text-xs font-semibold tracking-[0.2em] shadow-xl">
-              Explore Sanctuaries
+            <Link href={shared.hero.cta.href} className="btn-primary btn-gold px-9 py-3.5 text-xs font-semibold tracking-[0.2em] shadow-xl">
+              {shared.hero.cta.label}
             </Link>
           </Magnetic>
         </motion.div>

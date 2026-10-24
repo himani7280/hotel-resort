@@ -1,124 +1,94 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IMG } from "@/lib/data";
-import { Reveal } from "../components/Motion";
-import { PageHero } from "../components/PageHero";
-import { Photo } from "../components/Photo";
-import { Sparkles } from "../components/BgFx";
-import { SectionHeading } from "../components/SectionHeading";
-import { Spotlight } from "../components/Spotlight";
-import { BreakfastIcon, WineIcon, LeafIcon, ClockIcon } from "@/lib/icons";
+import { diningContent as dining } from "@/lib/data";
+import { Reveal } from "@/components/Motion";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { Sparkles } from "@/components/BgFx";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Spotlight } from "@/components/Spotlight";
+import { BreakfastIcon, LeafIcon, ClockIcon } from "@/lib/icons";
 
-export const metadata: Metadata = {
-  title: "Dining & Coastal Gastronomy | Suryavana Hotel & Resort",
-  description: "Experience four oceanfront dining destinations, wood-fired beach grills, organic botanical harvests, and starlit seven-course tasting journeys timed to the setting sun.",
-};
+export const metadata: Metadata = dining.metadata;
 
-const VENUES = [
-  {
-    name: "The Cliffside Terrace",
-    tagline: "Fine Coastal Dining Synchronized with Golden Hour",
-    timing: "Breakfast: 07:00 – 10:30 · Dinner: 18:30 – 22:30",
-    cuisine: "Goan-Portuguese Tasting Journeys & Curated Cellar Vintages",
-    image: IMG.terraceDining,
-    description:
-      "Perched high above the azure bay, The Cliffside Terrace celebrates the evening transition from radiant sun to twilight stars. Our culinary team presents an artistic seven-course tasting journey that shifts course-by-course as the sun dips below the horizon.",
-    highlights: ["Panoramic Ocean Sunset", "Private Wine Cellar", "Chef's Tasting Menu", "Live Sitar Melodies"],
-    dressCode: "Smart Resort Casual",
-  },
-  {
-    name: "Coconut Grove Beach Grill",
-    tagline: "Barefoot Sand Dining & Wood-Fired Flavors",
-    timing: "Lunch: 12:30 – 15:30 · Starlight Barbecue: 19:00 – 23:00",
-    cuisine: "Fresh Catamaran Catch, Charcoal Lobster & Tandoori Aromatics",
-    image: IMG.grill,
-    description:
-      "Feel the cool, powdery sands beneath your feet as lanterns flicker in the ocean breeze. Guests choose directly from our iced display of local lobster, kingfish, and tiger prawns, caught at dawn by local fishermen and flame-grilled over seasoned coconut husks.",
-    highlights: ["Tables on the Sand", "Live Seafood Display", "Open Coconut-Husk Grill", "Craft Local Ales"],
-    dressCode: "Barefoot Beach Chic",
-  },
-  {
-    name: "Vana Botanical Breakfast Pavilion",
-    tagline: "Sunrise Elixirs, Tropical Breads & Orchard Bounty",
-    timing: "Daily: 06:30 – 11:30",
-    cuisine: "Artisanal Sourdough, Cold-Pressed Juices & Ayurvedic Tonics",
-    image: IMG.breakfast,
-    description:
-      "Awaken gently in our open-air pavilion nestled beneath wild teak and bamboo groves. Enjoy farm-fresh honeycomb, seasonal passionfruit, bespoke eggs, warm sourdough loaves from our stone oven, and revitalizing Ayurvedic herbal infusions.",
-    highlights: ["Cold-Pressed Juice Bar", "Stone Oven Bakery", "Forest Birdsong", "Apothecary Herbal Teas"],
-    dressCode: "Casual Morning Attire",
-  },
-  {
-    name: "Sunset Cabana & Aperitif Lounge",
-    tagline: "Botanical Mixology & Starlit Twilight Tapas",
-    timing: "Daily: 16:30 – 00:00",
-    cuisine: "Artisanal Tapas, Cashew Feni Elixirs & Signature Cocktails",
-    image: IMG.cabana,
-    description:
-      "The resort's premier evening gathering place. Relax on plush daybeds under swaying palms as master mixologists blend single-estate cashew feni, coconut water, kaffir lime, and roasted spices into unforgettable sundowner cocktails.",
-    highlights: ["Sunset Daybeds", "Bespoke Botanical Cocktails", "Twilight Acoustic Sessions", "Artisan Mezze Plates"],
-    dressCode: "Resort Casual",
-  },
-];
+const img = (key: string): string => (IMG as Record<string, string>)[key] ?? "";
+
+const ICONS = { leaf: LeafIcon, breakfast: BreakfastIcon } as const;
 
 export default function DiningPage() {
+  const { philosophy, venuesSection, cta } = dining;
   return (
     <>
       <PageHero
-        title="Botanical & Coastal Dining"
-        subtitle="Four oceanfront destinations celebrating organic forest harvests, dawn fisherman catches, and wood-fired gastronomy."
-        image={IMG.terraceDining}
-        crumbs={[{ label: "Dining" }]}
+        title={dining.hero.title}
+        subtitle={dining.hero.subtitle}
+        image={img(dining.hero.imageKey)}
+        crumbs={dining.hero.crumbs}
       />
 
-      {/* Philosophy Section */}
+      {/* Philosophy Section - Left/Right Aligned Layout */}
       <section className="relative isolate mx-auto max-w-7xl px-4 py-8 my-4 sm:px-6 lg:px-8">
         <Sparkles />
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div>
-            <SectionHeading
-              eyebrow="Our Culinary Philosophy"
-              title="From Surya to Table: Sacred Groves & Ocean Bounty"
-              description="At Suryavana, dining is an intimate extension of our sanctuary ethos. Every ingredient honors the sacred balance between Surya—the sun that ripens our estate orchards—and Vana—the rich, fertile forest floor that nurtures our spices and herbs."
-            />
-            <div className="mt-8 space-y-4 text-ink/80 text-justify [text-align:justify] [text-justify:inter-word] leading-relaxed">
-              <p>
-                We collaborate closely with traditional catamaran fishermen who cast their nets at dawn, bringing pristine snapper, prawns, and crab directly to our shoreline kitchen within hours of catch.
-              </p>
-              <p>
-                Our botanical gardens provide fragrant lemongrass, curry leaves, turmeric, and black pepper, while our stone flour mill and wood ovens produce rustic breads baked fresh daily at dawn.
-              </p>
+        <div className="grid items-stretch gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* Left Column: Left-aligned Editorial Content */}
+          <div className="flex h-full flex-col justify-between text-left">
+            <p className="inline-flex items-center gap-2.5 text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.28em] text-teal">
+              <span className="h-px w-6 bg-gold" aria-hidden="true" />
+              {philosophy.eyebrow}
+            </p>
+            <h2 className="mt-2.5 font-serif text-2xl sm:text-3xl lg:text-[2.25rem] font-medium leading-[1.2] text-forest">
+              {philosophy.title}
+            </h2>
+            <p className="mt-4 text-sm sm:text-base font-medium leading-relaxed text-forest/90">
+              {philosophy.description}
+            </p>
+            <div className="mt-4 space-y-3.5 text-left text-sm sm:text-base leading-relaxed text-mist">
+              {philosophy.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
             </div>
 
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="group rounded-2xl border border-forest/10 bg-white p-4 shadow-sm transition-all duration-300 hover:border-gold/40 hover:shadow-md">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-teal/15 text-teal transition-all duration-300 group-hover:bg-gold group-hover:text-forest group-hover:scale-110 shadow-sm">
-                  <LeafIcon size={18} />
-                </span>
-                <h4 className="mt-2.5 font-serif text-base font-semibold text-forest group-hover:text-teal transition-colors">100% Organic Estates</h4>
-                <p className="mt-1 text-xs text-mist">Heirloom spices &amp; herbs from our forest gardens.</p>
-              </div>
-              <div className="group rounded-2xl border border-forest/10 bg-white p-4 shadow-sm transition-all duration-300 hover:border-gold/40 hover:shadow-md">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-gold/15 text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-forest group-hover:scale-110 shadow-sm">
-                  <BreakfastIcon size={18} />
-                </span>
-                <h4 className="mt-2.5 font-serif text-base font-semibold text-forest group-hover:text-teal transition-colors">Dawn Ocean Catch</h4>
-                <p className="mt-1 text-xs text-mist">Sustainable seafood landed fresh at our private jetty.</p>
-              </div>
+            <div className="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {philosophy.badges.map((b) => {
+                const Icon = ICONS[b.icon as keyof typeof ICONS];
+                return (
+                  <div
+                    key={b.title}
+                    className="group rounded-2xl border border-forest/10 bg-white p-4.5 shadow-sm transition-all duration-300 hover:border-gold/50 hover:shadow-md"
+                  >
+                    <span className={`grid h-10 w-10 place-items-center rounded-xl ${b.iconWrapClass} transition-all duration-300 group-hover:bg-gold group-hover:text-forest group-hover:scale-110 shadow-sm`}>
+                      <Icon size={18} />
+                    </span>
+                    <h4 className="mt-2.5 font-serif text-base font-semibold text-forest group-hover:text-teal transition-colors">
+                      {b.title}
+                    </h4>
+                    <p className="mt-1 text-xs text-mist leading-relaxed">{b.text}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          <div className="relative">
-            <Reveal dir="zoom" className="relative h-[420px] w-full overflow-hidden rounded-[2.5rem] shadow-2xl border-2 border-gold/30">
-              <Photo src={IMG.dining} alt="Dining at Suryavana" sizes="(min-width: 1024px) 50vw, 100vw" className="h-full w-full object-cover" />
+          {/* Right Column: Architectural Image & Stat Card */}
+          <div className="relative flex flex-col h-full min-h-[380px] sm:min-h-[440px] lg:min-h-0">
+            <Reveal dir="zoom" className="relative flex-1 h-full w-full overflow-hidden rounded-[2.5rem] shadow-2xl border-2 border-gold/30 group">
+              <Photo
+                src={img(philosophy.imageKey)}
+                alt={philosophy.imageAlt}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-forest/40 via-transparent to-transparent" />
             </Reveal>
-            <div className="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-4 rounded-2xl bg-forest p-4 text-white shadow-xl border border-gold/25">
-              <div className="grid h-12 w-12 place-items-center rounded-xl bg-gold text-forest font-serif font-bold text-xl">
-                4
+
+            <div className="absolute -bottom-5 left-4 sm:-bottom-6 sm:-left-6 flex items-center gap-4 rounded-2xl bg-forest p-4 text-white shadow-2xl border border-gold/30">
+              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gold text-forest font-serif font-bold text-xl shadow-md">
+                {philosophy.stat.number}
               </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-gold">Dining Venues</p>
-                <p className="text-xs text-white/80">From beachfront fire grills to cliffside tasting rooms</p>
+              <div className="min-w-0 pr-2">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-wider text-gold">{philosophy.stat.label}</p>
+                <p className="text-xs text-white/80 line-clamp-1">{philosophy.stat.text}</p>
               </div>
             </div>
           </div>
@@ -128,19 +98,19 @@ export default function DiningPage() {
       {/* 4 Venues Detail Section */}
       <section className="relative isolate mx-auto max-w-7xl px-4 py-8 my-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Our Restaurants & Lounges"
-          title="Four Distinct Culinary Destinations"
-          description="Each venue has been architecturally framed to celebrate a unique hour of daylight, from misty dawn forest breakfasts to starlit ocean banquets."
+          eyebrow={venuesSection.eyebrow}
+          title={venuesSection.title}
+          description={venuesSection.description}
           center
         />
 
         <div className="mt-12 space-y-12">
-          {VENUES.map((venue, idx) => (
+          {dining.venues.map((venue, idx) => (
             <Reveal key={venue.name} delay={idx * 0.1}>
               <Spotlight className="group overflow-hidden rounded-[2rem] bg-white shadow-xl shadow-forest/5 ring-1 ring-forest/10 transition-all duration-300 hover:shadow-2xl">
                 <div className={`grid gap-8 lg:grid-cols-12 items-center ${idx % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
                   <div className={`relative h-72 sm:h-84 lg:h-full lg:min-h-[360px] overflow-hidden ${idx % 2 === 1 ? "lg:col-span-6 lg:order-2" : "lg:col-span-6"}`}>
-                    <Photo src={venue.image} alt={venue.name} sizes="(min-width: 1024px) 50vw, 100vw" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <Photo src={img(venue.imageKey)} alt={venue.name} sizes="(min-width: 1024px) 50vw, 100vw" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                     <span className="absolute left-4 top-4 rounded-full bg-forest/85 backdrop-blur-md px-3.5 py-1.5 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-gold border border-gold/20">
                       {venue.dressCode}
                     </span>
@@ -163,11 +133,11 @@ export default function DiningPage() {
                     </p>
 
                     <div className="mt-6 border-t border-forest/10 pt-4">
-                      <p className="text-xs font-semibold uppercase tracking-wider text-forest/70 mb-2.5">Signature Highlights</p>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-forest/70 mb-2.5">{venuesSection.highlightsLabel}</p>
                       <div className="flex flex-wrap gap-2">
                         {venue.highlights.map((h) => (
                           <span key={h} className="rounded-full bg-sand px-3 py-1 text-xs font-medium text-forest transition-colors hover:bg-gold hover:text-forest">
-                            ✦ {h}
+                            {venuesSection.highlightPrefix}{h}
                           </span>
                         ))}
                       </div>
@@ -175,10 +145,10 @@ export default function DiningPage() {
 
                     <div className="mt-8 pt-5 border-t border-forest/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <Link
-                        href="/enquire"
+                        href={venuesSection.reserve.href}
                         className="inline-flex items-center justify-center gap-2.5 rounded-full bg-forest px-7 py-3 text-xs font-semibold uppercase tracking-widest text-white transition-all hover:bg-teal shadow-md whitespace-nowrap shrink-0 w-fit"
                       >
-                        <span>Reserve Table</span> <span>→</span>
+                        <span>{venuesSection.reserve.label}</span> <span>{venuesSection.reserve.arrow}</span>
                       </Link>
                       <span className="text-xs text-mist font-medium">{venue.cuisine}</span>
                     </div>
@@ -197,23 +167,17 @@ export default function DiningPage() {
             <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-gold/15 blur-3xl" />
             <div className="pointer-events-none absolute -left-20 -bottom-20 h-64 w-64 rounded-full bg-teal/20 blur-3xl" />
             <h3 className="relative font-serif text-3xl font-medium sm:text-4xl">
-              Reserve Your Culinary Journey
+              {cta.title}
             </h3>
             <p className="relative mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/80">
-              Whether celebrating a milestone or requesting a quiet corner table for sunset, our dining concierges accommodate dietary preferences and bespoke requirements with effortless grace.
+              {cta.text}
             </p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-4">
               <Link
-                href="/enquire"
+                href={cta.primary.href}
                 className="rounded-full bg-gold px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-forest shadow-lg transition hover:bg-white"
               >
-                Inquire For Table Reservation
-              </Link>
-              <Link
-                href="/contact"
-                className="rounded-full border border-white/30 px-8 py-3.5 text-xs font-semibold uppercase tracking-widest text-white transition hover:bg-white/10"
-              >
-                Contact Concierge Desk
+                {cta.primary.label}
               </Link>
             </div>
           </div>

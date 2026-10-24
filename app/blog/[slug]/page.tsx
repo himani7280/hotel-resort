@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { POSTS, getPost } from "@/lib/data";
-import { Reveal } from "../../components/Motion";
-import { PageHero } from "../../components/PageHero";
-import { Photo } from "../../components/Photo";
+import { Reveal } from "@/components/Motion";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { blogContent as blog } from "@/lib/data";
 
 export const generateStaticParams = () => POSTS.map((post) => ({ slug: post.slug }));
 
 export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  return { title: post?.title ?? "Article", description: post?.excerpt };
+  return { title: post?.title ?? blog.detail.fallbackTitle, description: post?.excerpt };
 }
 
 export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug]">) {
@@ -21,7 +22,6 @@ export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug
 
   const index = POSTS.findIndex((item) => item.slug === post.slug);
   const next = POSTS[(index + 1) % POSTS.length];
-  const categories = [...new Set(POSTS.map((item) => item.category))];
   const recent = POSTS.filter((item) => item.slug !== post.slug).slice(0, 6);
 
   return (
@@ -30,7 +30,7 @@ export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug
         title={post.title}
         subtitle={post.date}
         image={post.image}
-        crumbs={[{ label: "Blog", href: "/blog" }, { label: post.category }]}
+        crumbs={[blog.detail.blogCrumb, { label: post.category }]}
       />
 
       <section className="relative isolate mx-auto grid max-w-7xl gap-8 px-4 py-4 my-3 sm:px-6 lg:grid-cols-[1fr_360px] lg:gap-10 lg:px-8">
@@ -50,32 +50,28 @@ export default async function BlogDetailsPage({ params }: PageProps<"/blog/[slug
             </div>
           </div>
 
+          <Reveal className="mt-8">
+            <Link href={blog.detail.backHome.href} className="inline-flex items-center gap-2 text-sm font-semibold text-forest transition-colors hover:text-gold">
+              {blog.detail.backHome.label}
+            </Link>
+          </Reveal>
+
           {next && (
             <Reveal className="mt-8 pt-2">
               <Link href={`/blog/${next.slug}`} className="group flex items-center justify-between gap-4 rounded-2xl bg-forest p-5 text-white transition hover:bg-teal">
                 <span>
-                  <span className="block text-xs uppercase tracking-widest text-gold">Next story</span>
+                  <span className="block text-xs uppercase tracking-widest text-gold">{blog.detail.nextStory}</span>
                   <span className="mt-1 block font-serif text-lg sm:text-xl">{next.title}</span>
                 </span>
-                <span className="text-2xl transition-transform group-hover:translate-x-2">→</span>
+                <span className="text-2xl transition-transform group-hover:translate-x-2">{blog.detail.nextArrow}</span>
               </Link>
             </Reveal>
           )}
         </article>
 
         <aside className="flex flex-col space-y-6">
-          <Reveal dir="right" className="rounded-3xl bg-white p-6 shadow-lg shadow-forest/5">
-            <h2 className="font-serif text-2xl text-forest">Categories</h2>
-            <ul className="mt-3.5 flex flex-wrap gap-2">
-              {categories.map((category) => (
-                <li key={category} className={`rounded-full px-3.5 py-1 text-xs font-medium sm:text-sm ${category === post.category ? "bg-forest text-white" : "bg-sand text-forest"}`}>
-                  {category}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
           <Reveal dir="right" delay={0.1} className="flex-1 rounded-3xl bg-white p-6 shadow-lg shadow-forest/5">
-            <h2 className="font-serif text-2xl text-forest">Recent posts</h2>
+            <h2 className="font-serif text-2xl font-medium text-forest">{blog.detail.recentTitle}</h2>
             <ul className="mt-3 divide-y divide-forest/10">
               {recent.map((item) => (
                 <li key={item.slug} className="py-3.5 first:pt-0 last:pb-0">

@@ -1,70 +1,66 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BRAND, IMG } from "@/lib/data";
-import { PageHero } from "../components/PageHero";
-import { ShieldCheckIcon, PhoneIcon, MailIcon, WhatsAppIcon } from "@/lib/icons";
+import { PageHero } from "@/components/PageHero";
+import { ShieldCheckIcon, PhoneIcon, MailIcon } from "@/lib/icons";
+import { miscContent as misc } from "@/lib/data";
+
+const page = misc.thankYou;
 
 export const metadata: Metadata = {
-  title: "Thank You | Suryavana Hotel & Resort",
-  description: "Thank you for contacting Suryavana Hotel & Resort. Our concierge team will connect with you shortly.",
+  title: page.metadata.title,
+  description: page.metadata.description,
 };
 
 export default function ThankYouPage() {
   return (
     <>
       <PageHero
-        title="Thank You"
-        subtitle="Your enquiry has been received with warmth. We look forward to welcoming you."
-        image={IMG.poolResort}
-        crumbs={[{ label: "Thank You" }]}
+        title={page.hero.title}
+        subtitle={page.hero.subtitle}
+        image={IMG[page.hero.imageKey as keyof typeof IMG]}
+        crumbs={page.hero.crumbs}
       />
 
-      <section className="relative isolate mx-auto max-w-4xl px-4 py-8 my-6 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-white p-8 sm:p-12 shadow-2xl shadow-forest/10 border border-forest/5 text-center">
-          <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold/15 text-gold mb-6 ring-8 ring-gold/10">
-            <ShieldCheckIcon size={40} className="text-gold" />
+      <section className="relative isolate mx-auto max-w-3xl px-4 py-8 my-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl bg-white p-6 sm:p-10 lg:p-12 shadow-2xl shadow-forest/10 border border-forest/5 text-center">
+          <div className="mx-auto flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-gold/15 text-gold mb-5 sm:mb-6 ring-8 ring-gold/10">
+            <ShieldCheckIcon size={36} className="text-gold sm:w-10 sm:h-10" />
           </div>
 
-          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Enquiry Confirmed</span>
-          <h2 className="mt-2 font-serif text-3xl font-medium text-forest sm:text-5xl">
-            We Have Received Your Request
+          <span className="text-[0.7rem] sm:text-xs font-semibold uppercase tracking-[0.28em] text-gold">{page.eyebrow}</span>
+          <h2 className="mt-2 font-serif text-2xl font-medium text-forest sm:text-3xl lg:text-[2.25rem] leading-tight">
+            {page.heading}
           </h2>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-mist">
-            Thank you for reaching out to <strong className="text-forest font-semibold">Suryavana Hotel &amp; Resort</strong>. Our reservations and concierge team is reviewing your preferences and will respond within 2 to 4 hours with tailored stay options and best direct rates.
+          <p className="mx-auto mt-3 sm:mt-4 max-w-xl text-sm sm:text-base leading-relaxed text-mist">
+            {page.textBefore}<strong className="text-forest font-semibold">{page.brandName}</strong>{page.textAfter}
           </p>
 
-          <div className="mt-8 rounded-2xl bg-sand/40 border border-forest/10 p-5 max-w-md mx-auto text-sm text-forest">
-            <p className="text-xs uppercase tracking-widest text-mist font-semibold">Sanctuary Guarantee</p>
-            <p className="mt-1.5 font-serif text-lg font-medium text-forest">Direct Booking Confirmation &amp; Best Rate Privilege</p>
+          <div className="mt-6 sm:mt-8 rounded-2xl bg-sand/40 border border-forest/10 p-4 sm:p-5 max-w-md mx-auto text-sm text-forest">
+            <p className="text-[0.68rem] sm:text-xs uppercase tracking-widest text-mist font-semibold">{page.guarantee.label}</p>
+            <p className="mt-1 font-serif text-base sm:text-lg font-medium text-forest">{page.guarantee.text}</p>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4 border-t border-forest/10 pt-8">
-            <Link href="/" className="btn-primary btn-gold px-8 py-3.5 text-xs tracking-wider">
-              Return to Homepage
-            </Link>
-            <Link href="/rooms" className="btn-primary btn-gold px-8 py-3.5 text-xs tracking-wider">
-              Explore Sanctuaries
-            </Link>
-            <Link href="/gallery" className="btn-primary btn-gold px-8 py-3.5 text-xs tracking-wider">
-              View Gallery
-            </Link>
+          <div className="mt-8 flex items-center justify-center border-t border-forest/10 pt-6">
+            {page.links.map((link) => (
+              <Link key={link.href} href={link.href} className="btn-primary btn-gold px-8 py-3.5 text-xs tracking-wider inline-flex items-center gap-2">
+                {link.label}
+              </Link>
+            ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-forest/10 text-xs text-mist">
-            <p>Need urgent assistance with your travel plans? Connect with us immediately:</p>
-            <div className="mt-3 flex flex-wrap items-center justify-center gap-6 text-sm text-forest font-medium">
+          <div className="mt-8 pt-6 border-t border-forest/10 text-xs text-mist">
+            <p>{page.urgent}</p>
+            <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-forest font-medium">
               <a href={`tel:${BRAND.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 hover:text-gold transition-colors">
                 <PhoneIcon size={16} className="text-gold" />
                 {BRAND.phone}
               </a>
+              <span className="hidden sm:inline text-mist/40">&bull;</span>
               <a href={`mailto:${BRAND.email}`} className="inline-flex items-center gap-2 hover:text-gold transition-colors">
                 <MailIcon size={16} className="text-gold" />
                 {BRAND.email}
-              </a>
-              <a href={`https://wa.me/${BRAND.phone.replace(/[^0-9]/g, "")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-gold transition-colors">
-                <WhatsAppIcon size={16} className="text-gold" />
-                WhatsApp Concierge
               </a>
             </div>
           </div>

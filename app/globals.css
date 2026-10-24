@@ -9,9 +9,9 @@
   --color-gold: var(--c-gold);
   --color-ink: var(--c-ink);
   --color-mist: var(--c-mist);
-  --font-sans: var(--font-poppins), 'Poppins', system-ui, sans-serif;
-  --font-serif: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
-  --font-title: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-heading);
+  --font-title: var(--font-heading);
 }
 
 /* ---- Themes: switched with <html data-theme="..."> ---- */
@@ -38,7 +38,7 @@ html {
 body {
   background: var(--color-cream);
   color: var(--color-ink);
-  font-family: var(--font-sans), 'Poppins', system-ui, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.7;
   text-rendering: optimizeLegibility;
@@ -46,13 +46,13 @@ body {
 
 /* Heading font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: var(--font-heading);
   letter-spacing: -0.015em;
 }
 
 .font-serif,
 .font-title {
-  font-family: 'Google Sans', var(--font-title), 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-family: var(--font-heading) !important;
   letter-spacing: -0.01em;
 }
 
@@ -64,55 +64,6 @@ h1, h2, h3, h4, h5, h6 {
 
 a, button, summary, [role="button"] {
   cursor: pointer;
-}
-
-/* ================================================================
-   Standard section layout — equal padding + header-aligned content
-   Usage: <section className="section"> <div className="section-inner"> … </div> </section>
-   ================================================================ */
-.section {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-@media (min-width: 640px) {
-  .section {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-/* Inner container aligned with navbar max-w-7xl */
-.section-inner {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 80rem; /* = max-w-7xl */
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-  .section-inner {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .section-inner {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
 }
 
 /* ================================================================

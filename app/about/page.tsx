@@ -1,31 +1,37 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HOME, IMG } from "@/lib/data";
-import { FlipCard, Reveal, StackList } from "../components/Motion";
-import { PageHero } from "../components/PageHero";
-import { Photo } from "../components/Photo";
-import { Sparkles } from "../components/BgFx";
-import { SectionHeading } from "../components/SectionHeading";
+import { FlipCard, Reveal, StackList } from "@/components/Motion";
+import { PageHero } from "@/components/PageHero";
+import { Photo } from "@/components/Photo";
+import { Sparkles } from "@/components/BgFx";
+import { SectionHeading } from "@/components/SectionHeading";
+import { aboutContent as about } from "@/lib/data";
 import { SunIcon, LeafIcon, YogaLotusIcon, ShieldCheckIcon } from "@/lib/icons";
 
 export const metadata: Metadata = {
-  title: "About Us | Suryavana Hotel & Resort",
-  description: "Discover the story of Suryavana Hotel & Resort. Where the sun awakens ancient forest sanctuaries in harmony with luxury eco-hospitality.",
+  title: about.metadata.title,
+  description: about.metadata.description,
 };
 
 export default function AboutPage() {
-  const { story, values } = HOME.about;
+  const { story, values, mission, vision, whyUs } = HOME.about;
   const [main, second, third] = story;
+  const { gallery, heritage } = about;
 
   const valueIcons = [SunIcon, LeafIcon, YogaLotusIcon, ShieldCheckIcon];
+  const missionVision = [
+    { ...mission, icon: SunIcon },
+    { ...vision, icon: LeafIcon },
+  ];
 
   return (
     <>
       <PageHero
-        title="A Haven of Sun & Forest"
-        subtitle="Twelve years of warm welcomes, gentle sunbeams, and the timeless pace of the sanctuary."
-        image={IMG.whiteVilla}
-        crumbs={[{ label: "About Us" }]}
+        title={about.hero.title}
+        subtitle={about.hero.subtitle}
+        image={IMG[about.hero.imageKey as keyof typeof IMG]}
+        crumbs={about.hero.crumbs}
       />
 
       {/* Story Section - Header Aligned, Rich 4-Image Editorial Collage */}
@@ -33,18 +39,18 @@ export default function AboutPage() {
         <Sparkles />
         <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Column: Rich Editorial Architectural Gallery */}
-          <div className="flex flex-col justify-between h-full gap-4">
+          <div className="flex h-full flex-col gap-4">
             {/* Grand top image with arched curvature */}
             {main && (
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden rounded-t-[4rem] rounded-b-2xl shadow-xl group border-2 border-gold/30">
+              <div className="relative min-h-64 flex-1 sm:min-h-72 w-full overflow-hidden rounded-t-[4rem] rounded-b-2xl shadow-xl group border-2 border-gold/30">
                 <Photo
                   src={main}
-                  alt="Suryavana resort pool and villas"
+                  alt={gallery.main.alt}
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <span className="absolute bottom-3 left-4 glass-light text-forest text-[0.68rem] font-semibold uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md pointer-events-none">
-                  ✦ Sanctuary Pool &amp; Villas ✦
+                  {gallery.main.badge}
                 </span>
               </div>
             )}
@@ -55,12 +61,12 @@ export default function AboutPage() {
                 <div className="relative h-40 sm:h-48 w-full overflow-hidden rounded-2xl shadow-md group border border-gold/30">
                   <Photo
                     src={second}
-                    alt="Pool deck loungers in sunlight"
+                    alt={gallery.second.alt}
                     sizes="25vw"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <span className="absolute bottom-2 left-2 text-[0.62rem] font-medium bg-forest/90 text-gold px-3 py-1 rounded-full pointer-events-none shadow border border-gold/20">
-                    Sun Deck
+                    {gallery.second.badge}
                   </span>
                 </div>
               )}
@@ -68,33 +74,33 @@ export default function AboutPage() {
                 <div className="relative h-40 sm:h-48 w-full overflow-hidden rounded-2xl shadow-md group border border-gold/30">
                   <Photo
                     src={third}
-                    alt="Resort pool at night under stars"
+                    alt={gallery.third.alt}
                     sizes="25vw"
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <span className="absolute bottom-2 left-2 text-[0.62rem] font-medium bg-forest/90 text-gold px-3 py-1 rounded-full pointer-events-none shadow border border-gold/20">
-                    Night Serenity
+                    {gallery.third.badge}
                   </span>
                 </div>
               )}
             </div>
 
             {/* Bottom 4th stylish image */}
-            <div className="relative h-44 sm:h-52 w-full overflow-hidden rounded-2xl border-2 border-gold/45 shadow-xl group">
+            <div className="relative min-h-44 flex-1 sm:min-h-52 w-full overflow-hidden rounded-2xl border-2 border-gold/45 shadow-xl group">
               <Photo
-                src={IMG.fountainCourt}
-                alt="Fountain courtyard and ancient teak pavilion"
+                src={IMG[gallery.fourth.imageKey as keyof typeof IMG]}
+                alt={gallery.fourth.alt}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent p-3.5 sm:p-4 pointer-events-none">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-white text-xs font-serif font-medium tracking-wide">Fountain Courtyard &amp; Ancient Teak Pavilion</p>
-                    <p className="text-gold text-[0.65rem] uppercase tracking-wider">Hand-chiseled laterite stone &amp; sustainable architecture</p>
+                    <p className="text-white text-xs font-serif font-medium tracking-wide">{gallery.fourth.title}</p>
+                    <p className="text-gold text-[0.65rem] uppercase tracking-wider">{gallery.fourth.subtitle}</p>
                   </div>
                   <span className="h-7 w-7 grid place-items-center rounded-full bg-gold text-forest text-xs font-bold shadow-md shrink-0 ml-2">
-                    ✦
+                    {gallery.fourth.mark}
                   </span>
                 </div>
               </div>
@@ -107,56 +113,142 @@ export default function AboutPage() {
             <div className="pointer-events-none absolute -left-20 -top-20 h-56 w-56 rounded-full bg-teal/10 blur-3xl" />
 
             <div>
-              <SectionHeading eyebrow="Our Heritage" title="From Sacred Forest to Sunlit Sanctuary" />
+              <SectionHeading eyebrow={heritage.eyebrow} title={heritage.title} />
               <Reveal delay={0.15} className="mt-4 space-y-3 leading-relaxed text-forest/85">
-                <p>
-                  Suryavana was founded in 2013 on an untouched expanse where ancient teak groves and coconut canopies met golden coastal breezes. Our founders envisioned an eco-haven where the pace of life matched the gentle, restorative rhythm of the forest and the sun.
-                </p>
-                <p>
-                  Today, the resort has blossomed into secluded timber villas, hillside suites, organic dining pavilions, and holistic wellness spaces. Yet the founding ethos remains pure: warm hospitality, honest botanical nourishment, and spaces that let your soul breathe deeply.
-                </p>
+                {heritage.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </Reveal>
 
               {/* Heritage Hallmarks */}
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-3 border-t border-gold/25">
-                <div className="flex items-center gap-2 text-xs font-medium text-forest">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                  <span>100% Natural Canopy Preserved</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-forest">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                  <span>Solar-Powered &amp; Pure Spring Waters</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-forest">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                  <span>Hand-Chiseled Laterite Architecture</span>
-                </div>
-                <div className="flex items-center gap-2 text-xs font-medium text-forest">
-                  <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
-                  <span>Zero Single-Use Plastic Sanctuary</span>
-                </div>
+                {heritage.hallmarks.map((hallmark) => (
+                  <div key={hallmark} className="flex items-center gap-2 text-xs font-medium text-forest">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold shrink-0" />
+                    <span>{hallmark}</span>
+                  </div>
+                ))}
               </div>
 
               {/* Founder quote */}
               <div className="mt-6 rounded-2xl border border-gold/45 bg-white/75 p-5 italic text-forest shadow-sm backdrop-blur-sm">
                 <p className="text-sm leading-relaxed">
-                  &ldquo;We believe true luxury is space, sunlight filtering through teak leaves, birdsong at dawn, and unhurried stillness.&rdquo;
+                  {heritage.quote.text}
                 </p>
                 <p className="mt-2 text-xs font-semibold not-italic uppercase tracking-widest text-gold">
-                  — The Suryavana Founders · Est. 2013
+                  {heritage.quote.author}
                 </p>
               </div>
             </div>
 
             <div className="mt-6 flex flex-wrap items-center gap-4 border-t border-gold/25 pt-5">
-              <Link href="/rooms" className="btn-primary btn-gold">
-                Explore Sanctuaries
-              </Link>
-              <Link href="/contact" className="btn-primary btn-gold">
-                Connect With Us
-              </Link>
+              {heritage.buttons.map((button) => (
+                <Link key={button.href} href={button.href} className="btn-primary btn-gold">
+                  {button.label}
+                </Link>
+              ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="relative isolate mx-auto max-w-7xl px-4 py-8 my-3 sm:px-6 lg:px-8">
+        <SectionHeading center eyebrow={about.missionVision.eyebrow} title={about.missionVision.title} />
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {missionVision.map(({ title, text, icon: Icon }, idx) => {
+            const isMission = idx === 0;
+            return (
+              <Reveal key={title} delay={idx * 0.15}>
+                <div
+                  className={`group relative h-full overflow-hidden border-2 border-gold/40 bg-gradient-to-br from-[#faf7f2] via-[#f7f2e8] to-[#eee4d4] p-8 sm:p-10 shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-gold ${
+                    isMission
+                      ? "rounded-tl-none rounded-tr-3xl rounded-br-3xl rounded-bl-3xl"
+                      : "rounded-tr-none rounded-tl-3xl rounded-bl-3xl rounded-br-3xl"
+                  }`}
+                >
+                  {/* Decorative sharp-corner gold accent bracket */}
+                  <div
+                    className={`absolute top-0 ${
+                      isMission ? "left-0 border-t-[4px] border-l-[4px]" : "right-0 border-t-[4px] border-r-[4px]"
+                    } border-gold h-8 w-8`}
+                  />
+
+                  {/* Faint luxury background watermark */}
+                  <span className="pointer-events-none absolute -bottom-6 -right-6 font-serif text-9xl text-forest/5 select-none transition-transform duration-700 group-hover:scale-110">
+                    {isMission ? "M" : "V"}
+                  </span>
+
+                  <div className="relative">
+                    <div className="flex items-center justify-between">
+                      <span className="grid h-14 w-14 place-items-center rounded-2xl bg-forest text-gold shadow-lg shadow-forest/20 ring-2 ring-gold/40 transition-transform duration-300 group-hover:scale-110">
+                        <Icon size={26} />
+                      </span>
+                      <span className="rounded-full bg-forest/10 px-3.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-forest/70 border border-forest/10">
+                        {isMission ? "Our Purpose" : "Our Horizon"}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-6 font-serif text-2xl sm:text-3xl font-medium text-forest">{title}</h3>
+                    <p className="mt-3.5 text-sm sm:text-base leading-relaxed text-forest/80 font-normal">{text}</p>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="relative isolate my-3 overflow-hidden bg-forest py-12 sm:py-16">
+        <Sparkles />
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            center
+            light
+            eyebrow={about.whyUs.eyebrow}
+            title={about.whyUs.title}
+            text={about.whyUs.text}
+          />
+          <StackList className="mt-8 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+            {whyUs.map((item, i) => {
+              const WhyIcon = valueIcons[i % valueIcons.length];
+              return (
+                <div
+                  key={item.title}
+                  className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-6 sm:p-7 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:border-gold/60 hover:shadow-[0_16px_36px_rgba(212,175,55,0.18)]"
+                >
+                  {/* Subtle top gold accent glow on hover */}
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                  {/* Header: Icon & Numeral */}
+                  <div>
+                    <div className="flex items-center justify-between">
+                      <span className="grid h-12 w-12 place-items-center rounded-xl bg-gold/15 text-gold border border-gold/30 shadow-md transition-all duration-500 group-hover:bg-gold group-hover:text-forest group-hover:scale-110">
+                        <WhyIcon size={22} />
+                      </span>
+                      <span className="font-serif text-3xl font-light text-gold/35 transition-colors duration-300 group-hover:text-gold">
+                        0{i + 1}
+                      </span>
+                    </div>
+
+                    <h3 className="mt-5 font-serif text-xl font-medium text-white group-hover:text-gold transition-colors duration-300">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2.5 text-sm leading-relaxed text-white/70">
+                      {item.text}
+                    </p>
+                  </div>
+
+                  {/* Bottom micro accent */}
+                  <div className="mt-6 flex items-center gap-1.5 text-xs text-gold/60 group-hover:text-gold transition-colors duration-300">
+                    <span className="h-px w-6 bg-gold/40 group-hover:w-10 transition-all duration-300" />
+                    <span className="text-[0.65rem] uppercase tracking-widest font-semibold">Sanctuary Detail</span>
+                  </div>
+                </div>
+              );
+            })}
+          </StackList>
         </div>
       </section>
 
@@ -166,9 +258,9 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <SectionHeading
             center
-            eyebrow="What We Cherish"
-            title="Values That Shape Every Suryavana Stay"
-            text="Rooted in reverence for nature, sustainable luxury, and generous hospitality."
+            eyebrow={about.values.eyebrow}
+            title={about.values.title}
+            text={about.values.text}
           />
           <StackList className="mt-8 sm:grid sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {values.map((value, i) => {
@@ -188,7 +280,7 @@ export default function AboutPage() {
                               <IconComp size={20} />
                             </span>
                             <h3 className="font-serif text-2xl font-medium leading-snug">{value.title}</h3>
-                            <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-gold">Tap to explore ↻</p>
+                            <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-gold">{about.values.flipHint}</p>
                           </div>
                         </div>
                       </div>

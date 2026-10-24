@@ -3,7 +3,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
-import type { GalleryItem } from "@/lib/data";
+import { createPortal } from "react-dom";
+import { VARIANTS, type GalleryItem } from "@/lib/data";
 import { Photo } from "./Photo";
 
 type GalleryExplorerProps = { items: GalleryItem[]; categories: string[] };
@@ -20,6 +21,8 @@ function getSpan(index: number, total: number) {
 export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
   const [active, setActive] = useState("All");
   const [open, setOpen] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const visible = active === "All" ? items : items.filter((item) => item.category === active);
 
   const step = useCallback(
@@ -113,7 +116,8 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
         </AnimatePresence>
       </motion.div>
 
-      {/* ── Lightbox ── */}
+      {/* ── Lightbox (portal: page-transition transforms would otherwise trap position:fixed) ── */}
+      {mounted && createPortal(
       <AnimatePresence>
         {current && (
           <motion.div
@@ -132,7 +136,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              background: "rgba(0,0,0,0.96)",
+              background: "#000",
               margin: 0,
             }}
           >
@@ -150,7 +154,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
                 alignItems: "center",
                 width: "100%",
                 maxWidth: "90vw",
-                padding: "0 3.5rem",
+                padding: "0 clamp(0.5rem, 5vw, 4.5rem)",
               }}
             >
               {/* Image wrapper */}
@@ -158,7 +162,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
                 style={{
                   position: "relative",
                   width: "100%",
-                  height: "80vh",
+                  height: "78vh",
                 }}
               >
                 <Image
@@ -237,7 +241,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               onClick={(e) => { e.stopPropagation(); step(-1); }}
               style={{
                 position: "absolute",
-                left: "1rem",
+                left: "0.5rem",
                 top: "50%",
                 transform: "translateY(-50%)",
                 zIndex: 100000,
@@ -267,7 +271,7 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
               onClick={(e) => { e.stopPropagation(); step(1); }}
               style={{
                 position: "absolute",
-                right: "1rem",
+                right: "0.5rem",
                 top: "50%",
                 transform: "translateY(-50%)",
                 zIndex: 100000,
@@ -291,7 +295,9 @@ export function GalleryExplorer({ items, categories }: GalleryExplorerProps) {
             </button>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence>,
+      document.body,
+      )}
     </div>
   );
 }

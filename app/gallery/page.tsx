@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { GALLERY } from "@/lib/data";
-import { GalleryExplorer } from "../components/GalleryExplorer";
-import { Reveal } from "../components/Motion";
-import { PageHero } from "../components/PageHero";
-import { SectionHeading } from "../components/SectionHeading";
-import { Sparkles } from "../components/BgFx";
+import { GalleryExplorer } from "@/components/GalleryExplorer";
+import { Reveal } from "@/components/Motion";
+import { PageHero } from "@/components/PageHero";
+import { SectionHeading } from "@/components/SectionHeading";
+import { Sparkles } from "@/components/BgFx";
 
 export const metadata: Metadata = {
   title: "Gallery | Suryavana Hotel & Resort",
